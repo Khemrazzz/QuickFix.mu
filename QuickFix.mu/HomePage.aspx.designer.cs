@@ -11,7 +11,7 @@ namespace QuickFix.mu
 {
 
 
-    public partial class IndexPage
+    public partial class HomePage
     {
     }
 }
