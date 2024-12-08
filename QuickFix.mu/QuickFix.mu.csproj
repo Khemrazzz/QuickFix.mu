@@ -132,6 +132,7 @@
     <Content Include="fonts\fa-regular-400.svg" />
     <Content Include="fonts\fa-solid-900.svg" />
     <Content Include="Global.asax" />
+    <Content Include="HomePage.aspx" />
     <Content Include="ico\apple-touch-icon-114-precomposed.png" />
     <Content Include="ico\apple-touch-icon-144-precomposed.png" />
     <Content Include="ico\apple-touch-icon-57-precomposed.png" />
@@ -217,7 +218,6 @@
     <Content Include="images\team05.jpg" />
     <Content Include="images\team06.jpg" />
     <Content Include="images\title-mark.png" />
-    <Content Include="IndexPage.aspx" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\contact.form.min.js" />
     <Content Include="js\fancybox.min.js" />
@@ -406,6 +406,7 @@
     </Compile>
     <Compile Include="ContactPage.aspx.cs">
       <DependentUpon>ContactPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ContactPage.aspx.designer.cs">
       <DependentUpon>ContactPage.aspx</DependentUpon>
@@ -420,16 +421,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="IndexPage.aspx.cs">
-      <DependentUpon>IndexPage.aspx</DependentUpon>
+    <Compile Include="HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="IndexPage.aspx.designer.cs">
-      <DependentUpon>IndexPage.aspx</DependentUpon>
+    <Compile Include="HomePage.aspx.designer.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuickFixMasterPage.Master.cs">
       <DependentUpon>QuickFixMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="QuickFixMasterPage.Master.designer.cs">
       <DependentUpon>QuickFixMasterPage.Master</DependentUpon>
