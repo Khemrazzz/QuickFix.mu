@@ -12,7 +12,7 @@
     <meta name="description" content="Homepark | Real Estate & Luxury Homes">
     <meta name="keywords" content="homepark, realestate, flat, apartment, benefits, facility, consultation, home, house, studio, pool, animation, transportation">
 
-    <!-- SOCIAL MEDIA META -->
+    <!-- SOCIAL MEDIA META  with test comment from Ryan-->
     <meta property="og:description" content="Homepark | Real Estate & Luxury Homes">
     <meta property="og:image" content="http://www.themezinho.net/homepark/preview.png">
     <meta property="og:site_name" content="homepark">
@@ -65,8 +65,13 @@
     <div class="side-navigation">
         <div class="menu">
             <ul>
+<<<<<<< HEAD:QuickFix.mu/QuickFix.Master
                 <li><a href="ContactPage.aspx">END</a></li>
                 <li><a href="Home.aspx">HOMEPARK</a>
+=======
+                <li><a href="index.html">START edited by Ryan</a></li>
+                <li><a href="#">HOMEPARK</a>
+>>>>>>> aa81d5b56c2ff8b4f9691d9fa6ae5eeee8466124:QuickFix.mu/QuickFixMasterPage.Master
                     <ul>
                         <li><a href="zaga-construction.html">Zaga Construction</a></li>
                         <li><a href="about-homepark.html">About Homepark</a></li>
