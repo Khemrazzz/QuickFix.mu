@@ -11,7 +11,7 @@ namespace QuickFix.mu
 {
 
 
-    public partial class Home
+    public partial class ContactPage
     {
     }
 }

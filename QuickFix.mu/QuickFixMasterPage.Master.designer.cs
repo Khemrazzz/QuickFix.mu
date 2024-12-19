@@ -11,7 +11,7 @@ namespace QuickFix.mu
 {
 
 
-    public partial class QuickFix
+    public partial class QuickFixMasterPage
     {
 
         /// <summary>
