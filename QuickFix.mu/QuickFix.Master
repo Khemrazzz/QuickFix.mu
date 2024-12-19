@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="QuickFixMasterPage.master.cs" Inherits="QuickFix.mu.QuickFixMasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="QuickFix.master.cs" Inherits="QuickFix.mu.QuickFix" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +12,7 @@
     <meta name="description" content="Homepark | Real Estate & Luxury Homes">
     <meta name="keywords" content="homepark, realestate, flat, apartment, benefits, facility, consultation, home, house, studio, pool, animation, transportation">
 
-    <!-- SOCIAL MEDIA META -->
+    <!-- SOCIAL MEDIA META  with test comment from Ryan-->
     <meta property="og:description" content="Homepark | Real Estate & Luxury Homes">
     <meta property="og:image" content="http://www.themezinho.net/homepark/preview.png">
     <meta property="og:site_name" content="homepark">
@@ -51,7 +51,8 @@
         <!-- end layer -->
         <div class="inner">
             <figure>
-                <img src="images/preloader.gif" alt="Image"></figure>
+                <img src="images/preloader.gif" alt="Image">
+            </figure>
             <p><span class="text-rotater" data-text="Homepark | Elements | Loading">Loading</span></p>
         </div>
         <!-- end inner -->
@@ -64,8 +65,13 @@
     <div class="side-navigation">
         <div class="menu">
             <ul>
-                <li><a href="index.html">START</a></li>
+<<<<<<< HEAD:QuickFix.mu/QuickFix.Master
+                <li><a href="ContactPage.aspx">END</a></li>
+                <li><a href="Home.aspx">HOMEPARK</a>
+=======
+                <li><a href="index.html">START edited by Ryan</a></li>
                 <li><a href="#">HOMEPARK</a>
+>>>>>>> aa81d5b56c2ff8b4f9691d9fa6ae5eeee8466124:QuickFix.mu/QuickFixMasterPage.Master
                     <ul>
                         <li><a href="zaga-construction.html">Zaga Construction</a></li>
                         <li><a href="about-homepark.html">About Homepark</a></li>
@@ -113,6 +119,7 @@
             <address>
                 Kyiv | G. Stalingrada Avenue, 6 
     Vilnius | Antakalnio St. 17
+           
             </address>
             <h6>+380(98)298-59-73</h6>
             <p><a href="#">hello@homepark.com.ua</a></p>
@@ -131,8 +138,10 @@
     <nav class="navbar">
         <div class="container">
             <div class="upper-side">
-                <div class="logo"><a href="index.html">
-                    <img src="images/logo-light.png" alt="Image"></a> </div>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo-light.png" alt="Image"></a>
+                </div>
                 <!-- end logo -->
                 <div class="phone-email">
                     <img src="images/icon-phone.png" alt="Image">
@@ -193,18 +202,22 @@
                 <div class="row">
                     <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.05s">
                         <figure>
-                            <img src="images/footer-icon01.png" alt="Image"></figure>
+                            <img src="images/footer-icon01.png" alt="Image">
+                        </figure>
                         <h3>Address Infos</h3>
                         <p>
                             Kyiv | G. Stalingrada Avenue, 6
+                           
                             <br>
                             Vilnius | Antakalnio St. 17
+                       
                         </p>
                     </div>
                     <!-- end col-4 -->
                     <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.10s">
                         <figure>
-                            <img src="images/footer-icon02.png" alt="Image"></figure>
+                            <img src="images/footer-icon02.png" alt="Image">
+                        </figure>
                         <h3>Working Hours</h3>
                         <p>
                             Monday to Friday <strong>09:00</strong> to <strong>18:30</strong>
@@ -215,11 +228,13 @@
                     <!-- end col-4 -->
                     <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.15s">
                         <figure>
-                            <img src="images/footer-icon03.png" alt="Image"></figure>
+                            <img src="images/footer-icon03.png" alt="Image">
+                        </figure>
                         <h3>Sales Office</h3>
                         <p>
                             Boryssa Himry 124 B Block Pozniaky<br>
                             Kiev Oblast - Ukraine
+                       
                         </p>
                     </div>
                     <!-- end col-4 -->
