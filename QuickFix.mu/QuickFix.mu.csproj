@@ -403,7 +403,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuickFix.Master.cs">
       <DependentUpon>QuickFix.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="QuickFix.Master.designer.cs">
       <DependentUpon>QuickFix.Master</DependentUpon>
