@@ -7,26 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="format-detection" content="telephone=no">
     <meta name="theme-color" content="#282828" />
-    <title>Homepark | Real Estate & Luxury Homes</title>
-    <meta name="author" content="Themezinho">
-    <meta name="description" content="Homepark | Real Estate & Luxury Homes">
-    <meta name="keywords" content="homepark, realestate, flat, apartment, benefits, facility, consultation, home, house, studio, pool, animation, transportation">
-
+    <title>QuickFix</title>
+    <meta name="author" content="iTech">
+    <meta name="description" content="QuickFix">
+    <meta name="keywords" content="QuickFix">
     <!-- SOCIAL MEDIA META -->
-    <meta property="og:description" content="Homepark | Real Estate & Luxury Homes">
-    <meta property="og:image" content="http://www.themezinho.net/homepark/preview.png">
-    <meta property="og:site_name" content="homepark">
-    <meta property="og:title" content="homepark">
+    <meta property="og:description" content="QuickFix">
+    <meta property="og:image" content="#">
+    <meta property="og:site_name" content="QuickFix">
+    <meta property="og:title" content="QuickFix">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://www.themezinho.net/homepark">
+    <meta property="og:url" content="#">
 
     <!-- TWITTER META -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@homepark">
     <meta name="twitter:creator" content="@homepark">
     <meta name="twitter:title" content="homepark">
-    <meta name="twitter:description" content="Homepark | Real Estate & Luxury Homes">
-    <meta name="twitter:image" content="http://www.themezinho.net/homepark/preview.png">
+    <meta name="twitter:description" content="QuickFix">
+    <meta name="twitter:image" content="#">
 
     <!-- FAVICON FILES -->
     <link href="ico/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
@@ -52,7 +51,7 @@
         <div class="inner">
             <figure>
                 <img src="images/preloader.gif" alt="Image"></figure>
-            <p><span class="text-rotater" data-text="Homepark | Elements | Loading">Loading</span></p>
+            <p><span class="text-rotater" data-text="QuickFix | Elements | Loading">Loading</span></p>
         </div>
         <!-- end inner -->
     </div>
@@ -64,7 +63,7 @@
     <div class="side-navigation">
         <div class="menu">
             <ul>
-                <li><a href="index.html">START</a></li>
+                <li><a href="HomePage.aspx">STA</a></li>
                 <li><a href="#">HOMEPARK</a>
                     <ul>
                         <li><a href="zaga-construction.html">Zaga Construction</a></li>
