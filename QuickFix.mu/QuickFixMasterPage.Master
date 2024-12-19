@@ -276,7 +276,7 @@
                 <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
                 <li><a href="#"><i class="fab fa-youtube"></i></a></li>
             </ul>
-            <small>© 2024 QuickFix | Bring Solutions to your life</small>
+            <small>© 2024 QuickFix | Bringing Solutions to your life</small>
         </div>
         <!-- end side-content -->
     </div>
@@ -463,9 +463,7 @@
                         </figure>
                         <h3>Address Infos</h3>
                         <p>
-                            Kyiv | G. Stalingrada Avenue, 6
-                            <br>
-                            Vilnius | Antakalnio St. 17
+                            Mauritius | Bagatelle Business Park
                         </p>
                     </div>
                     <!-- end col-4 -->
@@ -487,8 +485,8 @@
                         </figure>
                         <h3>Sales Office</h3>
                         <p>
-                            Boryssa Himry 124 B Block Pozniaky<br>
-                            Kiev Oblast - Ukraine
+                             Mont Choisy Business Junction<br>
+                            Grand Baie - Mauritius
                         </p>
                     </div>
                     <!-- end col-4 -->
@@ -504,9 +502,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.05s">
-                    <img src="images/logo-light.png" alt="Image" class="logo">
+                    <img src="images/logo01.png" alt="Image" class="logo">
                     <p>By aiming to take the life quality to an upper level with the whole realized Projects, Homepark continues to be the address of luxury.</p>
-                    <div class="select-box dropdown show">
+                 <%--   <div class="select-box dropdown show">
                         <a class="dropdown-toggle" href="#" role="button" id="language-select" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>
                             <img src="images/flag-tr.svg" alt="Image">
                             Turkish</span> </a>
@@ -521,14 +519,14 @@
                                 <img src="images/flag-br.svg" alt="Image">
                                 Portugues</a></li>
                         </ul>
-                    </div>
+                    </div>--%>
                     <!-- end select-box -->
                 </div>
                 <!-- end col-4 -->
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.10s">
                     <ul class="footer-menu">
-                        <li><a href="#">Homepark</a></li>
-                        <li><a href="#">Apartments</a></li>
+                        <li><a href="#">QuickFix</a></li>
+                        <li><a href="#">Services</a></li>
                         <li><a href="#">Facilities</a></li>
                         <li><a href="#">News</a></li>
                         <li><a href="#">Contact</a></li>
@@ -548,8 +546,8 @@
                 <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.20s">
                     <div class="contact-box">
                         <h5>CALL CENTER</h5>
-                        <h3>+380(98)298-59-73</h3>
-                        <p><a href="#">hello@homepark.com.ua</a></p>
+                        <h3>+230 58300823</h3>
+                        <p><a href="#">Support@QuickFix.mu</a></p>
                         <ul>
                             <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -561,7 +559,7 @@
                     <!-- end contact-box -->
                 </div>
                 <!-- end col-4 -->
-                <div class="col-12"><span class="copyright">© 2019 Homepark | Real Estate &amp; Luxury Homes</span> <span class="creation">Site created by <a href="#">Themezinho</a></span> </div>
+                <div class="col-12"><span class="copyright">© 2024 QuickFix | Bringing Solutions to your life </span> <span class="creation">Site created by <a href="#">iTech</a></span> </div>
                 <!-- end col-12 -->
             </div>
             <!-- end row -->
