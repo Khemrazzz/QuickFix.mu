@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/QuickFixMasterPage.Master" AutoEventWireup="true" CodeBehind="HomePage.aspx.cs" Inherits="QuickFix.mu.HomePage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/QuickFix.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="QuickFix.mu.Home" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -12,7 +12,8 @@
                         <h2>Living Spaces in Pecherska - Kiev</h2>
                         <a href="#">GET A CONSULTATION <i class="fas fa-caret-right"></i></a>
                         <figure>
-                            <img src="images/services-icon01.png" alt="Image"></figure>
+                            <img src="images/services-icon01.png" alt="Image">
+                        </figure>
                     </div>
                     <!-- end container -->
                 </div>
@@ -23,7 +24,8 @@
                         <h2>Provide a decent level of comfort </h2>
                         <a href="#">GET A CONSULTATION <i class="fas fa-caret-right"></i></a>
                         <figure>
-                            <img src="images/services-icon08.png" alt="Image"></figure>
+                            <img src="images/services-icon08.png" alt="Image">
+                        </figure>
                     </div>
                     <!-- end container -->
                 </div>
@@ -34,7 +36,8 @@
                         <h2>We build your dream house</h2>
                         <a href="#">GET A CONSULTATION <i class="fas fa-caret-right"></i></a>
                         <figure>
-                            <img src="images/services-icon07.png" alt="Image"></figure>
+                            <img src="images/services-icon07.png" alt="Image">
+                        </figure>
                     </div>
                     <!-- end container -->
                 </div>
@@ -75,7 +78,8 @@
                         <div class="pattern-bg" data-stellar-ratio="1.07"></div>
                         <!-- end pattern-bg -->
                         <div class="holder" data-stellar-ratio="1.10">
-                            <img src="images/side-image01.jpg" alt="Image"></div>
+                            <img src="images/side-image01.jpg" alt="Image">
+                        </div>
                         <!-- end holder -->
                     </figure>
                 </div>
@@ -88,6 +92,7 @@
                         <p>
                             The smaller male cones release pollen, 
             which fertilizes the female
+                       
                         </p>
                         <a href="#">
                             <img src="images/icon-m2.png" alt="Image">See our projects</a>
@@ -164,7 +169,8 @@
                 <div class="col wow fadeInUp" data-wow-delay="0s">
                     <figure>
                         <img src="images/icon-benefits01.png" alt="Image">
-                        <b></b></figure>
+                        <b></b>
+                    </figure>
                     <h6>Near to Subway</h6>
                     <span class="odometer" data-count="28" data-status="yes">0</span> <span class="extra">min</span>
                 </div>
@@ -172,7 +178,8 @@
                 <div class="col wow fadeInUp" data-wow-delay="0.05s">
                     <figure>
                         <img src="images/icon-benefits02.png" alt="Image">
-                        <b></b></figure>
+                        <b></b>
+                    </figure>
                     <h6>Spaces in Pozniaky</h6>
                     <span class="odometer" data-count="32" data-status="yes">0</span> <span class="extra">+</span>
                 </div>
@@ -180,7 +187,8 @@
                 <div class="col wow fadeInUp" data-wow-delay="0.10s">
                     <figure>
                         <img src="images/icon-benefits03.png" alt="Image">
-                        <b></b></figure>
+                        <b></b>
+                    </figure>
                     <h6>Spaces in Pozniaky</h6>
                     <span class="odometer" data-count="15" data-status="yes">0</span> <span class="extra">%</span>
                 </div>
@@ -188,7 +196,8 @@
                 <div class="col wow fadeInUp" data-wow-delay="0.15s">
                     <figure>
                         <img src="images/icon-benefits04.png" alt="Image">
-                        <b></b></figure>
+                        <b></b>
+                    </figure>
                     <h6>Spaces in Pozniaky</h6>
                     <span class="odometer" data-count="3" data-status="yes">0</span> <span class="extra">years</span>
                 </div>
@@ -196,7 +205,8 @@
                 <div class="col wow fadeInUp" data-wow-delay="0.20s">
                     <figure>
                         <img src="images/icon-benefits05.png" alt="Image">
-                        <b></b></figure>
+                        <b></b>
+                    </figure>
                     <h6>Spaces in Pozniaky</h6>
                     <span class="odometer" data-count="79" data-status="yes">0</span> <span class="extra">m²</span>
                 </div>
@@ -220,18 +230,24 @@
                 <div class="col-lg-7">
                     <div class="row inner">
                         <div class="col-md-4 wow fadeInUp" data-wow-delay="0s">
-                            <figure data-stellar-ratio="1.07"><a href="images/gallery-thumb01.jpg" data-fancybox>
-                                <img src="images/gallery-thumb01.jpg" alt="Image"></a> </figure>
+                            <figure data-stellar-ratio="1.07">
+                                <a href="images/gallery-thumb01.jpg" data-fancybox>
+                                    <img src="images/gallery-thumb01.jpg" alt="Image"></a>
+                            </figure>
                         </div>
                         <!-- end col-4 -->
                         <div class="col-md-4 wow fadeInUp" data-wow-delay="0.05s">
-                            <figure data-stellar-ratio="1.15"><a href="images/gallery-thumb02.jpg" data-fancybox>
-                                <img src="images/gallery-thumb02.jpg" alt="Image"></a> </figure>
+                            <figure data-stellar-ratio="1.15">
+                                <a href="images/gallery-thumb02.jpg" data-fancybox>
+                                    <img src="images/gallery-thumb02.jpg" alt="Image"></a>
+                            </figure>
                         </div>
                         <!-- end col-4 -->
                         <div class="col-md-4 wow fadeInUp" data-wow-delay="0.10s">
-                            <figure data-stellar-ratio="1.04"><a href="images/gallery-thumb03.jpg" data-fancybox>
-                                <img src="images/gallery-thumb03.jpg" alt="Image"></a> </figure>
+                            <figure data-stellar-ratio="1.04">
+                                <a href="images/gallery-thumb03.jpg" data-fancybox>
+                                    <img src="images/gallery-thumb03.jpg" alt="Image"></a>
+                            </figure>
                         </div>
                         <!-- end col-4 -->
                     </div>
@@ -252,7 +268,8 @@
                         <div class="pattern-bg" data-stellar-ratio="1.03"></div>
                         <!-- end pattern-bg -->
                         <div class="holder" data-stellar-ratio="1.07">
-                            <img src="images/side-image02.jpg" alt="Image"></div>
+                            <img src="images/side-image02.jpg" alt="Image">
+                        </div>
                         <!-- end holder -->
                     </figure>
                 </div>
@@ -265,6 +282,7 @@
                         <p>
                             The smaller male cones release pollen, 
             which fertilizes the female
+                       
                         </p>
                         <ul>
                             <li>
@@ -324,17 +342,20 @@
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="tab-one">
                             <figure>
-                                <img src="images/plan01.jpg" alt="Image"></figure>
+                                <img src="images/plan01.jpg" alt="Image">
+                            </figure>
                         </div>
                         <!-- end tab-pane -->
                         <div class="tab-pane fade" id="tab-two">
                             <figure>
-                                <img src="images/plan02.jpg" alt="Image"></figure>
+                                <img src="images/plan02.jpg" alt="Image">
+                            </figure>
                         </div>
                         <!-- end tab-pane -->
                         <div class="tab-pane fade" id="tab-three">
                             <figure>
-                                <img src="images/plan03.jpg" alt="Image"></figure>
+                                <img src="images/plan03.jpg" alt="Image">
+                            </figure>
                         </div>
                         <!-- end tab-pane -->
                     </div>
@@ -386,6 +407,7 @@
                         <p>
                             The smaller male cones release pollen, 
             which fertilizes the female
+                       
                         </p>
                     </div>
                     <!-- end post-box -->
@@ -401,6 +423,7 @@
                         <p>
                             The smaller male cones release pollen, 
             which fertilizes the female
+                       
                         </p>
                     </div>
                     <!-- end post-box -->
@@ -416,6 +439,7 @@
                         <p>
                             The smaller male cones release pollen, 
             which fertilizes the female
+                       
                         </p>
                     </div>
                     <!-- end post-box -->
@@ -540,23 +564,31 @@
                 </div>
                 <!-- end col-5 -->
                 <div class="col-lg-2 col-md-3 col-sm-6 col-6 wow fadeInUp" data-wow-delay="0.05s">
-                    <figure><a href="images/certificate01.jpg" data-fancybox>
-                        <img src="images/certificate01.jpg" alt="Image"></a> </figure>
+                    <figure>
+                        <a href="images/certificate01.jpg" data-fancybox>
+                            <img src="images/certificate01.jpg" alt="Image"></a>
+                    </figure>
                 </div>
                 <!-- end col-3 -->
                 <div class="col-lg-2 col-md-3 col-sm-6 col-6 wow fadeInUp" data-wow-delay="0.10s">
-                    <figure><a href="images/certificate02.jpg" data-fancybox>
-                        <img src="images/certificate02.jpg" alt="Image"></a> </figure>
+                    <figure>
+                        <a href="images/certificate02.jpg" data-fancybox>
+                            <img src="images/certificate02.jpg" alt="Image"></a>
+                    </figure>
                 </div>
                 <!-- end col-3 -->
                 <div class="col-lg-2 col-md-3 col-sm-6 col-6 wow fadeInUp" data-wow-delay="0.15s">
-                    <figure><a href="images/certificate03.jpg" data-fancybox>
-                        <img src="images/certificate03.jpg" alt="Image"></a> </figure>
+                    <figure>
+                        <a href="images/certificate03.jpg" data-fancybox>
+                            <img src="images/certificate03.jpg" alt="Image"></a>
+                    </figure>
                 </div>
                 <!-- end col-3 -->
                 <div class="col-lg-2 col-md-3 col-sm-6 col-6 wow fadeInUp" data-wow-delay="0.20s">
-                    <figure><a href="images/certificate04.jpg" data-fancybox>
-                        <img src="images/certificate04.jpg" alt="Image"></a> </figure>
+                    <figure>
+                        <a href="images/certificate04.jpg" data-fancybox>
+                            <img src="images/certificate04.jpg" alt="Image"></a>
+                    </figure>
                 </div>
                 <!-- end col-3 -->
             </div>
