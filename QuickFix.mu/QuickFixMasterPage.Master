@@ -205,6 +205,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
+    <form id ="form1" runat="server">
     <div class="preloader">
         <div class="layer"></div>
         <!-- end layer -->
@@ -420,7 +421,7 @@
             <!-- end upper-side -->
             <div class="menu">
                 <ul>
-                    <li><a href="Registration.aspx">START</a></li>
+                    <li><a href="Registration.aspx">Start</a></li>
                     <li><a href="#">QuickFix</a>
                         <ul>
                             <li><a href="#">About Us</a></li>
@@ -566,6 +567,7 @@
         </div>
         <!-- end container -->
     </footer>
+        </form>
     <!-- end footer -->
 
     <!-- JS FILES -->
