@@ -286,7 +286,7 @@
             <div class="upper-side">
 
                 <div class="logo">
-                    <a href="HompePage.aspx">
+                    <a href="HomePage.aspx">
                         <img src="images/logo1.png" alt="Image"></a>
                 </div>
                 <!-- end logo -->

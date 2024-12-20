@@ -246,13 +246,10 @@
     <Content Include="js\swiper.min.js" />
     <Content Include="js\text-rotater.js" />
     <Content Include="js\wow.min.js" />
-<<<<<<< HEAD
     <Content Include="NewsPage.aspx" />
-=======
     <Content Include="images\banner1.jpg" />
     <Content Include="images\banner2.jpg" />
     <Content Include="images\banner3.jpg" />
->>>>>>> 4b54e0ce291a568d1e08f8e551337f8aaeb788b9
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
