@@ -128,6 +128,7 @@
     <Content Include="css\odometer.min.css" />
     <Content Include="css\style.css" />
     <Content Include="css\swiper.min.css" />
+    <Content Include="FacilitiesPage.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fa-brands-400.svg" />
     <Content Include="fonts\fa-regular-400.svg" />
@@ -233,6 +234,7 @@
     <Content Include="js\swiper.min.js" />
     <Content Include="js\text-rotater.js" />
     <Content Include="js\wow.min.js" />
+    <Content Include="NewsPage.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -398,6 +400,13 @@
     <Compile Include="ContactPage.aspx.designer.cs">
       <DependentUpon>ContactPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FacilitiesPage.aspx.cs">
+      <DependentUpon>FacilitiesPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FacilitiesPage.aspx.designer.cs">
+      <DependentUpon>FacilitiesPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -407,6 +416,13 @@
     </Compile>
     <Compile Include="HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewsPage.aspx.cs">
+      <DependentUpon>NewsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewsPage.aspx.designer.cs">
+      <DependentUpon>NewsPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuickFixMasterPage.Master.cs">
