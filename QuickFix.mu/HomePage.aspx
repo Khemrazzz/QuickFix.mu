@@ -6,7 +6,7 @@
     <header class="slider">
         <div class="slider-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide" data-background="images/slide01.jpg" data-stellar-background-ratio="1.15">
+                <div class="swiper-slide" data-background="images/banner1.jpg" data-stellar-background-ratio="1.15">
                     <div class="container">
                         <h1><span>Udført</span> Luxury Residences</h1>
                         <h2>Living Spaces in Pecherska - Kiev</h2>
@@ -17,7 +17,7 @@
                     <!-- end container -->
                 </div>
                 <!-- end swiper-slide -->
-                <div class="swiper-slide" data-background="images/slide02.jpg" data-stellar-background-ratio="1.15">
+                <div class="swiper-slide" data-background="images/banner2.jpg" data-stellar-background-ratio="1.15">
                     <div class="container">
                         <h1><span>Oxøme</span> Premium Flats</h1>
                         <h2>Provide a decent level of comfort </h2>
@@ -28,7 +28,7 @@
                     <!-- end container -->
                 </div>
                 <!-- end swiper-slide -->
-                <div class="swiper-slide" data-background="images/slide03.jpg" data-stellar-background-ratio="1.15">
+                <div class="swiper-slide" data-background="images/banner3.jpg" data-stellar-background-ratio="1.15">
                     <div class="container">
                         <h1><span>Hømepark</span> Elite Residences</h1>
                         <h2>We build your dream house</h2>
@@ -75,7 +75,7 @@
                         <div class="pattern-bg" data-stellar-ratio="1.07"></div>
                         <!-- end pattern-bg -->
                         <div class="holder" data-stellar-ratio="1.10">
-                            <img src="images/side-image01.jpg" alt="Image"></div>
+                            <img src="images/17.jpg" alt="Image"></div>
                         <!-- end holder -->
                     </figure>
                 </div>
@@ -221,17 +221,17 @@
                     <div class="row inner">
                         <div class="col-md-4 wow fadeInUp" data-wow-delay="0s">
                             <figure data-stellar-ratio="1.07"><a href="images/gallery-thumb01.jpg" data-fancybox>
-                                <img src="images/gallery-thumb01.jpg" alt="Image"></a> </figure>
+                                <img src="images/2.jpg" alt="Image"></a> </figure>
                         </div>
                         <!-- end col-4 -->
                         <div class="col-md-4 wow fadeInUp" data-wow-delay="0.05s">
                             <figure data-stellar-ratio="1.15"><a href="images/gallery-thumb02.jpg" data-fancybox>
-                                <img src="images/gallery-thumb02.jpg" alt="Image"></a> </figure>
+                                <img src="images/3.jpg" alt="Image"></a> </figure>
                         </div>
                         <!-- end col-4 -->
                         <div class="col-md-4 wow fadeInUp" data-wow-delay="0.10s">
                             <figure data-stellar-ratio="1.04"><a href="images/gallery-thumb03.jpg" data-fancybox>
-                                <img src="images/gallery-thumb03.jpg" alt="Image"></a> </figure>
+                                <img src="images/5.jpg" alt="Image"></a> </figure>
                         </div>
                         <!-- end col-4 -->
                     </div>
@@ -252,7 +252,7 @@
                         <div class="pattern-bg" data-stellar-ratio="1.03"></div>
                         <!-- end pattern-bg -->
                         <div class="holder" data-stellar-ratio="1.07">
-                            <img src="images/side-image02.jpg" alt="Image"></div>
+                            <img src="images/6.jpg" alt="Image"></div>
                         <!-- end holder -->
                     </figure>
                 </div>
@@ -324,17 +324,17 @@
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="tab-one">
                             <figure>
-                                <img src="images/plan01.jpg" alt="Image"></figure>
+                                <img src="images/7.jpg" alt="Image"></figure>
                         </div>
                         <!-- end tab-pane -->
                         <div class="tab-pane fade" id="tab-two">
                             <figure>
-                                <img src="images/plan02.jpg" alt="Image"></figure>
+                                <img src="images/7.jpg" alt="Image"></figure>
                         </div>
                         <!-- end tab-pane -->
                         <div class="tab-pane fade" id="tab-three">
                             <figure>
-                                <img src="images/plan03.jpg" alt="Image"></figure>
+                                <img src="images/7.jpg" alt="Image"></figure>
                         </div>
                         <!-- end tab-pane -->
                     </div>
@@ -347,7 +347,7 @@
         <!-- end container -->
     </section>
     <!-- property-plans -->
-    <section class="get-consultation" data-background="images/section-bg01.jpg" data-stellar-background-ratio="0.9">
+    <section class="get-consultation" data-background="images/8.jpg" data-stellar-background-ratio="0.9">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-8 fadeInUp wow">
@@ -379,7 +379,7 @@
                 <div class="col-lg-4 wow fadeInUp" data-wow-delay="0s">
                     <div class="post-box">
                         <figure>
-                            <img src="images/recent-news01.jpg" alt="Image">
+                            <img src="images/14.jpg" alt="Image">
                         </figure>
                         <span>24, September 2019</span>
                         <h6><a href="#">50th Anniversary of the Turner School of Construction Management </a></h6>
@@ -394,7 +394,7 @@
                 <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.10s">
                     <div class="post-box">
                         <figure>
-                            <img src="images/recent-news02.jpg" alt="Image">
+                            <img src="images/15.jpg" alt="Image">
                         </figure>
                         <span>06, November 2019</span>
                         <h6><a href="#">The Center for Construction Research and Training to Receive 2019 Award</a></h6>
@@ -409,7 +409,7 @@
                 <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.20s">
                     <div class="post-box">
                         <figure>
-                            <img src="images/recent-news03.jpg" alt="Image">
+                            <img src="images/16.jpg" alt="Image">
                         </figure>
                         <span>31, April 2019</span>
                         <h6><a href="#">Henry C. Turner Prize for Innovation in Construction Company</a></h6>
@@ -541,22 +541,22 @@
                 <!-- end col-5 -->
                 <div class="col-lg-2 col-md-3 col-sm-6 col-6 wow fadeInUp" data-wow-delay="0.05s">
                     <figure><a href="images/certificate01.jpg" data-fancybox>
-                        <img src="images/certificate01.jpg" alt="Image"></a> </figure>
+                        <img src="images/9.jpg" alt="Image"></a> </figure>
                 </div>
                 <!-- end col-3 -->
                 <div class="col-lg-2 col-md-3 col-sm-6 col-6 wow fadeInUp" data-wow-delay="0.10s">
                     <figure><a href="images/certificate02.jpg" data-fancybox>
-                        <img src="images/certificate02.jpg" alt="Image"></a> </figure>
+                        <img src="images/10.jpg" alt="Image"></a> </figure>
                 </div>
                 <!-- end col-3 -->
                 <div class="col-lg-2 col-md-3 col-sm-6 col-6 wow fadeInUp" data-wow-delay="0.15s">
                     <figure><a href="images/certificate03.jpg" data-fancybox>
-                        <img src="images/certificate03.jpg" alt="Image"></a> </figure>
+                        <img src="images/11.jpg" alt="Image"></a> </figure>
                 </div>
                 <!-- end col-3 -->
                 <div class="col-lg-2 col-md-3 col-sm-6 col-6 wow fadeInUp" data-wow-delay="0.20s">
                     <figure><a href="images/certificate04.jpg" data-fancybox>
-                        <img src="images/certificate04.jpg" alt="Image"></a> </figure>
+                        <img src="images/13.jpg" alt="Image"></a> </figure>
                 </div>
                 <!-- end col-3 -->
             </div>
