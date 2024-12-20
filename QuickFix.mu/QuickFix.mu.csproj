@@ -128,6 +128,13 @@
     <Content Include="css\odometer.min.css" />
     <Content Include="css\style.css" />
     <Content Include="css\swiper.min.css" />
+    <Content Include="dash\aDmin.html" />
+    <Content Include="dash\Client.html" />
+    <Content Include="dash\DASHapp.js" />
+    <Content Include="dash\DASHSstyle.css" />
+    <Content Include="dash\DASHstyle.css" />
+    <Content Include="dash\provider.html" />
+    <Content Include="dash\SupDash.aspx" />
     <Content Include="FacilitiesPage.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fa-brands-400.svg" />
@@ -246,11 +253,16 @@
     <Content Include="js\swiper.min.js" />
     <Content Include="js\text-rotater.js" />
     <Content Include="js\wow.min.js" />
+<<<<<<< HEAD
     <Content Include="NewsDetailPage.aspx" />
+=======
+    <Content Include="LogInPage.aspx" />
+>>>>>>> 3c363bdecd23af0a7390d72d3960fe0ee6f6ec6a
     <Content Include="NewsPage.aspx" />
     <Content Include="images\banner1.jpg" />
     <Content Include="images\banner2.jpg" />
     <Content Include="images\banner3.jpg" />
+    <Content Include="RegistrationPage.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -416,6 +428,13 @@
     <Compile Include="ContactPage.aspx.designer.cs">
       <DependentUpon>ContactPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="dash\SupDash.aspx.cs">
+      <DependentUpon>SupDash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dash\SupDash.aspx.designer.cs">
+      <DependentUpon>SupDash.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FacilitiesPage.aspx.cs">
       <DependentUpon>FacilitiesPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -433,12 +452,21 @@
     <Compile Include="HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="NewsDetailPage.aspx.cs">
       <DependentUpon>NewsDetailPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NewsDetailPage.aspx.designer.cs">
       <DependentUpon>NewsDetailPage.aspx</DependentUpon>
+=======
+    <Compile Include="LogInPage.aspx.cs">
+      <DependentUpon>LogInPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogInPage.aspx.designer.cs">
+      <DependentUpon>LogInPage.aspx</DependentUpon>
+>>>>>>> 3c363bdecd23af0a7390d72d3960fe0ee6f6ec6a
     </Compile>
     <Compile Include="NewsPage.aspx.cs">
       <DependentUpon>NewsPage.aspx</DependentUpon>
@@ -454,6 +482,13 @@
     </Compile>
     <Compile Include="QuickFixMasterPage.Master.designer.cs">
       <DependentUpon>QuickFixMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrationPage.aspx.cs">
+      <DependentUpon>RegistrationPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrationPage.aspx.designer.cs">
+      <DependentUpon>RegistrationPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
