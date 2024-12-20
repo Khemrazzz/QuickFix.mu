@@ -210,7 +210,7 @@
         <!-- end layer -->
         <div class="inner">
             <figure>
-                <img src="images/preloader.gif" alt="Image">
+                <img src="images/logo1.png" alt="Image">
             </figure>
             <p><span class="text-rotater" data-text="QuickFix | Elements | Loading">Loading</span></p>
         </div>
@@ -253,16 +253,16 @@
         <!-- end menu -->
         <div class="side-content">
             <figure>
-                <img src="images/logo01.png" alt="Image">
+                <img src="images/logo1.png" alt="Image">
             </figure>
             <p>By aiming to take the life quality to an upper level with the whole realized Projects, QuickFix continues to be the address of luxury.</p>
             <ul class="gallery">
-                <li><a href="images/gallery-thumb01.jpg" data-fancybox>
-                    <img src="images/gallery-thumb01.jpg" alt="Image"></a></li>
-                <li><a href="images/gallery-thumb02.jpg" data-fancybox>
-                    <img src="images/gallery-thumb02.jpg" alt="Image"></a></li>
-                <li><a href="images/gallery-thumb03.jpg" data-fancybox>
-                    <img src="images/gallery-thumb03.jpg" alt="Image"></a></li>
+                <li><a href="images/3.jpg" data-fancybox>
+                    <img src="images/3.jpg" alt="Image"></a></li>
+                <li><a href="images/4.jpg" data-fancybox>
+                    <img src="images/4.jpg" alt="Image"></a></li>
+                <li><a href="images/5.jpg" data-fancybox>
+                    <img src="images/5.jpg" alt="Image"></a></li>
             </ul>
             <address>
                 Mauritius | Bagatelle Business Park
@@ -287,7 +287,7 @@
 
                 <div class="logo">
                     <a href="HompePage.aspx">
-                        <img src="images/logo01.png" alt="Image"></a>
+                        <img src="images/logo1.png" alt="Image"></a>
                 </div>
                 <!-- end logo -->
                 <div class="phone-email">
