@@ -1,0 +1,139 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="shortcut icon" href="./images/logo.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="DASHstyle.css">
+</head>
+<body>
+    <header>
+        <div class="logo" title="Welcome To Client DashBoard">
+            <img src="./images/logo.png" alt="">
+            <h2>Welcome To <span class="danger">Fix</span> Client Dashboard</h2>
+        </div>
+        <div class="navbar">
+            <a href="index.html" class="active">
+                <span class="material-icons-sharp">dashboard</span>
+                <h3>Dashboard</h3>
+            </a>
+            <a href="users.html">
+                <span class="material-icons-sharp">people</span>
+                <h3>Manage Users</h3>
+            </a>
+            <a href="services.html">
+                <span class="material-icons-sharp">build</span>
+                <h3>Manage Services</h3>
+            </a>
+            <a href="analytics.html">
+                <span class="material-icons-sharp">insights</span>
+                <h3>Analytics</h3>
+            </a>
+            <a href="reports.html">
+                <span class="material-icons-sharp">assessment</span>
+                <h3>Reports</h3>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp">logout</span>
+                <h3>Logout</h3>
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside>
+            <div class="profile-photo">
+                <img src="./images/admin-profile.jpg" alt="Admin Profile Picture">
+            </div>
+            <div class="profile">
+                <div class="info">
+                    <p>Welcome, <b>Admin Name</b></p>
+                    <small class="text-muted">Administrator</small>
+                </div>
+            </div>
+            <div class="about">
+                <h5>Total Users</h5>
+                <p>350</p>
+                <h5>Active Services</h5>
+                <p>45</p>
+                <h5>Pending Approvals</h5>
+                <p>12</p>
+            </div>
+        </aside>
+
+        <!-- Main Dashboard -->
+        <main>
+            <h1>Admin Dashboard Overview</h1>
+            <div class="widgets">
+                <div class="card">
+                    <div class="icon">
+                        <span class="material-icons-sharp">people</span>
+                    </div>
+                    <div class="details">
+                        <h3>Total Users</h3>
+                        <h2>350</h2>
+                        <small>Updated just now</small>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="icon">
+                        <span class="material-icons-sharp">build</span>
+                    </div>
+                    <div class="details">
+                        <h3>Active Services</h3>
+                        <h2>45</h2>
+                        <small>Updated just now</small>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="icon">
+                        <span class="material-icons-sharp">pending_actions</span>
+                    </div>
+                    <div class="details">
+                        <h3>Pending Approvals</h3>
+                        <h2>12</h2>
+                        <small>Updated 10 mins ago</small>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="icon">
+                        <span class="material-icons-sharp">insights</span>
+                    </div>
+                    <div class="details">
+                        <h3>System Analytics</h3>
+                        <h2>95%</h2>
+                        <small>Performance</small>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Section -->
+        <div class="right">
+            <div class="announcements">
+                <h2>Notifications</h2>
+                <div class="updates">
+                    <div class="message">
+                        <p><b>System Update:</b> Maintenance scheduled for Dec 22.</p>
+                        <small class="text-muted">5 Minutes Ago</small>
+                    </div>
+                    <div class="message">
+                        <p><b>Report:</b> New user activity report is available.</p>
+                        <small class="text-muted">1 Hour Ago</small>
+                    </div>
+                    <div class="message">
+                        <p><b>Reminder:</b> Approve pending service requests.</p>
+                        <small class="text-muted">Yesterday</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="DASHapp.js"></script>
+</body>
+</html>

@@ -300,8 +300,10 @@
                 </div>
                 <!-- Log In -->
 
-                <button>
-                    Log In
+                <asp:Button ID="btnLogin" runat="server" Text="Log In" PostBackUrl="~/LogInPage.aspx" CssClass="button" />
+
+
+<%--<button > Log In
   <div class="star-1">
       <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -410,7 +412,7 @@
                             </g>
                         </svg>
                     </div>
-                </button>
+                </button>--%>
 
                 <!-- end Log In -->
                 <div class="phone-email2">
