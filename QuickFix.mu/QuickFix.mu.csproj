@@ -246,6 +246,7 @@
     <Content Include="js\swiper.min.js" />
     <Content Include="js\text-rotater.js" />
     <Content Include="js\wow.min.js" />
+    <Content Include="NewsDetailPage.aspx" />
     <Content Include="NewsPage.aspx" />
     <Content Include="images\banner1.jpg" />
     <Content Include="images\banner2.jpg" />
@@ -431,6 +432,13 @@
     </Compile>
     <Compile Include="HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewsDetailPage.aspx.cs">
+      <DependentUpon>NewsDetailPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewsDetailPage.aspx.designer.cs">
+      <DependentUpon>NewsDetailPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="NewsPage.aspx.cs">
       <DependentUpon>NewsPage.aspx</DependentUpon>

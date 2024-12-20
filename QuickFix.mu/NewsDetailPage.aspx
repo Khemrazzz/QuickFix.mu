@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/QuickFixMasterPage.Master" AutoEventWireup="true" CodeBehind="NewsPage.aspx.cs" Inherits="QuickFix.mu.NewsPage" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/QuickFixMasterPage.Master" AutoEventWireup="true" CodeBehind="NewsDetailPage.aspx.cs" Inherits="QuickFix.mu.NewsDetailPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
@@ -21,87 +20,35 @@
     	<div class="col-lg-8">
     		<div class="post">
     			<figure class="post-image">
-    				<img src="images/blog01.jpg" alt="Image">
-    			</figure>
-    			<div class="post-content">
-    				<h2 class="post-title"><a href="NewsDetailPage.aspx">The biggest updates from Construction annual developer conference</a></h2>
-    				<div class="post-author">
-    					<img src="images/author01.jpg" alt="Image"><span>By</span><a href="#"> Steven Bradley</a>
-    				</div>
-    				<p class="post-intro">Webz hosted its annual construction’s conference yesterday and the main focus was to build a privacy platform more the eye is attracted.</p>
-    				
-    				<div class="post-tags">
-    				<i class="fas fa-tags"></i>
-    				<ul>
-    					<li><a href="#">webz</a></li>
-    					<li><a href="#">internet</a></li>
-    					<li><a href="#">conference</a></li>
-    				</ul>
-    				</div>
-    				<!-- end post-tags -->
-    			</div>
-    			<!-- end post-content -->
-    		</div>
-    		<!-- end post -->
-    		<div class="post">
-    			<figure class="post-image">
     				<img src="images/blog02.jpg" alt="Image">
     			</figure>
-    			<div class="post-content">
-    				<h2 class="post-title"><a href="NewsDetailPage.aspx">The biggest updates from Construction annual developer conference</a></h2>
-    				<div class="post-author">
-    					<img src="images/author01.jpg" alt="Image"><span>By</span><a href="#"> Steven Bradley</a>
-    				</div>
-    				<p class="post-intro">Webz hosted its annual construction’s conference yesterday and the main focus was to build a privacy platform more the eye is attracted.</p>
-    				
-    				<div class="post-tags">
-    				<i class="fas fa-tags"></i>
-    				<ul>
-    					<li><a href="#">webz</a></li>
-    					<li><a href="#">internet</a></li>
-    					<li><a href="#">conference</a></li>
-    				</ul>
-    				</div>
-    				<!-- end post-tags -->
-    			</div>
-    			<!-- end post-content -->
-    		</div>
-    		<!-- end post -->
-    		<div class="post">
-    			<figure class="post-image">
-    				<img src="images/blog03.jpg" alt="Image">
-    			</figure>
-    			<div class="post-content">
-    				<h2 class="post-title"><a href="NewsDetail.aspx">The biggest updates from Construction annual developer conference</a></h2>
-    				<div class="post-author">
-    					<img src="images/author01.jpg" alt="Image"><span>By</span><a href="#"> Steven Bradley</a>
-    				</div>
-    				<p class="post-intro">Webz hosted its annual construction’s conference yesterday and the main focus was to build a privacy platform more the eye is attracted.</p>
-    				
-    				<div class="post-tags">
-    				<i class="fas fa-tags"></i>
-    				<ul>
-    					<li><a href="#">webz</a></li>
-    					<li><a href="#">internet</a></li>
-    					<li><a href="#">conference</a></li>
-    				</ul>
-    				</div>
-    				<!-- end post-tags -->
-    			</div>
-    			<!-- end post-content -->
-    		</div>
-    		<!-- end post -->
-    		<div class="post">
-    			<figure class="post-image">
-    				<img src="images/blog04.jpg" alt="Image">
-    			</figure>
-    			<div class="post-content">
+    			<div class="post-content single">
     				<h2 class="post-title"><a href="news-detail.html">The biggest updates from Construction annual developer conference</a></h2>
     				<div class="post-author">
     					<img src="images/author01.jpg" alt="Image"><span>By</span><a href="#"> Steven Bradley</a>
     				</div>
-    				<p class="post-intro">Webz hosted its annual construction’s conference yesterday and the main focus was to build a privacy platform more the eye is attracted.</p>
-    				
+    				<p>Webz hosted its annual construction’s conference yesterday and the main focus was to build a privacy platform more the eye is attracted.</p>
+    				<p>Whole wound wrote at whose to style in. Figure ye innate former do so we. Shutters but sir yourself provided you required his. So neither related he am do believe. Nothing but you hundred had use regular. Fat sportsmen arranging preferred can. Busy paid like is oh. Dinner our ask talent her age hardly. Neglected collected an attention listening do abilities. </p>
+    				<p>Whether article spirits new her covered hastily sitting her. Money witty books nor son add. Chicken age had evening believe but proceed pretend mrs. At missed advice my it no sister. Miss told ham dull knew see she spot near can. Spirit her entire her called. </p>
+    				<p>Fat new smallness few supposing suspicion two. Course sir people worthy horses add entire suffer. How one dull get busy dare far. At principle perfectly by sweetness do. As mr started arrival subject by believe. Strictly numerous outlived kindness whatever on we no on addition. </p>
+    				 
+        <blockquote>
+        	<p>Song such eyes had and off. Removed winding ask explain delight out few behaved lasting</p>
+        	<strong>Zaga Construction Lead Engineer</strong>
+        </blockquote>
+    				<p>Improved own provided blessing may peculiar domestic. Sight house has sex never. No visited raising gravity outward subject my cottage mr be. Hold do at tore in park feet near my case. Invitation at understood occasional sentiments insipidity inhabiting in. Off melancholy alteration principles old. Is do speedily kindness properly oh. Respect article painted cottage he is offices parlors.</p>
+    				<ul>
+          <li>Reget nec nunc. Etiam posuere iaculis quam.</li>
+          <li>Faucibus viverra eget nec nunc. Etiam posuere iaculis quam.</li>
+          <li>Etiam nec urna in odio faucibus viverra eget nec nunc. </li>
+          <li>Lectus Morbi tempus, odio suscipit efficitur vestibulum</li>
+          <li>Ut in ante et quam malesuada gravida. Morbi tempus, odio suscipit </li>
+          <li>Sed lectus vehicula mollis. Ut in ante et quam malesuada gravida.</li>
+          <li>Reget nec nunc. Etiam posuere iaculis quam.</li>
+          <li>Faucibus viverra eget nec nunc. Etiam posuere iaculis quam.</li>
+          <li>Integer ac nunc sed lectus vehicula mollis in ante et gravida.</li>
+          <li>Morbi tempus, odio suscipit efficitur vestibulum</li>
+        </ul>
     				<div class="post-tags">
     				<i class="fas fa-tags"></i>
     				<ul>
@@ -177,13 +124,8 @@
     	<!-- end col-4 -->
     	<div class="col-12">
     		<ul class="pagination">
-    		<li class="page-item"><a class="page-link" href="#">«</a></li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item active">
-      <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-   <li class="page-item"><a class="page-link" href="#">»</a></li>
+    		<li class="page-item"><a class="page-link" href="#">« PREV POST</a></li>
+   <li class="page-item"><a class="page-link" href="#">NEXT POST »</a></li>
   </ul>
     	</div>
     	<!-- end col-12 -->
