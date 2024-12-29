@@ -304,7 +304,7 @@
 <%--                <asp:Button ID="btnLogin" runat="server" Text="Log In" PostBackUrl="~/LogInPage.aspx" CssClass="button" />--%>
 
 
-<button id="btnLogin" class="button" onclick="__doPostBack('btnLogin', ''); return false;"> log in
+<button ID="btnLogin" runat="server" class="button" onclick="__doPostBack('btnLogin', '');"> log in
   <div class="star-1">
       <svg
           xmlns="http://www.w3.org/2000/svg"

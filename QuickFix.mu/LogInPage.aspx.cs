@@ -13,16 +13,16 @@ namespace QuickFix.mu
         {
             if (!IsPostBack)
             {
-                // Logic for first-time page load if needed
+                // Logic for first-time page load if needed                              
             }
         }
 
-        protected void btnLogin_Click(object sender, EventArgs e)
+        protected void btnLogin2_Click(object sender, EventArgs e)    
         {
-            string email = txtEmail.Text.Trim();
-            string password = txtPassword.Text.Trim();
+            string username = txtUsername.Value.Trim();
+            string password = txtPassword.Value.Trim();
 
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 lblMsg.Text = "Please enter both email and password.";
                 lblMsg.ForeColor = System.Drawing.Color.Red;
@@ -36,13 +36,13 @@ namespace QuickFix.mu
                     con.Open();
 
                     // Query to check the user in both tables (Client and Supplier)
-                    string query = @"SELECT 'Client' AS UserType FROM Client WHERE Email = @Email AND Password = @Password
+                    string query = @"SELECT 'Client' AS UserType FROM Client WHERE Username = @Username AND Password = @Password
                                      UNION
-                                     SELECT 'Supplier' AS UserType FROM Supplier WHERE Email = @Email AND Password = @Password";
+                                     SELECT 'Supplier' AS UserType FROM Supplier WHERE Username = @Username AND Password = @Password";
 
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
-                        cmd.Parameters.AddWithValue("@Email", email);
+                        cmd.Parameters.AddWithValue("@Username", username);
                         cmd.Parameters.AddWithValue("@Password", password);
 
                         object result = cmd.ExecuteScalar();
