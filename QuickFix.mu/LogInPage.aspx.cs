@@ -19,12 +19,12 @@ namespace QuickFix.mu
 
         protected void btnLogin2_Click(object sender, EventArgs e)    
         {
-            string username = txtUsername.Value.Trim();
-            string password = txtPassword.Value.Trim();
+            string username = txtUsername.Text.Trim();
+            string password = txtPassword.Text.Trim();
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                lblMsg.Text = "Please enter both email and password.";
+                lblMsg.Text = "Please enter both Username and Password.";
                 lblMsg.ForeColor = System.Drawing.Color.Red;
                 return;
             }
@@ -63,7 +63,7 @@ namespace QuickFix.mu
                         else
                         {
                             // User not found
-                            lblMsg.Text = "Invalid email or password. Please try again.";
+                            lblMsg.Text = "Invalid Username or Password.";
                             lblMsg.ForeColor = System.Drawing.Color.Red;
                         }
                     }
