@@ -236,9 +236,9 @@
                 </li>
                 <li><a href="#">Services</a>
                     <ul>
-                        <li><a href="ConstructionPage.aspx">Construction Services</a></li>
-                        <li><a href="MaintenancePage.aspx">Maintenance Services</a></li>
-                        <li><a href="HouseholdPage.aspx">Household Services</a></li>
+                        <li><a href="ConstructionServicesPage.aspx">Construction Services</a></li>
+                        <li><a href="MaintenanceServicesPage.aspx">Maintenance Services</a></li>
+                        <li><a href="HouseholdServicesPage.aspx">Household Services</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Feedbacks</a>
@@ -434,9 +434,9 @@
                     </li>
                     <li><a href="#">Services</a>
                         <ul>
-                            <li><a href="ConstructionPage.aspx">Construction Services</a></li>
-                            <li><a href="MaintenancePage.aspx">Maintenance Services</a></li>
-                            <li><a href="HouseholdPage.aspx">Household Services</a></li>
+                            <li><a href="ConstructionServicesPage.aspx">Construction Services</a></li>
+                            <li><a href="MaintenanceServicesPage.aspx">Maintenance Services</a></li>
+                            <li><a href="HouseholdServicesPage.aspx">Household Services</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Feedbacks</a>
