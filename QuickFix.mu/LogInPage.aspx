@@ -59,7 +59,6 @@
                 background-color: antiquewhite;
                 box-shadow: none;
             }
-
     </style>
 </asp:Content>
 
@@ -75,48 +74,66 @@
         </div>
     </header>
     <div class="form">
-    <p class="title">Welcome To QuickFix</p>
-    <asp:TextBox placeholder="Username" ID="txtUsername" runat="server" CssClass="input" TextMode="Password" ClientIDMode="Static"></asp:TextBox>
-    <asp:RequiredFieldValidator ID="rfvUsername" runat="server" ControlToValidate="txtUsername" ErrorMessage="Username is required" ForeColor="red" Display="Dynamic" CssClass="help-block"></asp:RequiredFieldValidator>
-    <asp:Label ID="lblUsernameMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Display="Dynamic" Text=""></asp:Label><br />
+        <p class="title">Welcome To QuickFix</p>
+        <asp:TextBox placeholder="Username" ID="txtUsername" runat="server" CssClass="input" TextMode="Password" ClientIDMode="Static"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvUsername" runat="server" ControlToValidate="txtUsername" ErrorMessage="Username is required" ForeColor="red" Display="Dynamic" CssClass="help-block"></asp:RequiredFieldValidator>
+        <asp:Label ID="lblUsernameMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Display="Dynamic" Text=""></asp:Label><br />
 
-    <asp:TextBox placeholder="Password" ID="txtPassword" runat="server" CssClass="input" TextMode="Password" ClientIDMode="Static"></asp:TextBox>
-    <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="txtPassword" ErrorMessage="Password is required" ForeColor="red" Display="Dynamic" CssClass="help-block"></asp:RequiredFieldValidator>
-    <asp:Label ID="lblPasswordMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Display="Dynamic" Text=""></asp:Label><br />
+        <asp:TextBox placeholder="Password" ID="txtPassword" runat="server" CssClass="input" TextMode="Password" ClientIDMode="Static"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="txtPassword" ErrorMessage="Password is required" ForeColor="red" Display="Dynamic" CssClass="help-block"></asp:RequiredFieldValidator>
+        <asp:Label ID="lblPasswordMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Display="Dynamic" Text=""></asp:Label><br />
 
-    <asp:Button class="btn" runat="server" ID="btnLogin2" OnClick="btnLogin2_Click" Text="Log In" OnClientClick="return validateFields();" />
-    
-    <div class="text-center mt-3">
-        <asp:Label ID="lblMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Text=""></asp:Label><br />
-        <p style="color:white">Don't have an account yet? <a href="RegistrationPage.aspx" class="text-primary">Sign Up</a></p>
+        <asp:Button class="btn" runat="server" ID="btnLogin2" OnClick="btnLogin2_Click" Text="Log In" OnClientClick="return validateFields();" />
+
+        <div class="text-center mt-3">
+            <asp:Label ID="lblMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Text=""></asp:Label><br />
+            <p style="color: white">Don't have an account yet? <a href="RegistrationPage.aspx" class="text-primary">Sign Up</a></p>
+        </div>
+        <br />
     </div>
-    <br />
-</div>0079
 
-<script type="text/javascript">
-    function validateFields() {
-        const username = document.getElementById("txtUsername").value.trim();
-        const password = document.getElementById("txtPassword").value.trim();
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            const usernameField = document.getElementById("txtUsername");
+            const passwordField = document.getElementById("txtPassword");
+            const lblUsernameMsg = document.getElementById('<%= lblUsernameMsg.ClientID %>');
+            const lblPasswordMsg = document.getElementById('<%= lblPasswordMsg.ClientID %>');
 
-        const lblUsernameMsg = document.getElementById('<%= lblUsernameMsg.ClientID %>');
-        const lblPasswordMsg = document.getElementById('<%= lblPasswordMsg.ClientID %>');
+            usernameField.addEventListener("input", function () {
+                if (usernameField.value.trim() !== "") {
+                    lblUsernameMsg.textContent = "";
+                }
+            });
 
-        lblUsernameMsg.textContent = '';
-        lblPasswordMsg.textContent = '';
+            passwordField.addEventListener("input", function () {
+                if (passwordField.value.trim() !== "") {
+                    lblPasswordMsg.textContent = "";
+                }
+            });
 
-        let isValid = true;
 
-        if (!username) {
-            lblUsernameMsg.textContent = "Username is required.";
-            isValid = false;
-        }
+            window.validateFields = function () {
+                const username = usernameField.value.trim();
+                const password = passwordField.value.trim();
 
-        if (!password) {
-            lblPasswordMsg.textContent = "Password is required.";
-            isValid = false;
-        }
+                let isValid = true;
 
-        return isValid;
-    }
-</script>
+                lblUsernameMsg.textContent = "";
+                lblPasswordMsg.textContent = "";
+
+                if (!username) {
+                    lblUsernameMsg.textContent = "Username is required.";
+                    isValid = false;
+                }
+
+                if (!password) {
+                    lblPasswordMsg.textContent = "Password is required.";
+                    isValid = false;
+                }
+
+                return isValid;
+            };
+        });
+    </script>
+
 </asp:Content>

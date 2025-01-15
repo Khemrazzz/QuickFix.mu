@@ -1,5 +1,4 @@
-﻿
-<%@ Page Title="" Language="C#" MasterPageFile="~/QuickFixMasterPage.Master" AutoEventWireup="true" CodeBehind="RegistrationPage.aspx.cs" Inherits="QuickFix.mu.Registration" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/QuickFixMasterPage.Master" AutoEventWireup="true" CodeBehind="RegistrationPage.aspx.cs" Inherits="QuickFix.mu.Registration" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
@@ -46,7 +45,8 @@
             height: 3rem;
             width: 20rem;
             margin-top: 3rem;
-            background-color: wheat;
+            background: #9f8054;
+            color: #fff;
             border-radius: 0.5rem;
             border: none;
             font-size: 1.2rem;
@@ -73,16 +73,68 @@
             </ol>
         </div>
     </header>
+    <div class="form">
+        <p class="title">Welcome To QuickFix</p>
+        <asp:TextBox placeholder="Username" ID="txtUsername" runat="server" CssClass="input" TextMode="Password" ClientIDMode="Static"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvUsername" runat="server" ControlToValidate="txtUsername" ErrorMessage="Username is required" ForeColor="red" Display="Dynamic" CssClass="help-block"></asp:RequiredFieldValidator>
+        <asp:Label ID="lblUsernameMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Display="Dynamic" Text=""></asp:Label><br />
 
-    <div class="form" action="">
-    <p class="title">Welcome User</p>
-    <br />
-    <input placeholder="Username" class="username input" type="text" />
-    <input placeholder="Password" class=" input" type="text" />
-    <button class="btn" type="submit">Sign Up</button>
-    <br />
-    <br />
-</div>
+        <asp:TextBox placeholder="Password" ID="txtPassword" runat="server" CssClass="input" TextMode="Password" ClientIDMode="Static"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="txtPassword" ErrorMessage="Password is required" ForeColor="red" Display="Dynamic" CssClass="help-block"></asp:RequiredFieldValidator>
+        <asp:Label ID="lblPasswordMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Display="Dynamic" Text=""></asp:Label><br />
+
+        <asp:Button class="btn" runat="server" Text="Sign Up" />
+
+        <div class="text-center mt-3">
+            <asp:Label ID="lblMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Text=""></asp:Label><br />
+            <p style="color: white">Already have an account? <a href="LogInPage.aspx" class="text-primary">Log In</a></p>
+        </div>
+        <br />
+    </div>
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            const usernameField = document.getElementById("txtUsername");
+            const passwordField = document.getElementById("txtPassword");
+            const lblUsernameMsg = document.getElementById('<%= lblUsernameMsg.ClientID %>');
+        const lblPasswordMsg = document.getElementById('<%= lblPasswordMsg.ClientID %>');
+
+        usernameField.addEventListener("input", function () {
+            if (usernameField.value.trim() !== "") {
+                lblUsernameMsg.textContent = "";
+            }
+        });
+
+        passwordField.addEventListener("input", function () {
+            if (passwordField.value.trim() !== "") {
+                lblPasswordMsg.textContent = "";
+            }
+        });
+
+
+        window.validateFields = function () {
+            const username = usernameField.value.trim();
+            const password = passwordField.value.trim();
+
+            let isValid = true;
+
+            lblUsernameMsg.textContent = "";
+            lblPasswordMsg.textContent = "";
+
+            if (!username) {
+                lblUsernameMsg.textContent = "Username is required.";
+                isValid = false;
+            }
+
+            if (!password) {
+                lblPasswordMsg.textContent = "Password is required.";
+                isValid = false;
+            }
+
+            return isValid;
+        };
+    });
+    </script>
 </asp:Content>
 
 
