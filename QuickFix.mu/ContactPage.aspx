@@ -52,7 +52,7 @@
                         <div class="pattern-bg" data-stellar-ratio="1.03"></div>
                         <!-- end pattern-bg -->
                         <div class="holder" data-stellar-ratio="1.07">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.2378765886474!2d-73.97644805915624!3d40.69075842971381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25bb6c6fe52c7%3A0x2b3bb16e97b13c01!2sFort+Greene+Tennis+Courts!5e0!3m2!1sen!2str!4v1559831164025!5m2!1sen!2str" allowfullscreen></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.3808681836247!2d57.48784821485409!3d-20.223015480448503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x217c5b92785b71f5%3A0xca85d4186d504b5!2sBAGATELLE%20Exclusives%20-%20BLAXAND!5e0!3m2!1sen!2smu!4v1671123456789!5m2!1sen!2smu" allowfullscreen></iframe>
                         </div>
                         <!-- end holder -->
                     </div>
@@ -62,7 +62,7 @@
                 <div class="col-lg-6">
                     <div class="contact-form">
                         
-                            <div class="form-group">
+                            <%--<div class="form-group">
                                 <input type="text" name="name" id="name" autocomplete="off" >
                                 <span>Your name</span>
                             </div>
@@ -86,7 +86,7 @@
                                 <button id="submit" type="submit" name="submit">
                                     Submit
                                 </button>
-                            </div>
+                            </div>--%>
                             <!-- end form-group -->
                         
                         <!-- end form -->
