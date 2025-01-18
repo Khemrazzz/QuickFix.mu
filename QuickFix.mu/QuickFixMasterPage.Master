@@ -206,6 +206,7 @@
 </head>
 <body>
     <form id ="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="preloader">
         <div class="layer"></div>
         <!-- end layer -->
@@ -225,7 +226,7 @@
     <div class="side-navigation">
         <div class="menu">
             <ul>
-                <li><a href="Registration.aspx">START</a></li>
+                <li><a href="RegistrationPage.aspx">START</a></li>
                 <li><a href="#">QuickFix</a>
                     <ul>
                         <li><a href="#">About Us</a></li>
@@ -235,9 +236,9 @@
                 </li>
                 <li><a href="#">Services</a>
                     <ul>
-                        <li><a href="ConstructionPage.aspx">Construction Services</a></li>
-                        <li><a href="MaintenancePage.aspx">Maintenance Services</a></li>
-                        <li><a href="HouseholdPage.aspx">Household Services</a></li>
+                        <li><a href="ConstructionServicesPage.aspx">Construction Services</a></li>
+                        <li><a href="MaintenanceServicesPage.aspx">Maintenance Services</a></li>
+                        <li><a href="HouseholdServicesPage.aspx">Household Services</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Feedbacks</a>
@@ -300,22 +301,24 @@
                 </div>
                 <!-- Log In -->
 
-                <button>
-                    Log In
+<%--                <asp:Button ID="btnLogin" runat="server" Text="Log In" PostBackUrl="~/LogInPage.aspx" CssClass="button" />--%>
+
+
+<button ID="btnLogin" runat="server" class="button" onclick="__doPostBack('btnLogin', '');"> log in
   <div class="star-1">
       <svg
           xmlns="http://www.w3.org/2000/svg"
           xml:space="preserve"
           version="1.1"
-          style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
-          viewBox="0 0 784.11 815.53"
+          style="shape-rendering: geometricprecision; text-rendering: geometricprecision; image-rendering: optimizequality; fill-rule: evenodd; clip-rule: evenodd"
+          viewbox="0 0 784.11 815.53"
           xmlns:xlink="http://www.w3.org/1999/xlink">
           <defs></defs>
-          <g id="Layer_x0020_1">
-              <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+          <g id="layer_x0020_1">
+              <metadata id="corelcorpid_0corel-layer"></metadata>
               <path
                   class="fil0"
-                  d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                  d="m392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
               </path>
           </g>
       </svg>
@@ -325,15 +328,15 @@
                             xmlns="http://www.w3.org/2000/svg"
                             xml:space="preserve"
                             version="1.1"
-                            style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
-                            viewBox="0 0 784.11 815.53"
+                            style="shape-rendering: geometricprecision; text-rendering: geometricprecision; image-rendering: optimizequality; fill-rule: evenodd; clip-rule: evenodd"
+                            viewbox="0 0 784.11 815.53"
                             xmlns:xlink="http://www.w3.org/1999/xlink">
                             <defs></defs>
-                            <g id="Layer_x0020_1">
-                                <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                            <g id="layer_x0020_1">
+                                <metadata id="corelcorpid_0corel-layer"></metadata>
                                 <path
                                     class="fil0"
-                                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                                    d="m392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
                                 </path>
                             </g>
                         </svg>
@@ -343,15 +346,15 @@
                             xmlns="http://www.w3.org/2000/svg"
                             xml:space="preserve"
                             version="1.1"
-                            style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
-                            viewBox="0 0 784.11 815.53"
+                            style="shape-rendering: geometricprecision; text-rendering: geometricprecision; image-rendering: optimizequality; fill-rule: evenodd; clip-rule: evenodd"
+                            viewbox="0 0 784.11 815.53"
                             xmlns:xlink="http://www.w3.org/1999/xlink">
                             <defs></defs>
-                            <g id="Layer_x0020_1">
-                                <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                            <g id="layer_x0020_1">
+                                <metadata id="corelcorpid_0corel-layer"></metadata>
                                 <path
                                     class="fil0"
-                                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                                    d="m392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
                                 </path>
                             </g>
                         </svg>
@@ -361,15 +364,15 @@
                             xmlns="http://www.w3.org/2000/svg"
                             xml:space="preserve"
                             version="1.1"
-                            style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
-                            viewBox="0 0 784.11 815.53"
+                            style="shape-rendering: geometricprecision; text-rendering: geometricprecision; image-rendering: optimizequality; fill-rule: evenodd; clip-rule: evenodd"
+                            viewbox="0 0 784.11 815.53"
                             xmlns:xlink="http://www.w3.org/1999/xlink">
                             <defs></defs>
-                            <g id="Layer_x0020_1">
-                                <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                            <g id="layer_x0020_1">
+                                <metadata id="corelcorpid_0corel-layer"></metadata>
                                 <path
                                     class="fil0"
-                                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                                    d="m392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
                                 </path>
                             </g>
                         </svg>
@@ -379,15 +382,15 @@
                             xmlns="http://www.w3.org/2000/svg"
                             xml:space="preserve"
                             version="1.1"
-                            style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
-                            viewBox="0 0 784.11 815.53"
+                            style="shape-rendering: geometricprecision; text-rendering: geometricprecision; image-rendering: optimizequality; fill-rule: evenodd; clip-rule: evenodd"
+                            viewbox="0 0 784.11 815.53"
                             xmlns:xlink="http://www.w3.org/1999/xlink">
                             <defs></defs>
-                            <g id="Layer_x0020_1">
-                                <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                            <g id="layer_x0020_1">
+                                <metadata id="corelcorpid_0corel-layer"></metadata>
                                 <path
                                     class="fil0"
-                                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                                    d="m392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
                                 </path>
                             </g>
                         </svg>
@@ -397,15 +400,15 @@
                             xmlns="http://www.w3.org/2000/svg"
                             xml:space="preserve"
                             version="1.1"
-                            style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
-                            viewBox="0 0 784.11 815.53"
+                            style="shape-rendering: geometricprecision; text-rendering: geometricprecision; image-rendering: optimizequality; fill-rule: evenodd; clip-rule: evenodd"
+                            viewbox="0 0 784.11 815.53"
                             xmlns:xlink="http://www.w3.org/1999/xlink">
                             <defs></defs>
-                            <g id="Layer_x0020_1">
-                                <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                            <g id="layer_x0020_1">
+                                <metadata id="corelcorpid_0corel-layer"></metadata>
                                 <path
                                     class="fil0"
-                                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                                    d="m392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
                                 </path>
                             </g>
                         </svg>
@@ -421,7 +424,7 @@
             <!-- end upper-side -->
             <div class="menu">
                 <ul>
-                    <li><a href="Registration.aspx">Start</a></li>
+                    <li><a href="RegistrationPage.aspx">Start</a></li>
                     <li><a href="#">QuickFix</a>
                         <ul>
                             <li><a href="#">About Us</a></li>
@@ -431,9 +434,9 @@
                     </li>
                     <li><a href="#">Services</a>
                         <ul>
-                            <li><a href="ConstructionPage.aspx">Construction Services</a></li>
-                            <li><a href="MaintenancePage.aspx">Maintenance Services</a></li>
-                            <li><a href="HouseholdPage.aspx">Household Services</a></li>
+                            <li><a href="ConstructionServicesPage.aspx">Construction Services</a></li>
+                            <li><a href="MaintenanceServicesPage.aspx">Maintenance Services</a></li>
+                            <li><a href="HouseholdServicesPage.aspx">Household Services</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Feedbacks</a>

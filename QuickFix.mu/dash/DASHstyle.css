@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --color-primary: #9f8054; /* Golden Brown */
+    --color-secondary: #9f8054; /* Background Color */
+    --color-dark: #26282b; /* Dark Gray */
+    --color-light: #eee; /* Light Gray */
+    --color-white: #fff; /* White */
+    --card-border-radius: 1rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 1.2rem;
+    --card-padding: 1.5rem;
+    --box-shadow: 0 1.2rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--color-secondary);
+    color: var(--color-dark);
+}
+
+a {
+    color: var(--color-dark);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+small {
+    font-size: 0.75rem;
+    color: var(--color-light);
+}
+
+/* Layout */
+.container {
+    display: grid;
+    grid-template-columns: 14rem auto 22rem;
+    gap: 1.5rem;
+    margin: 2rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--card-border-radius);
+}
+
+header .logo h2 {
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+header .navbar {
+    display: flex;
+    gap: 2rem;
+}
+
+header .navbar a {
+    font-weight: 500;
+    color: var(--color-dark);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-1);
+    transition: all 0.3s ease;
+}
+
+header .navbar a.active,
+header .navbar a:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* Sidebar */
+aside {
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    height: fit-content;
+}
+
+aside .profile-photo {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+aside .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+aside .info p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #26282b; /* Updated to Dark Gray for better visibility */
+}
+
+aside .info b {
+    color: #26282b; /* Ensure bold text is also visible */
+}
+
+aside h5 {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+aside p {
+    font-size: 0.9rem;
+    color: #9f8054; /* Use primary color for numbers */
+}
+
+/* Main Dashboard */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.widgets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.card .icon {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+}
+
+.card .details h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+.card .details h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-dark);
+}
+
+.card small {
+    color: #26282b; /* Updated to Dark Gray */
+}
+
+/* Right Section */
+.right {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.right .announcements {
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.right h2 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: var(--color-dark);
+}
+
+.updates .message {
+    margin-bottom: 1rem;
+}
+
+.updates .message p {
+    font-weight: 500;
+    color: var(--color-dark);
+}
+
+.updates .message small {
+    color: #26282b; /* Updated to Dark Gray */
+}
+
+/* Responsive Layout */
+@media screen and (max-width: 1200px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .widgets {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    header .navbar {
+        flex-wrap: wrap;
+    }
+
+    .container {
+        margin: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .widgets {
+        grid-template-columns: 1fr;
+    }
+}
