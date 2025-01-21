@@ -1,6 +1,108 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/QuickFixMasterPage.Master" AutoEventWireup="true" CodeBehind="ContactPage.aspx.cs" Inherits="QuickFix.mu.ContactPage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+        .orange {
+            color: #ff7a01;
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 30px;
+            background-color: #9f8054;
+            padding: 30px;
+            border-left: 5px solid #ff7a01;
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+        }
+
+        .heading {
+            display: block;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .form-container .form .input {
+            color: #87a4b6;
+            width: 100%;
+            background-color: #ebcfa7;
+            border: none;
+            outline: none;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            transition: all 0.2s ease-in-out;
+            border-left: 1px solid transparent;
+        }
+
+            .form-container .form .input:focus {
+                border-left: 5px solid #ff7a01;
+            }
+
+        .form-container .form .textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            outline: none;
+            background-color: #ebcfa7;
+            color: #ff7a01;
+            font-weight: bold;
+            resize: none;
+            max-height: 150px;
+            margin-bottom: 20px;
+            border-left: 1px solid transparent;
+            transition: all 0.2s ease-in-out;
+        }
+
+            .form-container .form .textarea:focus {
+                border-left: 5px solid #ff7a01;
+            }
+
+        .form-container .form .button-container {
+            display: flex;
+            gap: 10px;
+        }
+
+            .form-container .form .button-container .send-button {
+                flex-basis: 70%;
+                background: #ff7a01;
+                padding: 10px;
+                color: #001925;
+                text-align: center;
+                font-weight: bold;
+                border: 1px solid transparent;
+                transition: all 0.2s ease-in-out;
+            }
+
+                .form-container .form .button-container .send-button:hover {
+                    background: transparent;
+                    border: 1px solid #ff7a01;
+                    color: #ff7a01;
+                }
+
+            .form-container .form .button-container .reset-button-container {
+                filter: drop-shadow(1px 1px 0px #ff7a01);
+                flex-basis: 30%;
+            }
+
+                .form-container .form .button-container .reset-button-container .reset-button {
+                    position: relative;
+                    text-align: center;
+                    width: 300px;
+                    padding: 10px;
+                    color: #ff7a01;
+                    font-weight: bold;
+                    background: #001925;
+                    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+                    transition: all 0.2s ease-in-out;
+                }
+
+                    .form-container .form .button-container .reset-button-container .reset-button:hover {
+                        background: #ff7a01;
+                        color: #001925;
+                    }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
     <header class="page-header" data-background="images/slide01.jpg" data-stellar-background-ratio="1.15">
@@ -60,43 +162,81 @@
                 </div>
                 <!-- end col-6 -->
                 <div class="col-lg-6">
-                    <div class="contact-form">
-                        
-                            <%--<div class="form-group">
-                                <input type="text" name="name" id="name" autocomplete="off" >
-                                <span>Your name</span>
+                    <div class="form-container">
+                        <div class="form">
+                            <span class="heading">Get in touch</span>
+
+                            <!-- First Name -->
+                            <asp:TextBox ID="txtfname" CssClass="input" Placeholder="First Name" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator
+                                ID="rfvFirstName"
+                                runat="server"
+                                ControlToValidate="txtfname"
+                                ErrorMessage="First Name is required."
+                                ForeColor="red"
+                                Display="Dynamic"></asp:RequiredFieldValidator>
+                            <asp:Label ID="lblFirstNameMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Display="Dynamic" Text=""></asp:Label>
+
+                            <!-- Last Name -->
+                            <asp:TextBox ID="txtlname" CssClass="input" Placeholder="Last Name" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator
+                                ID="rfvLastName"
+                                runat="server"
+                                ControlToValidate="txtlname"
+                                ErrorMessage="Last Name is required."
+                                ForeColor="red"
+                                Display="Dynamic"></asp:RequiredFieldValidator>
+                            <asp:Label ID="lblLastNameMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Text=""></asp:Label>
+
+                            <!-- Email -->
+                            <asp:TextBox ID="txtemail" CssClass="input" Placeholder="Email" TextMode="Email" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator
+                                ID="rfvEmail"
+                                runat="server"
+                                ControlToValidate="txtemail"
+                                ErrorMessage="Email is required."
+                                ForeColor="red"
+                                Display="Dynamic"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator
+                                ID="revEmail"
+                                runat="server"
+                                ControlToValidate="txtemail"
+                                ErrorMessage="Enter a valid email."
+                                ValidationExpression="^\S+@\S+\.\S+$"
+                                ForeColor="red"
+                                Display="Dynamic"></asp:RegularExpressionValidator>
+                            <asp:Label ID="lblEmailMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Text=""></asp:Label>
+
+                            <!-- Subject -->
+                            <asp:TextBox ID="txtsubject" CssClass="input" Placeholder="Subject" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator
+                                ID="rfvSubject"
+                                runat="server"
+                                ControlToValidate="txtsubject"
+                                ErrorMessage="Subject is required."
+                                ForeColor="red"
+                                Display="Dynamic"></asp:RequiredFieldValidator>
+                            <asp:Label ID="lblSubjectMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Text=""></asp:Label>
+
+                            <!-- Message -->
+                            <asp:TextBox ID="txtmessage" CssClass="textarea" TextMode="MultiLine" Rows="4" Placeholder="Say Hello" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator
+                                ID="rfvMessage"
+                                runat="server"
+                                ControlToValidate="txtmessage"
+                                ErrorMessage="Message is required."
+                                ForeColor="red"
+                                Display="Dynamic"></asp:RequiredFieldValidator>
+                            <asp:Label ID="lblMessageMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Text=""></asp:Label>
+
+                            <!-- Submit Button -->
+                            <div class="button-container">
+                                <div class="reset-button-container">
+                                    <asp:Button class="reset-button" runat="server" ID="btnSend" OnClick="sendMessageButton_Click" Text="Send" OnClientClick="return validateFields();" />
+                                </div>
                             </div>
-                            <!-- end form-group -->
-                            <div class="form-group">
-                                <input type="text" name="email" id="email" autocomplete="off" >
-                                <span>Your e-mail</span>
-                            </div>
-                            <!-- end form-group -->
-                            <div class="form-group">
-                                <input type="text" name="subject" id="subject" autocomplete="off" >
-                                <span>Subject</span>
-                            </div>
-                            <!-- end form-group -->
-                            <div class="form-group">
-                                <textarea name="message" id="message" autocomplete="off" ></textarea>
-                                <span>Your message</span>
-                            </div>
-                            <!-- end form-group -->
-                            <div class="form-group">
-                                <button id="submit" type="submit" name="submit">
-                                    Submit
-                                </button>
-                            </div>--%>
-                            <!-- end form-group -->
-                        
-                        <!-- end form -->
-                        <div class="form-group">
-                            <div id="success" class="alert alert-success wow fadeInUp" role="alert">Your message was sent successfully! We will be in touch as soon as we can. </div>
-                            <!-- end success -->
-                            <div id="error" class="alert alert-danger wow fadeInUp" role="alert">Something went wrong, try refreshing and submitting the form again. </div>
-                            <!-- end error -->
                         </div>
-                        <!-- end form-group -->
+
                     </div>
                     <!-- end contact-form -->
                 </div>
@@ -107,4 +247,54 @@
         <!-- end container -->
     </section>
     <!-- end contact -->
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            const firstNameField = document.getElementById('<%= txtfname.ClientID %>');
+            const lastNameField = document.getElementById('<%= txtlname.ClientID %>');
+            const emailField = document.getElementById('<%= txtemail.ClientID %>');
+            const subjectField = document.getElementById('<%= txtsubject.ClientID %>');
+            const messageField = document.getElementById('<%= txtmessage.ClientID %>');
+
+            const lblFirstNameMsg = document.getElementById('<%= lblFirstNameMsg.ClientID %>');
+            const lblLastNameMsg = document.getElementById('<%= lblLastNameMsg.ClientID %>');
+            const lblEmailMsg = document.getElementById('<%= lblEmailMsg.ClientID %>');
+            const lblSubjectMsg = document.getElementById('<%= lblSubjectMsg.ClientID %>');
+            const lblMessageMsg = document.getElementById('<%= lblMessageMsg.ClientID %>');
+
+            window.validateFields = function () {
+                let isValid = true;
+
+                lblFirstNameMsg.textContent = "";
+                lblLastNameMsg.textContent = "";
+                lblEmailMsg.textContent = "";
+                lblSubjectMsg.textContent = "";
+                lblMessageMsg.textContent = "";
+
+                function showError(label, message) {
+                    label.textContent = message;
+                    isValid = false;
+                }
+
+                if (!firstNameField.value.trim()) {
+                    showError(lblFirstNameMsg, "First Name is required.");
+                }
+                if (!lastNameField.value.trim()) {
+                    showError(lblLastNameMsg, "Last Name is required.");
+                }
+                if (!emailField.value.trim() || !/^\S+@\S+\.\S+$/.test(emailField.value)) {
+                    showError(lblEmailMsg, "Enter a valid Email.");
+                }
+                if (!subjectField.value.trim()) {
+                    showError(lblSubjectMsg, "Subject is required.");
+                }
+                if (!messageField.value.trim()) {
+                    showError(lblMessageMsg, "Message is required.");
+                }
+
+                return isValid;
+            };
+        });
+
+    </script>
 </asp:Content>
