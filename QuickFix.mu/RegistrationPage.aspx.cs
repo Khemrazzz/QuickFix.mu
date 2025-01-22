@@ -1,11 +1,17 @@
 ﻿using System;
+using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
+using System.IO;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web.Configuration;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace QuickFix.mu
 {
-    public partial class Registration : System.Web.UI.Page
+    public partial class RegistrationPage : Page
     {
         private string _conString = WebConfigurationManager.ConnectionStrings["QuickFixDB"].ConnectionString;
 
@@ -13,66 +19,340 @@ namespace QuickFix.mu
         {
             if (!IsPostBack)
             {
-                // Initial setup logic if needed
+                // If you want a DOB range (e.g. 10..65 years old):
+                DateTime now = DateTime.Now;
+                rvClientDOB.MinimumValue = now.AddYears(-65).ToString("yyyy-MM-dd");
+                rvClientDOB.MaximumValue = now.AddYears(-10).ToString("yyyy-MM-dd");
+
+                rvSupplierDOB.MinimumValue = now.AddYears(-65).ToString("yyyy-MM-dd");
+                rvSupplierDOB.MaximumValue = now.AddYears(-10).ToString("yyyy-MM-dd");
+
+                // Load Districts for both Client & Supplier
+                LoadDistricts(ddlClientDistrict);
+                LoadDistricts(ddlSupplierDistrict);
             }
         }
 
-        //protected void btnRegister_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        using (SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["QuickFixDB"].ConnectionString))
-        //        {
-        //            con.Open();
+        // ---------- LOADING DISTRICTS ----------
+        private void LoadDistricts(DropDownList ddl)
+        {
+            using (SqlConnection con = new SqlConnection(_conString))
+            {
+                SqlCommand cmd = new SqlCommand("SELECT District_Id, District_Name FROM District", con);
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                ddl.DataSource = reader;
+                ddl.DataTextField = "District_Name";
+                ddl.DataValueField = "District_Id";
+                ddl.DataBind();
+                reader.Close();
+            }
+            ddl.Items.Insert(0, new ListItem("Select District", "-1"));
+        }
 
-        //            // Determine the table name based on user type
-        //            string tableName = ddlUserType.SelectedValue == "Client" ? "Client" : "Supplier";
+        // ---------- POPULATE VILLAGE/TOWN by District ----------
+        private void LoadVillagesByDistrict(DropDownList ddl, int districtId)
+        {
+            using (SqlConnection con = new SqlConnection(_conString))
+            {
+                // Example: you have a stored procedure named "GetVillagesTownsByDistrict"
+                SqlCommand cmd = new SqlCommand("GetVillagesTownsByDistrict", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@DistrictId", districtId);
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                ddl.DataSource = reader;
+                ddl.DataTextField = "VT_Name";  // your DB column name for village/town
+                ddl.DataValueField = "VT_Id";   // primary key
+                ddl.DataBind();
+                reader.Close();
+            }
+            ddl.Items.Insert(0, new ListItem("Select Village/Town", "-1"));
+        }
 
-        //            // Prepare the INSERT query
-        //            string query = $"INSERT INTO {tableName} (FirstName, LastName, Gender, DateOfBirth, Bio, Email, MobileNumber, Country, District, VillageTown, StrAddress, Username, Password, CPassword) " +
-        //                           "VALUES (@FirstName, @LastName, @Gender, @DateOfBirth, @Bio, @Email, @MobileNumber, @Country, @District, @VillageTown, @StrAddress, @Username, @Password, @CPassword)";
+        // ---------- CLIENT District Changed ----------
+        protected void ddlClientDistrict_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (int.TryParse(ddlClientDistrict.SelectedValue, out int distId) && distId != -1)
+            {
+                LoadVillagesByDistrict(ddlClientVillageTown, distId);
+            }
+            else
+            {
+                ddlClientVillageTown.Items.Clear();
+                ddlClientVillageTown.Items.Insert(0, new ListItem("Select Village/Town", "-1"));
+            }
+        }
 
-        //            using (SqlCommand cmd = new SqlCommand(query, con))
-        //            {
-        //                // Add parameters
-        //                cmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text.Trim());
-        //                cmd.Parameters.AddWithValue("@LastName", txtLastName.Text.Trim());
-        //                cmd.Parameters.AddWithValue("@Gender", ddlGender.SelectedValue);
-        //                cmd.Parameters.AddWithValue("@DateOfBirth", txtDateOfBirth.Text.Trim());
-        //                cmd.Parameters.AddWithValue("@Bio", txtBio.Text.Trim());
-        //                cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
-        //                cmd.Parameters.AddWithValue("@MobileNumber", txtMobileNumber.Text.Trim());
-        //                cmd.Parameters.AddWithValue("@Country", txtCountry.Text.Trim());
-        //                cmd.Parameters.AddWithValue("@District", txtDistrict.Text.Trim());
-        //                cmd.Parameters.AddWithValue("@VillageTown", txtVillageTown.Text.Trim());
-        //                cmd.Parameters.AddWithValue("@StrAddress", txtStrAddress.Text.Trim());
-        //                cmd.Parameters.AddWithValue("@Username", txtUsername.Text.Trim());
-        //                cmd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());
-        //                cmd.Parameters.AddWithValue("@CPassword", txtConfirmPassword.Text.Trim());
+        // ---------- SUPPLIER District Changed ----------
+        protected void ddlSupplierDistrict_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (int.TryParse(ddlSupplierDistrict.SelectedValue, out int distId) && distId != -1)
+            {
+                LoadVillagesByDistrict(ddlSupplierVillageTown, distId);
+            }
+            else
+            {
+                ddlSupplierVillageTown.Items.Clear();
+                ddlSupplierVillageTown.Items.Insert(0, new ListItem("Select Village/Town", "-1"));
+            }
+        }
 
-        //                // Execute the query
-        //                int rowsAffected = cmd.ExecuteNonQuery();
-        //                if (rowsAffected > 0)
-        //                {
-        //                    lblMsg.Text = "Registration successful!";
-        //                    lblMsg.ForeColor = System.Drawing.Color.Green;
-        //                }
-        //                else
-        //                {
-        //                    lblMsg.Text = "Registration failed. Please try again.";
-        //                    lblMsg.ForeColor = System.Drawing.Color.Red;
-        //                }
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        lblMsg.Text = $"An error occurred: {ex.Message}";
-        //        lblMsg.ForeColor = System.Drawing.Color.Red;
-        //        System.Diagnostics.Debug.WriteLine("Error: " + ex.Message);
-        //    }
-        //}
+        // ---------- VALIDATIONS ----------
+        protected void cvClientPassLen_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = !(args.Value.Length < 8 || args.Value.Length > 12);
+        }
+        protected void cvSupplierPassLen_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = !(args.Value.Length < 8 || args.Value.Length > 12);
+        }
 
+        // ** NEW: Check if username is taken (across both tables) **
+        private bool IsUsernameTaken(string username)
+        {
+            int count = 0;
+            using (SqlConnection con = new SqlConnection(_conString))
+            {
+                con.Open();
 
+                // 1) Check Client table
+                using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Client WHERE Username = @Username", con))
+                {
+                    cmd.Parameters.AddWithValue("@Username", username);
+                    count += (int)cmd.ExecuteScalar();
+                }
+
+                // 2) Check Supplier table
+                using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Supplier WHERE Username = @Username", con))
+                {
+                    cmd.Parameters.AddWithValue("@Username", username);
+                    count += (int)cmd.ExecuteScalar();
+                }
+            }
+            // If count > 0 => username found
+            return (count > 0);
+        }
+
+        // ** NEW: CustomValidator for Client Username uniqueness **
+        protected void cvClientUsernameTaken_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (IsUsernameTaken(args.Value.Trim()))
+                args.IsValid = false;
+            else
+                args.IsValid = true;
+        }
+
+        // ** NEW: CustomValidator for Supplier Username uniqueness **
+        protected void cvSupplierUsernameTaken_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (IsUsernameTaken(args.Value.Trim()))
+                args.IsValid = false;
+            else
+                args.IsValid = true;
+        }
+
+        // ---------- CLIENT REGISTRATION ----------
+        protected void btnClientRegister_Click(object sender, EventArgs e)
+        {
+            // Only "ClientReg" validation group is triggered here
+            if (Page.IsValid)
+            {
+                // Gather data
+                string fname = txtClientFName.Text.Trim();
+                string mname = txtClientMName.Text.Trim();
+                string lname = txtClientLName.Text.Trim();
+                string gender = ddlClientGender.SelectedValue;
+                string gtag = ddlClientGTag.SelectedValue;
+                string dob = txtClientDOB.Text.Trim();
+                string bio = txtClientBio.Text.Trim();
+                string email = txtClientEmail.Text.Trim();
+                string mobile = txtClientMobile.Text.Trim();
+                string districtVal = ddlClientDistrict.SelectedValue;
+                string villageVal = ddlClientVillageTown.SelectedValue;
+                string address = txtClientStreetAddress.Text.Trim();
+                string username = txtClientUsername.Text.Trim();
+
+                // Encrypt passwords
+                string encPass = Encrypt(txtClientPass.Text.Trim());
+                string encCPass = Encrypt(txtClientCPass.Text.Trim());
+
+                // Profile pic
+                string profilePicPath = SaveFileIfValid(fuClientProfilePic, "~/clientImages/");
+
+                using (SqlConnection con = new SqlConnection(_conString))
+                {
+                    // Insert into Client table
+                    string query = @"
+                        INSERT INTO Client 
+                        (FirstName, MiddleName, LastName, Gender, GTag, DateOfBirth, ProfilePicture,
+                         Bio, Email, MobileNumber, Country, District, VillageTown, StrAddress,
+                         Username, Password, CPassword, Status, Approval, IsActive, IsDeleted, FailedLoginAttempts)
+                        VALUES
+                        (@FName, @MName, @LName, @Gender, @GTag, @DOB, @ProfilePic,
+                         @Bio, @Email, @Mobile, @Country, @District, @VillageTown, @StrAddress,
+                         @Username, @Password, @CPassword, @Status, @Approval, @IsActive, @IsDeleted, @FailedLoginAttempts)";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@FName", fname);
+                    cmd.Parameters.AddWithValue("@MName", mname);
+                    cmd.Parameters.AddWithValue("@LName", lname);
+                    cmd.Parameters.AddWithValue("@Gender", gender);
+                    cmd.Parameters.AddWithValue("@GTag", gtag);
+                    cmd.Parameters.AddWithValue("@DOB", dob);
+                    cmd.Parameters.AddWithValue("@ProfilePic", profilePicPath ?? (object)DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Bio", bio);
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    cmd.Parameters.AddWithValue("@Mobile", mobile);
+
+                    // If you have a "Country" column, set it
+                    cmd.Parameters.AddWithValue("@Country", "");
+
+                    cmd.Parameters.AddWithValue("@District", districtVal);
+                    cmd.Parameters.AddWithValue("@VillageTown", villageVal);
+                    cmd.Parameters.AddWithValue("@StrAddress", address);
+                    cmd.Parameters.AddWithValue("@Username", username);
+                    cmd.Parameters.AddWithValue("@Password", encPass);
+                    cmd.Parameters.AddWithValue("@CPassword", encCPass);
+
+                    // Default fields
+                    cmd.Parameters.AddWithValue("@Status", "Inactive");
+                    cmd.Parameters.AddWithValue("@Approval", "pending");
+                    cmd.Parameters.AddWithValue("@IsActive", true);
+                    cmd.Parameters.AddWithValue("@IsDeleted", false);
+                    cmd.Parameters.AddWithValue("@FailedLoginAttempts", 0);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+
+                lblMsg.ForeColor = System.Drawing.Color.LightGreen;
+                lblMsg.Text = "Client registration successful. You can now log in.";
+            }
+        }
+
+        // ---------- SUPPLIER REGISTRATION ----------
+        protected void btnSupplierRegister_Click(object sender, EventArgs e)
+        {
+            // Only "SupplierReg" validation group is triggered here
+            if (Page.IsValid)
+            {
+                // Gather data
+                string fname = txtSupplierFName.Text.Trim();
+                string mname = txtSupplierMName.Text.Trim();
+                string lname = txtSupplierLName.Text.Trim();
+                string gender = ddlSupplierGender.SelectedValue;
+                string gtag = ddlSupplierGTag.SelectedValue;
+                string dob = txtSupplierDOB.Text.Trim();
+                string bio = txtSupplierBio.Text.Trim();
+                string email = txtSupplierEmail.Text.Trim();
+                string mobile = txtSupplierMobile.Text.Trim();
+                string districtVal = ddlSupplierDistrict.SelectedValue;
+                string villageVal = ddlSupplierVillageTown.SelectedValue;
+                string address = txtSupplierStreetAddress.Text.Trim();
+                string username = txtSupplierUsername.Text.Trim();
+
+                // Encrypt passwords
+                string encPass = Encrypt(txtSupplierPass.Text.Trim());
+                string encCPass = Encrypt(txtSupplierCPass.Text.Trim());
+
+                // Profile pic
+                string profilePicPath = SaveFileIfValid(fuSupplierProfilePic, "~/supplierImages/");
+
+                using (SqlConnection con = new SqlConnection(_conString))
+                {
+                    // Insert into Supplier table
+                    string query = @"
+                        INSERT INTO Supplier
+                        (FirstName, MiddleName, LastName, Gender, GTag, DateOfBirth, ProfilePicture,
+                         Bio, Email, MobileNumber, Country, District, VillageTown, StrAddress,
+                         Username, Password, CPassword, Status, Approval, IsActive, IsDeleted, FailedLoginAttempts)
+                        VALUES
+                        (@FName, @MName, @LName, @Gender, @GTag, @DOB, @ProfilePic,
+                         @Bio, @Email, @Mobile, @Country, @District, @VillageTown, @StrAddress,
+                         @Username, @Password, @CPassword, @Status, @Approval, @IsActive, @IsDeleted, @FailedLoginAttempts)";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@FName", fname);
+                    cmd.Parameters.AddWithValue("@MName", mname);
+                    cmd.Parameters.AddWithValue("@LName", lname);
+                    cmd.Parameters.AddWithValue("@Gender", gender);
+                    cmd.Parameters.AddWithValue("@GTag", gtag);
+                    cmd.Parameters.AddWithValue("@DOB", dob);
+                    cmd.Parameters.AddWithValue("@ProfilePic", profilePicPath ?? (object)DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Bio", bio);
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    cmd.Parameters.AddWithValue("@Mobile", mobile);
+
+                    // If your table has a "Country" field, set it
+                    cmd.Parameters.AddWithValue("@Country", "");
+
+                    cmd.Parameters.AddWithValue("@District", districtVal);
+                    cmd.Parameters.AddWithValue("@VillageTown", villageVal);
+                    cmd.Parameters.AddWithValue("@StrAddress", address);
+                    cmd.Parameters.AddWithValue("@Username", username);
+                    cmd.Parameters.AddWithValue("@Password", encPass);
+                    cmd.Parameters.AddWithValue("@CPassword", encCPass);
+
+                    // Default fields
+                    cmd.Parameters.AddWithValue("@Status", "Inactive");
+                    cmd.Parameters.AddWithValue("@Approval", "pending");
+                    cmd.Parameters.AddWithValue("@IsActive", true);
+                    cmd.Parameters.AddWithValue("@IsDeleted", false);
+                    cmd.Parameters.AddWithValue("@FailedLoginAttempts", 0);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+
+                lblMsg.ForeColor = System.Drawing.Color.LightGreen;
+                lblMsg.Text = "Supplier registration successful. You can now log in.";
+            }
+        }
+
+        // ---------- ENCRYPTION ----------
+        private string Encrypt(string clearText)
+        {
+            string EncryptionKey = "MAKV2SPBNI99212"; // sample key
+            byte[] clearBytes = Encoding.Unicode.GetBytes(clearText);
+            using (Aes encryptor = Aes.Create())
+            {
+                var pdb = new Rfc2898DeriveBytes(EncryptionKey,
+                    new byte[] { 0x49, 0x76, 0x61, 0x6e,
+                                 0x20, 0x4d, 0x65, 0x64,
+                                 0x76, 0x65, 0x64, 0x65,
+                                 0x76 });
+                encryptor.Key = pdb.GetBytes(32);
+                encryptor.IV = pdb.GetBytes(16);
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    using (CryptoStream cs = new CryptoStream(ms,
+                        encryptor.CreateEncryptor(), CryptoStreamMode.Write))
+                    {
+                        cs.Write(clearBytes, 0, clearBytes.Length);
+                        cs.Close();
+                    }
+                    clearText = Convert.ToBase64String(ms.ToArray());
+                }
+            }
+            return clearText;
+        }
+
+        // ---------- FILE UPLOAD HELPER ----------
+        private string SaveFileIfValid(FileUpload fu, string folderPath)
+        {
+            if (fu.HasFile)
+            {
+                string ext = Path.GetExtension(fu.FileName).ToLower();
+                if (ext == ".jpg" || ext == ".jpeg" || ext == ".png" || ext == ".gif")
+                {
+                    string fileName = Path.GetFileName(fu.FileName);
+                    string serverPath = Server.MapPath(folderPath + fileName);
+                    fu.SaveAs(serverPath);
+                    return folderPath + fileName; // Return the relative path for DB
+                }
+            }
+            return null;
+        }
     }
 }

@@ -532,7 +532,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="clientImages\" />
     <Folder Include="Photo\" />
+    <Folder Include="supplierImages\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
