@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ClientDashboardMasterPage.master.cs" Inherits="QuickFix.mu.ClientDashboardMasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+     <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Client Dashboard</title>
+ <link rel="shortcut icon" href="./images/logo.png">
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+ <link rel="stylesheet" href="dash/DASHstyle.css">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+        
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+                    <header>
+    <div class="logo" title="Welcome To Client Dashboard">
+        <img src="./images/logo.png" alt="">
+        <h2>Welcome To <span class="danger"> Client Dashboard</span></h2>
+    </div>
+    <div class="navbar">
+        <a href="index.html" class="active">
+            <span class="material-icons-sharp">home</span>
+            <h3>Dashboard</h3>
+        </a>
+        <a href="services.html">
+            <span class="material-icons-sharp">build</span>
+            <h3>Services</h3>
+        </a>
+        <a href="bookings.html">
+            <span class="material-icons-sharp">calendar_today</span>
+            <h3>Bookings</h3>
+        </a>
+        <a href="invoices.html">
+            <span class="material-icons-sharp">receipt</span>
+            <h3>Invoices</h3>
+        </a>
+        <a href="support.html">
+            <span class="material-icons-sharp">support_agent</span>
+            <h3>Support</h3>
+        </a>
+        <a href="#">
+            <span class="material-icons-sharp">logout</span>
+            <h3>Logout</h3>
+        </a>
+    </div>
+</header>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
