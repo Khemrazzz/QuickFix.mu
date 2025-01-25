@@ -1,49 +1,9 @@
-<!DOCTYPE html> 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Provider Dashboard</title>
-    <link rel="shortcut icon" href="./images/logo.png">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
-    <link rel="stylesheet" href="dash/DASHstyle.css">
-</head>
-<body>
-    <header>
-        <div class="logo" title="ServicePro Provider">
-            <img src="./images/logo.png" alt="">
-            <h2>Service<span class="danger">Pro</span> Provider</h2>
-        </div>
-        <div class="navbar">
-            <a href="index.html" class="active">
-                <span class="material-icons-sharp">home</span>
-                <h3>Dashboard</h3>
-            </a>
-            <a href="posts.html">
-                <span class="material-icons-sharp">post_add</span>
-                <h3>Manage Posts</h3>
-            </a>
-            <a href="analytics.html">
-                <span class="material-icons-sharp">insights</span>
-                <h3>Analytics</h3>
-            </a>
-            <a href="messages.html">
-                <span class="material-icons-sharp">message</span>
-                <h3>Messages</h3>
-            </a>
-            <a href="earnings.html">
-                <span class="material-icons-sharp">attach_money</span>
-                <h3>Earnings</h3>
-            </a>
-            <a href="#">
-                <span class="material-icons-sharp">logout</span>
-                <h3>Logout</h3>
-            </a>
-        </div>
-    </header>
-
-    <div class="container">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SupplierDashboardMasterPage.Master" AutoEventWireup="true" CodeBehind="SupplierDashboardPage.aspx.cs" Inherits="QuickFix.mu.SupplierDashboardPage" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    
+        <div class="container">
         <aside>
             <!-- Profile Picture Section -->
             <div class="profile-photo">
@@ -137,5 +97,6 @@
     </div>
 
     <script src="DASHapp.js"></script>
-</body>
-</html>
+
+
+</asp:Content>

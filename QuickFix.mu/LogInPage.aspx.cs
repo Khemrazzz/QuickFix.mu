@@ -17,7 +17,7 @@ namespace QuickFix.mu
             }
         }
 
-        protected void btnLogin2_Click(object sender, EventArgs e)    
+        protected void btnLogin2_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
