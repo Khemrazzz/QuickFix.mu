@@ -43,10 +43,11 @@
              <span class="material-icons-sharp">attach_money</span>
              <h3>Earnings</h3>
          </a>
-         <a href="#">
-             <span class="material-icons-sharp">logout</span>
-             <h3>Logout</h3>
-         </a>
+         <asp:LinkButton ID="LogoutLinkButton" runat="server" OnClick="LogoutLinkButton_Click">
+       <span class="material-icons-sharp">logout</span>
+       <h3>Logout</h3>
+     </asp:LinkButton>
+        
      </div>
  </header>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

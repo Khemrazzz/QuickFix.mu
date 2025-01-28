@@ -5,26 +5,25 @@
     
         <div class="container">
         <aside>
-            <!-- Profile Picture Section -->
-            <div class="profile-photo">
-                <img src="./images/provider-profile.jpg" alt="Profile Picture">
-            </div>
+        
 
             <!-- Welcome Info -->
-            <div class="profile">
-                <div class="info">
-                    <p>Welcome, <b>Provider Name</b></p>
-                    <small class="text-muted">Service Provider</small>
-                </div>
-                <div class="about">
-                    <h5>Total Posts</h5>
-                    <p>25</p>
-                    <h5>Total Inquiries</h5>
-                    <p>120</p>
-                    <h5>Total Earnings</h5>
-                    <p>$15,000</p>
-                </div>
-            </div>
+       <div class="profile-photo">
+    <asp:Image ID="imgProfilePicture" runat="server" CssClass="profile-pic" />
+</div>
+<div class="info">
+    <asp:Label ID="lblWelcome" runat="server" Text="Welcome, " CssClass="welcome-label"></asp:Label>
+    <small class="text-muted">Service Provider</small>
+</div>
+<div class="about">
+    <h5>Email</h5>
+    <asp:Label ID="lblEmail" runat="server" Text="" CssClass="email-label"></asp:Label>
+    <h5>Number</h5>
+    <asp:Label ID="lblMobileNumber" runat="server" Text="" CssClass="number-label"></asp:Label>
+    <h5>Address</h5>
+    
+</div>
+
         </aside>
 
         <main>

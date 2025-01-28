@@ -13,5 +13,24 @@ namespace QuickFix.mu
         {
 
         }
+
+        void lgout()
+        {
+            if (Session["ClientUsername"] != null)
+            {
+                //Remove all session
+                Session.RemoveAll();
+                //Destroy all Session objects
+                Session.Abandon();
+                //Redirect to homepage or login page
+                Response.Redirect("~/HomePage");
+            }
+        }
+
+        protected void LogoutLinkButton_Click(object sender, EventArgs e)
+        {
+            lgout();
+        }
+
     }
 }

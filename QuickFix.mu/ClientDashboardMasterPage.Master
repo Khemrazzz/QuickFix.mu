@@ -46,10 +46,11 @@
             <span class="material-icons-sharp">support_agent</span>
             <h3>Support</h3>
         </a>
-        <a href="#">
+      <asp:LinkButton ID="LogoutLinkButton" runat="server" OnClick="LogoutLinkButton_Click">
             <span class="material-icons-sharp">logout</span>
             <h3>Logout</h3>
-        </a>
+          </asp:LinkButton>
+        
     </div>
 </header>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
