@@ -11,6 +11,11 @@ namespace QuickFix.mu
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack && Request["__EVENTTARGET"] == "btnLogin")
+            {
+                // Handle button click
+                Response.Redirect("~/LogInPage.aspx");
+            }
 
         }
     }

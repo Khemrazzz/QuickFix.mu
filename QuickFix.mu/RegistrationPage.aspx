@@ -1,250 +1,845 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/QuickFixMasterPage.Master" AutoEventWireup="true" CodeBehind="RegistrationPage.aspx.cs" Inherits="QuickFix.mu.Registration" %>
+﻿<%@ Page Title="Registration" Language="C#" 
+    MasterPageFile="~/QuickFixMasterPage.Master" 
+    AutoEventWireup="true"
+    CodeBehind="RegistrationPage.aspx.cs" 
+    Inherits="QuickFix.mu.RegistrationPage" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-        <style>
-        .page-header-new {
-            background: url('images/slide01.jpg') no-repeat center center;
-            background-size: cover;
-            position: relative;
-            text-align: center;
-            padding: 50px 0;
-        }
-        .page-header-new h1 {
-            color: var(--whiteColor);
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        .page-header-new p {
-            color: var(--lightGrey3);
-            font-size: 1rem;
-        }
-        .breadcrumb-new {
-            display: inline-block;
-            padding: 0;
-            margin: 0;
-            background: transparent;
-        }
-        .breadcrumb-new .breadcrumb-item {
-            display: inline;
-            font-size: 0.9rem;
-        }
-        .breadcrumb-new .breadcrumb-item a {
-            color: var(--yellow);
-        }
-        .breadcrumb-new .breadcrumb-item.active {
-            color: var(--whiteColor);
+    <style>
+        /* YOUR CSS STYLES */
+        ::selection {
+            background-color: ;
         }
 
-        .login-area-new {
-            padding: 100px 0;
+        .form-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            background: #333;
         }
-        .login-area-wrapper-new {
-            background: var(--bodyBg);
-            padding: 30px;
-            border-radius: var(--borderRadius3);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border: 2px solid var(--borderColor2);
-            margin-top: 20px;
-        }
-        .login-heading-new h5 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-        .login-heading-new p {
-            font-size: 0.9rem;
-            color: var(--contentColor);
-        }
-        .form-label-new {
-            font-weight: bold;
-            color: var(--headingColor);
-        }
-        .common-input-new {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            margin-bottom: 15px;
-            border: 1px solid var(--borderColor);
-            border-radius: var(--borderRadius);
-            font-size: 1rem;
-            color: var(--contentColor);
-            background: var(--whiteColor);
-        }
-        .form-check-new {
-            display: flex;
-            align-items: center;
-        }
-        .form-check-label-new {
-            margin-left: 5px;
-            color: var(--contentColor2);
-        }
-        .login-button-new {
-            color:antiquewhite;
+
+        .title {
+            color: #f5deb3;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
             text-align: center;
         }
-        .error-new {
-            color: var(--secondaryColor);
-            font-size: 0.8rem;
+
+        .nav-tabs {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
         }
-        .forgot-password-link-new {
-            text-align: right;
-        }
-        .forgot-password-link-new a {
-            color: var(--blue);
+        .nav-tabs a {
+            color: #fff;
             text-decoration: none;
+            background-color: #9f8054;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+        }
+        .nav-tabs a.active {
+            background-color: #f5f5dc;
+            color: #000;
+        }
+
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        .input {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0.5rem 0;
+            padding: 0.75rem;
+            color: #f5deb3;
+            background-color: inherit;
+            border: 1px solid #f5deb3;
+            border-radius: 0.25rem;
+            transition: background 0.3s;
+        }
+        .input:focus {
+            outline: none;
+            background: #424242;
+        }
+
+        .input[type="file"] {
+            padding: 0;
+            color: #fff;
+            border: none;
+        }
+
+        textarea.input {
+            resize: vertical;
+            min-height: 5rem;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            margin: 1rem 0;
+            padding: 0.75rem;
+            background: #9f8054;
+            color: #fff;
+            border-radius: 0.5rem;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 6px #f5deb3, 0 0 6px #f5deb3;
+        }
+        .btn:hover {
+            background-color: #f5f5dc;
+            color: #000;
+            box-shadow: none;
+        }
+
+        @media (max-width: 600px) {
+            .form-container {
+                margin: 1rem;
+                padding: 1rem;
+            }
         }
     </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
+
+    <!-- Page Header -->
     <header class="page-header" data-background="images/slide01.jpg" data-stellar-background-ratio="1.15">
         <div class="container">
             <h1>Registration</h1>
-            <p>Register as a Supplier or Client to get started</p>
+            <p>Register as a client or supplier</p>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Registration</li>
+                <li class="breadcrumb-item">
+                    <a href="#">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    Registration
+                </li>
             </ol>
         </div>
     </header>
 
-    <div class="login-area-new">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-8 col-md-8 offset-md-2" data-aos="fade-up">
-                    <div class="login-area-wrapper-new">
-                        <div class="login-heading-new">
-                            <h5>Registration Form</h5>
-                            <p>Already have an account? <a href="LogInPage.aspx">Login here</a></p>
-                        </div>
+    <!-- Main form container -->
+    <div class="form-container">
+        <p class="title">Welcome To QuickFix</p>
 
-                        <asp:Label ID="lblMsg" runat="server" CssClass="message" />
+        <!-- Tabs -->
+        <div class="nav-tabs">
+            <a href="#" id="tabLink1" class="active" onclick="showTab(event, 'tabClient')">Client</a>
+            <a href="#" id="tabLink2" onclick="showTab(event, 'tabSupplier')">Supplier</a>
+        </div>
 
-                        <div class="login-form-new">
-                            <asp:Label runat="server" CssClass="form-label-new" AssociatedControlID="ddlUserType">Registering as</asp:Label>
-                            <asp:DropDownList runat="server" ID="ddlUserType" CssClass="common-input-new">
-                                <asp:ListItem Text="Select User Type" Value="" />
-                                <asp:ListItem Text="Supplier" Value="Supplier" />
-                                <asp:ListItem Text="Client" Value="Client" />
-                            </asp:DropDownList>
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="ddlUserType" InitialValue="" ErrorMessage="Please select a user type" ForeColor="Red" Display="Dynamic" CssClass="error-new" />
-                        </div>
+        <!-- ------------------ CLIENT TAB ------------------ -->
+        <div id="tabClient" class="tab-content active">
 
-                        <div class="login-form-new">
-                            <asp:Label runat="server" CssClass="form-label-new" AssociatedControlID="txtFirstName">First Name</asp:Label>
-                            <asp:TextBox runat="server" ID="txtFirstName" CssClass="common-input-new" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtFirstName" ErrorMessage="First Name is required" ForeColor="Red" Display="Dynamic" CssClass="error-new" />
-                        </div>
+            <legend>Personal Details</legend>
+            <!-- First Name -->
+            <asp:TextBox 
+                ID="txtClientFName" 
+                runat="server" 
+                CssClass="input" 
+                Placeholder="First Name"
+                ValidationGroup="ClientReg" />
+            <asp:RequiredFieldValidator 
+                ID="rfvClientFName" 
+                runat="server"
+                ControlToValidate="txtClientFName" 
+                ErrorMessage="First name is required"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="ClientReg" />
 
-<%--                        <div class="login-form-new">
-                            <asp:Label runat="server" CssClass="form-label-new" AssociatedControlID="txtMiddleName">Middle Name</asp:Label>
-                            <asp:TextBox runat="server" ID="txtMiddleName" CssClass="common-input-new" />
-                            
-                        </div>--%>
+            <!-- Middle Name -->
+            <asp:TextBox 
+                ID="txtClientMName" 
+                runat="server" 
+                CssClass="input" 
+                Placeholder="Middle Name"
+                ValidationGroup="ClientReg" />
 
-                        <div class="login-form-new">
-                            <asp:Label runat="server" CssClass="form-label-new" AssociatedControlID="txtLastName">Last Name</asp:Label>
-                            <asp:TextBox runat="server" ID="txtLastName" CssClass="common-input-new" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtLastName" ErrorMessage="Last Name is required" ForeColor="Red" Display="Dynamic" CssClass="error-new" />
-                        </div>
+            <!-- Last Name -->
+            <asp:TextBox 
+                ID="txtClientLName" 
+                runat="server" 
+                CssClass="input" 
+                Placeholder="Last Name"
+                ValidationGroup="ClientReg" />
+            <asp:RequiredFieldValidator 
+                ID="rfvClientLName" 
+                runat="server"
+                ControlToValidate="txtClientLName" 
+                ErrorMessage="Last name is required"
+                Display="Dynamic" 
+                ForeColor="Red" 
+                ValidationGroup="ClientReg" />
 
-                        <div class="login-form-new">
-                            <asp:Label runat="server" CssClass="form-label-new" AssociatedControlID="ddlGender">Gender</asp:Label>
-                            <asp:DropDownList runat="server" ID="ddlGender" CssClass="common-input-new">
-                                <asp:ListItem Text="Select Gender" Value="" />
-                                <asp:ListItem Text="Male" Value="Male" />
-                                <asp:ListItem Text="Female" Value="Female" />
-                                <asp:ListItem Text="Other" Value="Other" />
-                            </asp:DropDownList>
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="ddlGender" InitialValue="" ErrorMessage="Please select a gender" ForeColor="Red" Display="Dynamic" CssClass="error-new" />
-                        </div>
+            <!-- Gender -->
+            <asp:DropDownList 
+                ID="ddlClientGender" 
+                runat="server" 
+                CssClass="input"
+                ValidationGroup="ClientReg">
+                <asp:ListItem Text="Select Gender" Value=""></asp:ListItem>
+                <asp:ListItem Text="Male" Value="Male"></asp:ListItem>
+                <asp:ListItem Text="Female" Value="Female"></asp:ListItem>
+                <asp:ListItem Text="Other" Value="Other"></asp:ListItem>
+                <asp:ListItem Text="Prefer not to say" Value="Prefer not to say"></asp:ListItem>
+            </asp:DropDownList>
+            <asp:RequiredFieldValidator 
+                ID="rfvClientGender" 
+                runat="server"
+                ControlToValidate="ddlClientGender" 
+                InitialValue=""
+                ErrorMessage="Gender is required" 
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="ClientReg" />
 
-<%--                        <div class="login-form-new">
-                            <asp:Label runat="server" CssClass="form-label-new" AssociatedControlID="txtGTag">GTag</asp:Label>
-                            <asp:TextBox runat="server" ID="txtGTag" CssClass="common-input-new" MaxLength="10" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtGTag" ErrorMessage="GTag is required" ForeColor="Red" Display="Dynamic" CssClass="error-new" />
-                        </div>--%>
+            <!-- GTag (title) -->
+            <asp:DropDownList 
+                ID="ddlClientGTag" 
+                runat="server" 
+                CssClass="input"
+                ValidationGroup="ClientReg">
+                <asp:ListItem Text="Select Title" Value=""></asp:ListItem>
+                <asp:ListItem Text="Mr" Value="Mr"></asp:ListItem>
+                <asp:ListItem Text="Mrs" Value="Mrs"></asp:ListItem>
+                <asp:ListItem Text="Miss" Value="Miss"></asp:ListItem>
+            </asp:DropDownList>
+            <asp:RequiredFieldValidator 
+                ID="rfvClientGTag" 
+                runat="server"
+                ControlToValidate="ddlClientGTag" 
+                InitialValue=""
+                ErrorMessage="Select a title (Mr, Mrs, Miss...)"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="ClientReg" />
 
-                        <div class="login-form-new">
-                            <asp:Label runat="server" CssClass="form-label-new" AssociatedControlID="txtDateOfBirth">Date of Birth</asp:Label>
-                            <asp:TextBox runat="server" ID="txtDateOfBirth" CssClass="common-input-new" TextMode="Date" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtDateOfBirth" ErrorMessage="Date of Birth is required" ForeColor="Red" Display="Dynamic" CssClass="error-new" />
-                        </div>
+            <!-- Date of Birth -->
+            <asp:TextBox 
+                ID="txtClientDOB" 
+                runat="server" 
+                CssClass="input" 
+                TextMode="Date" 
+                Placeholder="Date of Birth"
+                ValidationGroup="ClientReg" />
+            <asp:RequiredFieldValidator 
+                ID="rfvClientDOB" 
+                runat="server"
+                ControlToValidate="txtClientDOB" 
+                ErrorMessage="Date of Birth is required"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="ClientReg" />
+            <asp:RangeValidator 
+                ID="rvClientDOB" 
+                runat="server"
+                ControlToValidate="txtClientDOB" 
+                Type="Date"
+                ErrorMessage="DOB must be valid and within allowed range"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="ClientReg" />
 
-<%--                        <div class="login-form-new">
-                            <asp:Label runat="server" CssClass="form-label-new" AssociatedControlID="txtProfilePicture">Profile Picture URL</asp:Label>
-                            <asp:TextBox runat="server" ID="txtProfilePicture" CssClass="common-input-new" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtProfilePicture" ErrorMessage="Profile Picture URL is required" ForeColor="Red" Display="Dynamic" CssClass="error-new" />
-                        </div>--%>
+            <!-- Profile Picture -->
+            <asp:FileUpload 
+                ID="fuClientProfilePic" 
+                runat="server" 
+                CssClass="input"
+                ValidationGroup="ClientReg" />
+            <asp:RequiredFieldValidator 
+                ID="rfvClientProfilePic" 
+                runat="server"
+                ControlToValidate="fuClientProfilePic" 
+                ErrorMessage="Profile Picture is required"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="ClientReg" />
 
-                        <div class="login-form-new">
-                            <asp:Label runat="server" CssClass="form-label-new" AssociatedControlID="txtBio">Bio</asp:Label>
-                            <asp:TextBox runat="server" ID="txtBio" CssClass="common-input-new" MaxLength="256" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtBio" ErrorMessage="Bio is required" ForeColor="Red" Display="Dynamic" CssClass="error-new" />
-                        </div>
+            <!-- Bio -->
+            <asp:TextBox 
+                ID="txtClientBio" 
+                runat="server" 
+                CssClass="input" 
+                TextMode="MultiLine"
+                Placeholder="Tell us about you"
+                ValidationGroup="ClientReg" />
 
-                        <div class="login-form-new">
-                            <asp:Label runat="server" CssClass="form-label-new" AssociatedControlID="txtEmail">Email</asp:Label>
-                            <asp:TextBox runat="server" ID="txtEmail" CssClass="common-input-new" TextMode="Email" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtEmail" ErrorMessage="Email is required" ForeColor="Red" Display="Dynamic" CssClass="error-new" />
-                            <asp:RegularExpressionValidator runat="server" ControlToValidate="txtEmail" ErrorMessage="Invalid email format" ForeColor="Red" Display="Dynamic" CssClass="error-new" ValidationExpression="^[^@\s]+@[^@\s]+\.[^@\s]+$" />
-                        </div>
+            <legend>Contact Details</legend>
+            <!-- Email -->
+            <asp:TextBox 
+                ID="txtClientEmail" 
+                runat="server" 
+                CssClass="input" 
+                TextMode="Email" 
+                Placeholder="Email"
+                ValidationGroup="ClientReg" />
+            <asp:RequiredFieldValidator 
+                ID="rfvClientEmail" 
+                runat="server"
+                ControlToValidate="txtClientEmail" 
+                ErrorMessage="Email is required"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="ClientReg" />
 
-                        <div class="login-form-new">
-                            <asp:Label runat="server" CssClass="form-label-new" AssociatedControlID="txtMobileNumber">Mobile Number</asp:Label>
-                            <asp:TextBox runat="server" ID="txtMobileNumber" CssClass="common-input-new" TextMode="Number" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtMobileNumber" ErrorMessage="Mobile Number is required" ForeColor="Red" Display="Dynamic" CssClass="error-new" />
-                        </div>
+            <!-- Mobile -->
+            <asp:TextBox 
+                ID="txtClientMobile" 
+                runat="server" 
+                CssClass="input" 
+                Placeholder="Mobile Number"
+                ValidationGroup="ClientReg" />
+            <asp:RequiredFieldValidator 
+                ID="rfvClientMobile" 
+                runat="server"
+                ControlToValidate="txtClientMobile" 
+                ErrorMessage="Mobile number is required"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="ClientReg" />
+            <asp:RegularExpressionValidator 
+                ID="revClientMobile" 
+                runat="server"
+                ControlToValidate="txtClientMobile" 
+                ValidationExpression="^\d{8}$"
+                ErrorMessage="Mobile number must be 8 digits"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="ClientReg" />
 
-                        <div class="login-form-new">
-                            <asp:Label runat="server" CssClass="form-label-new" AssociatedControlID="txtCountry">Country</asp:Label>
-                            <asp:TextBox runat="server" ID="txtCountry" CssClass="common-input-new" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtCountry" ErrorMessage="Country is required" ForeColor="Red" Display="Dynamic" CssClass="error-new" />
-                        </div>
+            <!-- District + Village/Town -->
+            <asp:UpdatePanel ID="updPanelClientDistrict" runat="server">
+                <ContentTemplate>
+                    <asp:DropDownList 
+                        ID="ddlClientDistrict" 
+                        runat="server" 
+                        CssClass="input"
+                        AutoPostBack="True" 
+                        OnSelectedIndexChanged="ddlClientDistrict_SelectedIndexChanged"
+                        ValidationGroup="ClientReg">
+                        <asp:ListItem Text="Select District" Value="-1"></asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:RequiredFieldValidator 
+                        ID="rfvClientDistrict" 
+                        runat="server"
+                        ControlToValidate="ddlClientDistrict" 
+                        InitialValue="-1"
+                        ErrorMessage="District is required" 
+                        Display="Dynamic" 
+                        ForeColor="Red"
+                        ValidationGroup="ClientReg" />
 
-                        <div class="login-form-new">
-                            <asp:Label runat="server" CssClass="form-label-new" AssociatedControlID="txtDistrict">District</asp:Label>
-                            <asp:TextBox runat="server" ID="txtDistrict" CssClass="common-input-new" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtDistrict" ErrorMessage="District is required" ForeColor="Red" Display="Dynamic" CssClass="error-new" />
-                        </div>
+                    <asp:DropDownList 
+                        ID="ddlClientVillageTown" 
+                        runat="server" 
+                        CssClass="input"
+                        ValidationGroup="ClientReg">
+                        <asp:ListItem Text="Select Village/Town" Value="-1"></asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:RequiredFieldValidator 
+                        ID="rfvClientVillageTown" 
+                        runat="server"
+                        ControlToValidate="ddlClientVillageTown" 
+                        InitialValue="-1"
+                        ErrorMessage="Village/Town is required" 
+                        Display="Dynamic" 
+                        ForeColor="Red"
+                        ValidationGroup="ClientReg" />
+                </ContentTemplate>
+                <Triggers>
+                    <asp:AsyncPostBackTrigger 
+                        ControlID="ddlClientDistrict" 
+                        EventName="SelectedIndexChanged" />
+                </Triggers>
+            </asp:UpdatePanel>
 
-                        <div class="login-form-new">
-                            <asp:Label runat="server" CssClass="form-label-new" AssociatedControlID="txtVillageTown">Village/Town</asp:Label>
-                            <asp:TextBox runat="server" ID="txtVillageTown" CssClass="common-input-new" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtVillageTown" ErrorMessage="Village/Town is required" ForeColor="Red" Display="Dynamic" CssClass="error-new" />
-                        </div>
+            <!-- Street Address -->
+            <asp:TextBox 
+                ID="txtClientStreetAddress" 
+                runat="server" 
+                CssClass="input" 
+                Placeholder="Street Address"
+                ValidationGroup="ClientReg" />
+            <asp:RequiredFieldValidator 
+                ID="rfvClientStreetAddress" 
+                runat="server"
+                ControlToValidate="txtClientStreetAddress" 
+                ErrorMessage="Street Address is required"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="ClientReg" />
 
-                        <div class="login-form-new">
-                            <asp:Label runat="server" CssClass="form-label-new" AssociatedControlID="txtStrAddress">Street Address</asp:Label>
-                            <asp:TextBox runat="server" ID="txtStrAddress" CssClass="common-input-new" TextMode="MultiLine" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtStrAddress" ErrorMessage="Street Address is required" ForeColor="Red" Display="Dynamic" CssClass="error-new" />
-                        </div>
+            <legend>Login Details</legend>
+            <!-- Username -->
+            <asp:TextBox 
+                ID="txtClientUsername" 
+                runat="server" 
+                CssClass="input" 
+                Placeholder="Username"
+                ValidationGroup="ClientReg" />
+            <asp:RequiredFieldValidator 
+                ID="rfvClientUsername" 
+                runat="server"
+                ControlToValidate="txtClientUsername" 
+                ErrorMessage="Username is required"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="ClientReg" />
 
-                        <div class="login-form-new">
-                            <asp:Label runat="server" CssClass="form-label-new" AssociatedControlID="txtUsername">Username</asp:Label>
-                            <asp:TextBox runat="server" ID="txtUsername" CssClass="common-input-new" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtUsername" ErrorMessage="Username is required" ForeColor="Red" Display="Dynamic" CssClass="error-new" />
-                        </div>
+            <!-- **CustomValidator to check if username is taken** -->
+            <asp:CustomValidator 
+                ID="cvClientUsernameTaken" 
+                runat="server"
+                ControlToValidate="txtClientUsername" 
+                OnServerValidate="cvClientUsernameTaken_ServerValidate"
+                ErrorMessage="Username is already taken" 
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="ClientReg" />
 
-                        <div class="login-form-new">
-                            <asp:Label runat="server" CssClass="form-label-new" AssociatedControlID="txtPassword">Password</asp:Label>
-                            <asp:TextBox runat="server" ID="txtPassword" CssClass="common-input-new" TextMode="Password" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtPassword" ErrorMessage="Password is required" ForeColor="Red" Display="Dynamic" CssClass="error-new" />
-                        </div>
+            <!-- Password -->
+            <asp:TextBox 
+                ID="txtClientPass" 
+                runat="server" 
+                CssClass="input"
+                TextMode="Password" 
+                Placeholder="Password"
+                ValidationGroup="ClientReg" />
+            <asp:RequiredFieldValidator 
+                ID="rfvClientPass" 
+                runat="server"
+                ControlToValidate="txtClientPass" 
+                ErrorMessage="Password is required"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="ClientReg" />
+            <asp:CustomValidator 
+                ID="cvClientPassLen" 
+                runat="server"
+                ControlToValidate="txtClientPass" 
+                ClientValidationFunction="validatePassLength"
+                OnServerValidate="cvClientPassLen_ServerValidate"
+                ErrorMessage="Password must be between 8 and 12 characters"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="ClientReg" />
 
-                        <div class="login-form-new">
-                            <asp:Label runat="server" CssClass="form-label-new" AssociatedControlID="txtConfirmPassword">Confirm Password</asp:Label>
-                            <asp:TextBox runat="server" ID="txtConfirmPassword" CssClass="common-input-new" TextMode="Password" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtConfirmPassword" ErrorMessage="Confirmation Password is required" ForeColor="Red" Display="Dynamic" CssClass="error-new" />
-                            <asp:CompareValidator runat="server" ControlToValidate="txtConfirmPassword" ControlToCompare="txtPassword" ErrorMessage="Passwords do not match" ForeColor="Red" Display="Dynamic" CssClass="error-new" />
-                        </div>
+            <!-- Confirm Password -->
+            <asp:TextBox 
+                ID="txtClientCPass" 
+                runat="server" 
+                CssClass="input"
+                TextMode="Password" 
+                Placeholder="Confirm Password"
+                ValidationGroup="ClientReg" />
+            <asp:RequiredFieldValidator 
+                ID="rfvClientCPass" 
+                runat="server"
+                ControlToValidate="txtClientCPass" 
+                ErrorMessage="Confirm Password is required"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="ClientReg" />
+            <asp:CompareValidator 
+                ID="cvClientPasswords" 
+                runat="server"
+                ControlToValidate="txtClientCPass" 
+                ControlToCompare="txtClientPass"
+                ErrorMessage="Passwords do not match"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="ClientReg" />
 
-                        <div class="login-button-new">
-                            <asp:Button runat="server" ID="btnRegister" CssClass="button" Text="Register"  OnClick="btnRegister_Click" />
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- Register Button -->
+            <asp:Button 
+                ID="btnClientRegister" 
+                runat="server" 
+                CssClass="btn"
+                Text="Sign Up (Client)" 
+                OnClick="btnClientRegister_Click"
+                ValidationGroup="ClientReg" />
+        </div>
+        <!-- END CLIENT TAB -->
+
+
+        <!-- ------------------ SUPPLIER TAB ------------------ -->
+        <div id="tabSupplier" class="tab-content">
+
+            <legend>Personal Details</legend>
+            <!-- First Name -->
+            <asp:TextBox 
+                ID="txtSupplierFName" 
+                runat="server" 
+                CssClass="input" 
+                Placeholder="First Name"
+                ValidationGroup="SupplierReg" />
+            <asp:RequiredFieldValidator 
+                ID="rfvSupplierFName" 
+                runat="server"
+                ControlToValidate="txtSupplierFName" 
+                ErrorMessage="First name is required"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="SupplierReg" />
+
+            <!-- Middle Name -->
+            <asp:TextBox 
+                ID="txtSupplierMName" 
+                runat="server" 
+                CssClass="input" 
+                Placeholder="Middle Name"
+                ValidationGroup="SupplierReg" />
+
+            <!-- Last Name -->
+            <asp:TextBox 
+                ID="txtSupplierLName" 
+                runat="server" 
+                CssClass="input" 
+                Placeholder="Last Name"
+                ValidationGroup="SupplierReg" />
+            <asp:RequiredFieldValidator 
+                ID="rfvSupplierLName" 
+                runat="server"
+                ControlToValidate="txtSupplierLName" 
+                ErrorMessage="Last name is required"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="SupplierReg" />
+
+            <!-- Gender -->
+            <asp:DropDownList 
+                ID="ddlSupplierGender" 
+                runat="server" 
+                CssClass="input"
+                ValidationGroup="SupplierReg">
+                <asp:ListItem Text="Select Gender" Value=""></asp:ListItem>
+                <asp:ListItem Text="Male" Value="Male"></asp:ListItem>
+                <asp:ListItem Text="Female" Value="Female"></asp:ListItem>
+            </asp:DropDownList>
+            <asp:RequiredFieldValidator 
+                ID="rfvSupplierGender" 
+                runat="server"
+                ControlToValidate="ddlSupplierGender" 
+                InitialValue=""
+                ErrorMessage="Gender is required" 
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="SupplierReg" />
+
+            <!-- GTag (title) -->
+            <asp:DropDownList 
+                ID="ddlSupplierGTag" 
+                runat="server" 
+                CssClass="input"
+                ValidationGroup="SupplierReg">
+                <asp:ListItem Text="Select Title" Value=""></asp:ListItem>
+                <asp:ListItem Text="Mr" Value="Mr"></asp:ListItem>
+                <asp:ListItem Text="Mrs" Value="Mrs"></asp:ListItem>
+                <asp:ListItem Text="Miss" Value="Miss"></asp:ListItem>
+            </asp:DropDownList>
+            <asp:RequiredFieldValidator 
+                ID="rfvSupplierGTag" 
+                runat="server"
+                ControlToValidate="ddlSupplierGTag" 
+                InitialValue=""
+                ErrorMessage="Select a title (Mr, Mrs, Miss...)" 
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="SupplierReg" />
+
+            <!-- Date of Birth -->
+            <asp:TextBox 
+                ID="txtSupplierDOB" 
+                runat="server" 
+                CssClass="input" 
+                TextMode="Date"
+                Placeholder="Date of Birth"
+                ValidationGroup="SupplierReg" />
+            <asp:RequiredFieldValidator 
+                ID="rfvSupplierDOB" 
+                runat="server"
+                ControlToValidate="txtSupplierDOB" 
+                ErrorMessage="Date of Birth is required"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="SupplierReg" />
+            <asp:RangeValidator 
+                ID="rvSupplierDOB" 
+                runat="server"
+                ControlToValidate="txtSupplierDOB" 
+                Type="Date"
+                ErrorMessage="DOB must be valid and within allowed range"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="SupplierReg" />
+
+            <!-- Profile Picture -->
+            <asp:FileUpload 
+                ID="fuSupplierProfilePic" 
+                runat="server" 
+                CssClass="input"
+                ValidationGroup="SupplierReg" />
+            <asp:RequiredFieldValidator 
+                ID="rfvSupplierProfilePic" 
+                runat="server"
+                ControlToValidate="fuSupplierProfilePic" 
+                ErrorMessage="Profile Picture is required"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="SupplierReg" />
+
+            <!-- Bio -->
+            <asp:TextBox 
+                ID="txtSupplierBio" 
+                runat="server" 
+                CssClass="input" 
+                TextMode="MultiLine"
+                Placeholder="Tell us about you"
+                ValidationGroup="SupplierReg" />
+
+            <legend>Contact Details</legend>
+            <!-- Email -->
+            <asp:TextBox 
+                ID="txtSupplierEmail" 
+                runat="server" 
+                CssClass="input" 
+                TextMode="Email" 
+                Placeholder="Email"
+                ValidationGroup="SupplierReg" />
+            <asp:RequiredFieldValidator 
+                ID="rfvSupplierEmail" 
+                runat="server"
+                ControlToValidate="txtSupplierEmail" 
+                ErrorMessage="Email is required"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="SupplierReg" />
+
+            <!-- Mobile -->
+            <asp:TextBox 
+                ID="txtSupplierMobile" 
+                runat="server" 
+                CssClass="input" 
+                Placeholder="Mobile Number"
+                ValidationGroup="SupplierReg" />
+            <asp:RequiredFieldValidator 
+                ID="rfvSupplierMobile" 
+                runat="server"
+                ControlToValidate="txtSupplierMobile" 
+                ErrorMessage="Mobile number is required"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="SupplierReg" />
+            <asp:RegularExpressionValidator 
+                ID="revSupplierMobile" 
+                runat="server"
+                ControlToValidate="txtSupplierMobile" 
+                ValidationExpression="^\d{8}$"
+                ErrorMessage="Mobile number must be 8 digits"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="SupplierReg" />
+
+            <!-- District + Village/Town -->
+            <asp:UpdatePanel ID="updPanelSupplierDistrict" runat="server">
+                <ContentTemplate>
+                    <asp:DropDownList 
+                        ID="ddlSupplierDistrict" 
+                        runat="server" 
+                        CssClass="input"
+                        AutoPostBack="True" 
+                        OnSelectedIndexChanged="ddlSupplierDistrict_SelectedIndexChanged"
+                        ValidationGroup="SupplierReg">
+                        <asp:ListItem Text="Select District" Value="-1"></asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:RequiredFieldValidator 
+                        ID="rfvSupplierDistrict" 
+                        runat="server"
+                        ControlToValidate="ddlSupplierDistrict" 
+                        InitialValue="-1"
+                        ErrorMessage="District is required" 
+                        Display="Dynamic" 
+                        ForeColor="Red"
+                        ValidationGroup="SupplierReg" />
+
+                    <asp:DropDownList 
+                        ID="ddlSupplierVillageTown" 
+                        runat="server" 
+                        CssClass="input"
+                        ValidationGroup="SupplierReg">
+                        <asp:ListItem Text="Select Village/Town" Value="-1"></asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:RequiredFieldValidator 
+                        ID="rfvSupplierVillageTown" 
+                        runat="server"
+                        ControlToValidate="ddlSupplierVillageTown" 
+                        InitialValue="-1"
+                        ErrorMessage="Village/Town is required" 
+                        Display="Dynamic" 
+                        ForeColor="Red"
+                        ValidationGroup="SupplierReg" />
+                </ContentTemplate>
+                <Triggers>
+                    <asp:AsyncPostBackTrigger 
+                        ControlID="ddlSupplierDistrict" 
+                        EventName="SelectedIndexChanged" />
+                </Triggers>
+            </asp:UpdatePanel>
+
+            <!-- Street Address -->
+            <asp:TextBox 
+                ID="txtSupplierStreetAddress" 
+                runat="server" 
+                CssClass="input" 
+                Placeholder="Street Address"
+                ValidationGroup="SupplierReg" />
+            <asp:RequiredFieldValidator 
+                ID="rfvSupplierStreetAddress" 
+                runat="server"
+                ControlToValidate="txtSupplierStreetAddress" 
+                ErrorMessage="Street Address is required"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="SupplierReg" />
+
+            <legend>Login Details</legend>
+            <!-- Username -->
+            <asp:TextBox 
+                ID="txtSupplierUsername" 
+                runat="server" 
+                CssClass="input" 
+                Placeholder="Username"
+                ValidationGroup="SupplierReg" />
+            <asp:RequiredFieldValidator 
+                ID="rfvSupplierUsername" 
+                runat="server"
+                ControlToValidate="txtSupplierUsername" 
+                ErrorMessage="Username is required"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="SupplierReg" />
+
+            <!-- **CustomValidator to check if username is taken** -->
+            <asp:CustomValidator 
+                ID="cvSupplierUsernameTaken" 
+                runat="server"
+                ControlToValidate="txtSupplierUsername" 
+                OnServerValidate="cvSupplierUsernameTaken_ServerValidate"
+                ErrorMessage="Username is already taken" 
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="SupplierReg" />
+
+            <!-- Password -->
+            <asp:TextBox 
+                ID="txtSupplierPass" 
+                runat="server" 
+                CssClass="input"
+                TextMode="Password" 
+                Placeholder="Password"
+                ValidationGroup="SupplierReg" />
+            <asp:RequiredFieldValidator 
+                ID="rfvSupplierPass" 
+                runat="server"
+                ControlToValidate="txtSupplierPass" 
+                ErrorMessage="Password is required"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="SupplierReg" />
+            <asp:CustomValidator 
+                ID="cvSupplierPassLen" 
+                runat="server"
+                ControlToValidate="txtSupplierPass" 
+                ClientValidationFunction="validatePassLength"
+                OnServerValidate="cvSupplierPassLen_ServerValidate"
+                ErrorMessage="Password must be between 8 and 12 characters"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="SupplierReg" />
+
+            <!-- Confirm Password -->
+            <asp:TextBox 
+                ID="txtSupplierCPass" 
+                runat="server" 
+                CssClass="input"
+                TextMode="Password" 
+                Placeholder="Confirm Password"
+                ValidationGroup="SupplierReg" />
+            <asp:RequiredFieldValidator 
+                ID="rfvSupplierCPass" 
+                runat="server"
+                ControlToValidate="txtSupplierCPass" 
+                ErrorMessage="Confirm Password is required"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="SupplierReg" />
+            <asp:CompareValidator 
+                ID="cvSupplierPasswords" 
+                runat="server"
+                ControlToValidate="txtSupplierCPass" 
+                ControlToCompare="txtSupplierPass"
+                ErrorMessage="Passwords do not match"
+                Display="Dynamic" 
+                ForeColor="Red"
+                ValidationGroup="SupplierReg" />
+
+            <!-- Register Button -->
+            <asp:Button 
+                ID="btnSupplierRegister" 
+                runat="server" 
+                CssClass="btn"
+                Text="Sign Up (Supplier)" 
+                OnClick="btnSupplierRegister_Click"
+                ValidationGroup="SupplierReg" />
+        </div>
+        <!-- END SUPPLIER TAB -->
+
+
+        <!-- Shared success/error message label -->
+        <div class="text-center" style="margin-top: 1rem;">
+            <asp:Label ID="lblMsg" runat="server" ForeColor="LightGreen"></asp:Label>
+            <br />
+            <p style="color: white">
+                Already have an account?
+                <a href="LogInPage.aspx" class="text-primary">Log In</a>
+            </p>
         </div>
     </div>
+    <!-- End form container -->
+
+    <!-- Tab switching script -->
+    <script type="text/javascript">
+        function showTab(event, tabId) {
+            event.preventDefault();
+
+            // Remove 'active' from tab links
+            document.getElementById("tabLink1").classList.remove("active");
+            document.getElementById("tabLink2").classList.remove("active");
+
+            // Hide all tab contents
+            document.getElementById("tabClient").classList.remove("active");
+            document.getElementById("tabSupplier").classList.remove("active");
+
+            // Show the clicked tab
+            document.getElementById(tabId).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+
+        function validatePassLength(sender, args) {
+            if (args.Value.length < 8 || args.Value.length > 12) {
+                args.IsValid = false;
+            } else {
+                args.IsValid = true;
+            }
+        }
+    </script>
 </asp:Content>
-
-
