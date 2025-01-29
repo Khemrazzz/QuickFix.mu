@@ -234,10 +234,8 @@ namespace QuickFix.mu
         // ---------- SUPPLIER REGISTRATION ----------
         protected void btnSupplierRegister_Click(object sender, EventArgs e)
         {
-            // Only "SupplierReg" validation group is triggered here
             if (Page.IsValid)
             {
-                // Gather data
                 string fname = txtSupplierFName.Text.Trim();
                 string mname = txtSupplierMName.Text.Trim();
                 string lname = txtSupplierLName.Text.Trim();
@@ -251,25 +249,23 @@ namespace QuickFix.mu
                 string villageVal = ddlSupplierVillageTown.SelectedValue;
                 string address = txtSupplierStreetAddress.Text.Trim();
                 string username = txtSupplierUsername.Text.Trim();
+                string service = ddlSupplierServices.SelectedValue; // Capture the selected service
 
-                // Encrypt passwords
                 string encPass = Encrypt(txtSupplierPass.Text.Trim());
                 string encCPass = Encrypt(txtSupplierCPass.Text.Trim());
 
-                // Profile pic
                 string profilePicPath = SaveFileIfValid(fuSupplierProfilePic, "~/supplierImages/");
 
                 using (SqlConnection con = new SqlConnection(_conString))
                 {
-                    // Insert into Supplier table
                     string query = @"
                         INSERT INTO Supplier
                         (FirstName, MiddleName, LastName, Gender, GTag, DateOfBirth, ProfilePicture,
-                         Bio, Email, MobileNumber, Country, District, VillageTown, StrAddress,
+                         Bio, Services, Email, MobileNumber, Country, District, VillageTown, StrAddress,
                          Username, Password, CPassword, Status, Approval, IsActive, IsDeleted, FailedLoginAttempts)
                         VALUES
                         (@FName, @MName, @LName, @Gender, @GTag, @DOB, @ProfilePic,
-                         @Bio, @Email, @Mobile, @Country, @District, @VillageTown, @StrAddress,
+                         @Bio, @Services, @Email, @Mobile, @Country, @District, @VillageTown, @StrAddress,
                          @Username, @Password, @CPassword, @Status, @Approval, @IsActive, @IsDeleted, @FailedLoginAttempts)";
 
                     SqlCommand cmd = new SqlCommand(query, con);
@@ -281,20 +277,16 @@ namespace QuickFix.mu
                     cmd.Parameters.AddWithValue("@DOB", dob);
                     cmd.Parameters.AddWithValue("@ProfilePic", profilePicPath ?? (object)DBNull.Value);
                     cmd.Parameters.AddWithValue("@Bio", bio);
+                    cmd.Parameters.AddWithValue("@Services", service); // Save selected service
                     cmd.Parameters.AddWithValue("@Email", email);
                     cmd.Parameters.AddWithValue("@Mobile", mobile);
-
-                    // If your table has a "Country" field, set it
                     cmd.Parameters.AddWithValue("@Country", "");
-
                     cmd.Parameters.AddWithValue("@District", districtVal);
                     cmd.Parameters.AddWithValue("@VillageTown", villageVal);
                     cmd.Parameters.AddWithValue("@StrAddress", address);
                     cmd.Parameters.AddWithValue("@Username", username);
                     cmd.Parameters.AddWithValue("@Password", encPass);
                     cmd.Parameters.AddWithValue("@CPassword", encCPass);
-
-                    // Default fields
                     cmd.Parameters.AddWithValue("@Status", "Inactive");
                     cmd.Parameters.AddWithValue("@Approval", "pending");
                     cmd.Parameters.AddWithValue("@IsActive", true);
@@ -309,6 +301,7 @@ namespace QuickFix.mu
                 lblMsg.Text = "Supplier registration successful. You can now log in.";
             }
         }
+
 
         // ---------- ENCRYPTION ----------
         private string Encrypt(string clearText)
