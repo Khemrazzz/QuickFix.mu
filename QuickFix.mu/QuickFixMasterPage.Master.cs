@@ -11,12 +11,65 @@ namespace QuickFix.mu
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack && Request["__EVENTTARGET"] == "btnLogin")
-            {
-                // Handle button click
-                Response.Redirect("~/LogInPage.aspx");
-            }
+            CheckUserLogin();
 
+            // Handle postback from either button
+            if (IsPostBack)
+            {
+                string target = Request["__EVENTTARGET"];
+                if (target == "btnLogin")
+                {
+                    // user clicked "Login"
+                    Response.Redirect("~/LogInPage.aspx");
+                }
+                else if (target == "btnProfile")
+                {
+                    // user clicked "Profile"
+                    if (Session["ClientUsername"] != null)
+                    {
+                        Response.Redirect("~/ClientDashboardPage.aspx");
+                    }
+                    else if (Session["SupplierUsername"] != null)
+                    {
+                        Response.Redirect("~/SupplierDashboardPage.aspx");
+                    }
+                    else
+                    {
+                        // If they're not logged in, possibly redirect to login or do nothing
+                        Response.Redirect("~/LogInPage.aspx");
+                    }
+                }
+            }
         }
+
+        private void CheckUserLogin()
+        {
+            if (Session["ClientUsername"] != null)
+            {
+                // Show Profile, hide Login
+                btnLogin.Visible = false;
+                phProfileButton.Visible = true;
+            }
+            else if (Session["SupplierUsername"] != null)
+            {
+                // Show Profile, hide Login
+                btnLogin.Visible = false;
+                phProfileButton.Visible = true;
+            }
+            else
+            {
+                // Show Login, hide Profile
+                btnLogin.Visible = true;
+                phProfileButton.Visible = false;
+            }
+        }
+
+
+
+
+
+
+
+
     }
 }
