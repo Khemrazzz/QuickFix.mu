@@ -43,6 +43,7 @@
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+
     <style>
         button {
             position: relative;
@@ -58,373 +59,107 @@
             cursor: pointer;
         }
 
-        .star-1 {
+        .star-1, .star-2, .star-3, .star-4, .star-5, .star-6 {
             position: absolute;
-            top: 20%;
-            left: 20%;
-            width: 25px;
+            width: auto;
             height: auto;
             filter: drop-shadow(0 0 0 #fffdef);
             z-index: -5;
             transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
         }
 
-        .star-2 {
-            position: absolute;
-            top: 45%;
-            left: 45%;
-            width: 15px;
-            height: auto;
-            filter: drop-shadow(0 0 0 #fffdef);
-            z-index: -5;
-            transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
-        }
-
-        .star-3 {
-            position: absolute;
-            top: 40%;
-            left: 40%;
-            width: 5px;
-            height: auto;
-            filter: drop-shadow(0 0 0 #fffdef);
-            z-index: -5;
-            transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
-        }
-
-        .star-4 {
-            position: absolute;
-            top: 20%;
-            left: 40%;
-            width: 8px;
-            height: auto;
-            filter: drop-shadow(0 0 0 #fffdef);
-            z-index: -5;
-            transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
-        }
-
-        .star-5 {
-            position: absolute;
-            top: 25%;
-            left: 45%;
-            width: 15px;
-            height: auto;
-            filter: drop-shadow(0 0 0 #fffdef);
-            z-index: -5;
-            transition: all 0.6s cubic-bezier(0, 0.4, 0, 1.01);
-        }
-
-        .star-6 {
-            position: absolute;
-            top: 5%;
-            left: 50%;
-            width: 5px;
-            height: auto;
-            filter: drop-shadow(0 0 0 #fffdef);
-            z-index: -5;
-            transition: all 0.8s ease;
-        }
+        .star-1 { top: 20%; left: 20%; width: 25px; }
+        .star-2 { top: 45%; left: 45%; width: 15px; transition: all 1s cubic-bezier(0, 0.4, 0, 1.01); }
+        .star-3 { top: 40%; left: 40%; width: 5px;  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01); }
+        .star-4 { top: 20%; left: 40%; width: 8px;  transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01); }
+        .star-5 { top: 25%; left: 45%; width: 15px; transition: all 0.6s cubic-bezier(0, 0.4, 0, 1.01); }
+        .star-6 { top: 5%;  left: 50%; width: 5px;  transition: all 0.8s ease; }
 
         button:hover {
             background: transparent;
             color: #fec195;
             box-shadow: 0 0 25px #fec1958c;
         }
-
-            button:hover .star-1 {
-                position: absolute;
-                top: -80%;
-                left: -30%;
-                width: 25px;
-                height: auto;
-                filter: drop-shadow(0 0 10px #fffdef);
-                z-index: 2;
-            }
-
-            button:hover .star-2 {
-                position: absolute;
-                top: -25%;
-                left: 10%;
-                width: 15px;
-                height: auto;
-                filter: drop-shadow(0 0 10px #fffdef);
-                z-index: 2;
-            }
-
-            button:hover .star-3 {
-                position: absolute;
-                top: 55%;
-                left: 25%;
-                width: 5px;
-                height: auto;
-                filter: drop-shadow(0 0 10px #fffdef);
-                z-index: 2;
-            }
-
-            button:hover .star-4 {
-                position: absolute;
-                top: 30%;
-                left: 80%;
-                width: 8px;
-                height: auto;
-                filter: drop-shadow(0 0 10px #fffdef);
-                z-index: 2;
-            }
-
-            button:hover .star-5 {
-                position: absolute;
-                top: 25%;
-                left: 115%;
-                width: 15px;
-                height: auto;
-                filter: drop-shadow(0 0 10px #fffdef);
-                z-index: 2;
-            }
-
-            button:hover .star-6 {
-                position: absolute;
-                top: 5%;
-                left: 60%;
-                width: 5px;
-                height: auto;
-                filter: drop-shadow(0 0 10px #fffdef);
-                z-index: 2;
-            }
+        button:hover .star-1 {
+            top: -80%;
+            left: -30%;
+            filter: drop-shadow(0 0 10px #fffdef);
+            z-index: 2;
+        }
+        button:hover .star-2 {
+            top: -25%;
+            left: 10%;
+            filter: drop-shadow(0 0 10px #fffdef);
+            z-index: 2;
+        }
+        button:hover .star-3 {
+            top: 55%;
+            left: 25%;
+            filter: drop-shadow(0 0 10px #fffdef);
+            z-index: 2;
+        }
+        button:hover .star-4 {
+            top: 30%;
+            left: 80%;
+            filter: drop-shadow(0 0 10px #fffdef);
+            z-index: 2;
+        }
+        button:hover .star-5 {
+            top: 25%;
+            left: 115%;
+            filter: drop-shadow(0 0 10px #fffdef);
+            z-index: 2;
+        }
+        button:hover .star-6 {
+            top: 5%;
+            left: 60%;
+            filter: drop-shadow(0 0 10px #fffdef);
+            z-index: 2;
+        }
 
         .fil0 {
             fill: #fffdef;
         }
 
         .navbar .container .upper-side .phone-email2 {
-            margin-right: 10px;
-            margin-top: 5px;
-            text-align: right;
-            color: #fff;
-        }
+    margin-left: 20px; /* Add this to push the button container to the right */
+    margin-right: 10px;
+    margin-top: 5px;
+    text-align: right;
+    color: #fff;
+    display: flex;             /* If you haven't already removed inline styles, */
+    align-items: center;       /* keep these to maintain horizontal alignment. */
+    gap: 10px;                 /* This controls spacing between the buttons themselves */
+}
+
     </style>
 
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id ="form1" runat="server">
+    <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-    <div class="preloader">
-        <div class="layer"></div>
-        <!-- end layer -->
-        <div class="inner">
-            <figure>
-                <img src="images/logo1.png" alt="Image">
-            </figure>
-            <p><span class="text-rotater" data-text="QuickFix | Elements | Loading">Loading</span></p>
-        </div>
-        <!-- end inner -->
-    </div>
-    <!-- end prelaoder -->
-    <div class="transition-overlay">
-        <div class="layer"></div>
-    </div>
-    <!-- end transition-overlay -->
-    <div class="side-navigation">
-        <div class="menu">
-            <ul>
-                <li><a href="RegistrationPage.aspx">START</a></li>
-                <li><a href="#">QuickFix</a>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Mission & Vision</a></li>
-                        <li><a href="#">Our Team</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Services</a>
-                    <ul>
-                        <li><a href="ConstructionServicesPage.aspx">Construction Services</a></li>
-                        <li><a href="MaintenanceServicesPage.aspx">Maintenance Services</a></li>
-                        <li><a href="HouseholdServicesPage.aspx">Household Services</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Feedbacks</a>
-                    <ul>
-                        <li><a href="SupplierReviewsPage.aspx">Suppliers Reviews</a></li>
-                        <li><a href="QuickFixReviewsPage.aspx">Our Experience</a></li>
-                    </ul>
-                </li>
-                <li><a href="FacilitiesPage.aspx">Facilities</a></li>
-                <li><a href="NewsPage.aspx">News</a></li>
-                <li><a href="ContactPage.aspx">Contact</a></li>
-            </ul>
-        </div>
-        <!-- end menu -->
-        <div class="side-content">
-            <figure>
-                <img src="images/logo1.png" alt="Image">
-            </figure>
-            <p>By aiming to take the life quality to an upper level with the whole realized Projects, QuickFix continues to be the address of luxury.</p>
-            <ul class="gallery">
-                <li><a href="images/3.jpg" data-fancybox>
-                    <img src="images/3.jpg" alt="Image"></a></li>
-                <li><a href="images/4.jpg" data-fancybox>
-                    <img src="images/4.jpg" alt="Image"></a></li>
-                <li><a href="images/5.jpg" data-fancybox>
-                    <img src="images/5.jpg" alt="Image"></a></li>
-            </ul>
-            <address>
-                Mauritius | Bagatelle Business Park
-            </address>
-            <h6>+230 58300823</h6>
-            <p><a href="#">Support@QuickFix.mu</a></p>
-            <ul class="social-media">
-                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-            </ul>
-            <small>© 2024 QuickFix | Bringing Solutions to your life</small>
-        </div>
-        <!-- end side-content -->
-    </div>
-    <!-- end side-navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="upper-side">
 
-                <div class="logo">
-                    <a href="HomePage.aspx">
-                        <img src="images/logo1.png" alt="Image"></a>
-                </div>
-                <!-- end logo -->
-                <div class="phone-email">
-                    <img src="images/icon-phone.png" alt="Image">
-                    <h4>+(230)-58300823</h4>
-                    <small><a href="#">Support@QuickFix.mu</a></small>
-                </div>
-                <div class="phone-email2">
-                </div>
-                <!-- Log In -->
-
-<%--                <asp:Button ID="btnLogin" runat="server" Text="Log In" PostBackUrl="~/LogInPage.aspx" CssClass="button" />--%>
-
-
-<button ID="btnLogin" runat="server" class="button" onclick="__doPostBack('btnLogin', '');"> log in
-  <div class="star-1">
-      <svg
-          xmlns="http://www.w3.org/2000/svg"
-          xml:space="preserve"
-          version="1.1"
-          style="shape-rendering: geometricprecision; text-rendering: geometricprecision; image-rendering: optimizequality; fill-rule: evenodd; clip-rule: evenodd"
-          viewbox="0 0 784.11 815.53"
-          xmlns:xlink="http://www.w3.org/1999/xlink">
-          <defs></defs>
-          <g id="layer_x0020_1">
-              <metadata id="corelcorpid_0corel-layer"></metadata>
-              <path
-                  class="fil0"
-                  d="m392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
-              </path>
-          </g>
-      </svg>
-  </div>
-                    <div class="star-2">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            xml:space="preserve"
-                            version="1.1"
-                            style="shape-rendering: geometricprecision; text-rendering: geometricprecision; image-rendering: optimizequality; fill-rule: evenodd; clip-rule: evenodd"
-                            viewbox="0 0 784.11 815.53"
-                            xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <defs></defs>
-                            <g id="layer_x0020_1">
-                                <metadata id="corelcorpid_0corel-layer"></metadata>
-                                <path
-                                    class="fil0"
-                                    d="m392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
-                                </path>
-                            </g>
-                        </svg>
-                    </div>
-                    <div class="star-3">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            xml:space="preserve"
-                            version="1.1"
-                            style="shape-rendering: geometricprecision; text-rendering: geometricprecision; image-rendering: optimizequality; fill-rule: evenodd; clip-rule: evenodd"
-                            viewbox="0 0 784.11 815.53"
-                            xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <defs></defs>
-                            <g id="layer_x0020_1">
-                                <metadata id="corelcorpid_0corel-layer"></metadata>
-                                <path
-                                    class="fil0"
-                                    d="m392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
-                                </path>
-                            </g>
-                        </svg>
-                    </div>
-                    <div class="star-4">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            xml:space="preserve"
-                            version="1.1"
-                            style="shape-rendering: geometricprecision; text-rendering: geometricprecision; image-rendering: optimizequality; fill-rule: evenodd; clip-rule: evenodd"
-                            viewbox="0 0 784.11 815.53"
-                            xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <defs></defs>
-                            <g id="layer_x0020_1">
-                                <metadata id="corelcorpid_0corel-layer"></metadata>
-                                <path
-                                    class="fil0"
-                                    d="m392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
-                                </path>
-                            </g>
-                        </svg>
-                    </div>
-                    <div class="star-5">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            xml:space="preserve"
-                            version="1.1"
-                            style="shape-rendering: geometricprecision; text-rendering: geometricprecision; image-rendering: optimizequality; fill-rule: evenodd; clip-rule: evenodd"
-                            viewbox="0 0 784.11 815.53"
-                            xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <defs></defs>
-                            <g id="layer_x0020_1">
-                                <metadata id="corelcorpid_0corel-layer"></metadata>
-                                <path
-                                    class="fil0"
-                                    d="m392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
-                                </path>
-                            </g>
-                        </svg>
-                    </div>
-                    <div class="star-6">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            xml:space="preserve"
-                            version="1.1"
-                            style="shape-rendering: geometricprecision; text-rendering: geometricprecision; image-rendering: optimizequality; fill-rule: evenodd; clip-rule: evenodd"
-                            viewbox="0 0 784.11 815.53"
-                            xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <defs></defs>
-                            <g id="layer_x0020_1">
-                                <metadata id="corelcorpid_0corel-layer"></metadata>
-                                <path
-                                    class="fil0"
-                                    d="m392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
-                                </path>
-                            </g>
-                        </svg>
-                    </div>
-                </button>
-
-                <!-- end Log In -->
-                <div class="phone-email2">
-                </div>
-                <div class="hamburger"><span></span><span></span><span></span><span></span></div>
-                <!-- end hamburger -->
+        <div class="preloader">
+            <div class="layer"></div>
+            <div class="inner">
+                <figure>
+                    <img src="images/logo1.png" alt="Image">
+                </figure>
+                <p><span class="text-rotater" data-text="QuickFix | Elements | Loading">Loading</span></p>
             </div>
-            <!-- end upper-side -->
+        </div>
+        <!-- end prelaoder -->
+
+        <div class="transition-overlay">
+            <div class="layer"></div>
+        </div>
+        <!-- end transition-overlay -->
+
+        <div class="side-navigation">
             <div class="menu">
                 <ul>
-                    <li><a href="RegistrationPage.aspx">Start</a></li>
+                    <li><a href="RegistrationPage.aspx">START</a></li>
                     <li><a href="#">QuickFix</a>
                         <ul>
                             <li><a href="#">About Us</a></li>
@@ -451,126 +186,385 @@
                 </ul>
             </div>
             <!-- end menu -->
+            <div class="side-content">
+                <figure>
+                    <img src="images/logo1.png" alt="Image">
+                </figure>
+                <p>By aiming to take the life quality to an upper level with the whole realized Projects, QuickFix continues to be the address of luxury.</p>
+                <ul class="gallery">
+                    <li>
+                        <a href="images/3.jpg" data-fancybox>
+                            <img src="images/3.jpg" alt="Image">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="images/4.jpg" data-fancybox>
+                            <img src="images/4.jpg" alt="Image">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="images/5.jpg" data-fancybox>
+                            <img src="images/5.jpg" alt="Image">
+                        </a>
+                    </li>
+                </ul>
+                <address>
+                    Mauritius | Bagatelle Business Park
+                </address>
+                <h6>+230 58300823</h6>
+                <p><a href="#">Support@QuickFix.mu</a></p>
+                <ul class="social-media">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+                <small>© 2024 QuickFix | Bringing Solutions to your life</small>
+            </div>
+            <!-- end side-content -->
         </div>
-        <!-- end container -->
-    </nav>
-    <!-- end navbar -->
-    <asp:ContentPlaceHolder ID="main" runat="server"></asp:ContentPlaceHolder>
+        <!-- end side-navigation -->
 
-    <section class="footer-bar">
-        <div class="container">
-            <div class="inner wow fadeIn">
+        <nav class="navbar">
+            <div class="container">
+                <div class="upper-side">
+
+                    <div class="logo">
+                        <a href="HomePage.aspx">
+                            <img src="images/logo1.png" alt="Image">
+                        </a>
+                    </div>
+                    <!-- end logo -->
+
+                    <div class="phone-email">
+                        <img src="images/icon-phone.png" alt="Image">
+                        <h4>+(230)-58300823</h4>
+                        <small><a href="#">Support@QuickFix.mu</a></small>
+                    </div>
+
+                    <!-- 
+                      Place the PROFILE and LOGIN buttons side by side.
+                      You can style them with a flex container (inline style or custom CSS).
+                    -->
+                    <div class="phone-email2" style="display: flex; align-items: center; gap: 10px;">
+
+                        <!-- Placeholder for Profile Button (initially hidden; controlled via code-behind) -->
+                        <asp:PlaceHolder ID="phProfileButton" runat="server" Visible="false">
+                            <button 
+                                ID="btnProfile" 
+                                runat="server" 
+                                class="button" 
+                                onclick="__doPostBack('btnProfile','');">
+                                Profile
+                                <div class="star-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
+                                         style="shape-rendering: geometricprecision; text-rendering: geometricprecision; 
+                                         image-rendering: optimizequality; fill-rule: evenodd; clip-rule: evenodd"
+                                         viewBox="0 0 784.11 815.53">
+                                        <g id="layer_x0020_1">
+                                            <path class="fil0" d="
+                                                m392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 
+                                                207.96,29.37 371.12,197.68 392.05,407.74 
+                                                20.93,-210.06 184.09,-378.37 392.05,-407.74 
+                                                -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                                            </path>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="star-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
+                                        <g id="layer_x0020_1">
+                                            <path class="fil0" d="
+                                                m392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 
+                                                207.96,29.37 371.12,197.68 392.05,407.74 
+                                                20.93,-210.06 184.09,-378.37 392.05,-407.74 
+                                                -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                                            </path>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="star-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
+                                        <g id="layer_x0020_1">
+                                            <path class="fil0" d="
+                                                m392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 
+                                                207.96,29.37 371.12,197.68 392.05,407.74 
+                                                20.93,-210.06 184.09,-378.37 392.05,-407.74 
+                                                -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                                            </path>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="star-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
+                                        <g id="layer_x0020_1">
+                                            <path class="fil0" d="
+                                                m392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 
+                                                207.96,29.37 371.12,197.68 392.05,407.74 
+                                                20.93,-210.06 184.09,-378.37 392.05,-407.74 
+                                                -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                                            </path>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="star-5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
+                                        <g id="layer_x0020_1">
+                                            <path class="fil0" d="
+                                                m392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 
+                                                207.96,29.37 371.12,197.68 392.05,407.74 
+                                                20.93,-210.06 184.09,-378.37 392.05,-407.74 
+                                                -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                                            </path>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="star-6">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
+                                        <g id="layer_x0020_1">
+                                            <path class="fil0" d="
+                                                m392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 
+                                                207.96,29.37 371.12,197.68 392.05,407.74 
+                                                20.93,-210.06 184.09,-378.37 392.05,-407.74 
+                                                -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                                            </path>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </button>
+                        </asp:PlaceHolder>
+
+                        <!-- LOGIN BUTTON -->
+                        <button 
+                            ID="btnLogin" 
+                            runat="server" 
+                            class="button" 
+                            onclick="__doPostBack('btnLogin','');">
+                            Log In
+                            <div class="star-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
+                                    <g id="layer_x0020_1">
+                                        <path class="fil0" d="
+                                            m392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78
+                                            207.96,29.37 371.12,197.68 392.05,407.74
+                                            20.93,-210.06 184.09,-378.37 392.05,-407.74
+                                            -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                                        </path>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="star-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
+                                    <g id="layer_x0020_1">
+                                        <path class="fil0" d="
+                                            m392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78
+                                            207.96,29.37 371.12,197.68 392.05,407.74
+                                            20.93,-210.06 184.09,-378.37 392.05,-407.74
+                                            -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                                        </path>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="star-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
+                                    <g id="layer_x0020_1">
+                                        <path class="fil0" d="
+                                            m392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78
+                                            207.96,29.37 371.12,197.68 392.05,407.74
+                                            20.93,-210.06 184.09,-378.37 392.05,-407.74
+                                            -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                                        </path>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="star-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
+                                    <g id="layer_x0020_1">
+                                        <path class="fil0" d="
+                                            m392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78
+                                            207.96,29.37 371.12,197.68 392.05,407.74
+                                            20.93,-210.06 184.09,-378.37 392.05,-407.74
+                                            -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                                        </path>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="star-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
+                                    <g id="layer_x0020_1">
+                                        <path class="fil0" d="
+                                            m392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78
+                                            207.96,29.37 371.12,197.68 392.05,407.74
+                                            20.93,-210.06 184.09,-378.37 392.05,-407.74
+                                            -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                                        </path>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="star-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
+                                    <g id="layer_x0020_1">
+                                        <path class="fil0" d="
+                                            m392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78
+                                            207.96,29.37 371.12,197.68 392.05,407.74
+                                            20.93,-210.06 184.09,-378.37 392.05,-407.74
+                                            -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                                        </path>
+                                    </g>
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                    <!-- end buttons container -->
+
+                    <div class="phone-email2">
+                    </div>
+                    <div class="hamburger"><span></span><span></span><span></span><span></span></div>
+                </div>
+                <!-- end upper-side -->
+
+                <div class="menu">
+                    <ul>
+                        <li><a href="RegistrationPage.aspx">Start</a></li>
+                        <li><a href="#">QuickFix</a>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Mission & Vision</a></li>
+                                <li><a href="#">Our Team</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Services</a>
+                            <ul>
+                                <li><a href="ConstructionServicesPage.aspx">Construction Services</a></li>
+                                <li><a href="MaintenanceServicesPage.aspx">Maintenance Services</a></li>
+                                <li><a href="HouseholdServicesPage.aspx">Household Services</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Feedbacks</a>
+                            <ul>
+                                <li><a href="SupplierReviewsPage.aspx">Suppliers Reviews</a></li>
+                                <li><a href="QuickFixReviewsPage.aspx">Our Experience</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="FacilitiesPage.aspx">Facilities</a></li>
+                        <li><a href="NewsPage.aspx">News</a></li>
+                        <li><a href="ContactPage.aspx">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- end menu -->
+            </div>
+            <!-- end container -->
+        </nav>
+        <!-- end navbar -->
+
+        <asp:ContentPlaceHolder ID="main" runat="server"></asp:ContentPlaceHolder>
+
+        <section class="footer-bar">
+            <div class="container">
+                <div class="inner wow fadeIn">
+                    <div class="row">
+                        <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.05s">
+                            <figure>
+                                <img src="images/footer-icon01.png" alt="Image">
+                            </figure>
+                            <h3>Address Infos</h3>
+                            <p>
+                                Mauritius | Bagatelle Business Park
+                            </p>
+                        </div>
+                        <!-- end col-4 -->
+                        <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.10s">
+                            <figure>
+                                <img src="images/footer-icon02.png" alt="Image">
+                            </figure>
+                            <h3>Working Hours</h3>
+                            <p>
+                                Monday to Friday <strong>09:00</strong> to <strong>18:30</strong>
+                                <br>
+                                Saturday we work until <strong>15:30</strong>
+                            </p>
+                        </div>
+                        <!-- end col-4 -->
+                        <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.15s">
+                            <figure>
+                                <img src="images/footer-icon03.png" alt="Image">
+                            </figure>
+                            <h3>Sales Office</h3>
+                            <p>
+                                Mont Choisy Business Junction<br>
+                                Grand Baie - Mauritius
+                            </p>
+                        </div>
+                        <!-- end col-4 -->
+                    </div>
+                    <!-- end row -->
+                </div>
+                <!-- end inner -->
+            </div>
+            <!-- end container -->
+        </section>
+        <!-- end footer-bar -->
+
+        <footer class="footer">
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.05s">
-                        <figure>
-                            <img src="images/footer-icon01.png" alt="Image">
-                        </figure>
-                        <h3>Address Infos</h3>
-                        <p>
-                            Mauritius | Bagatelle Business Park
-                        </p>
+                        <img src="images/logo01.png" alt="Image" class="logo">
+                        <p>By aiming to take the life quality to an upper level with the whole realized Projects, Homepark continues to be the address of luxury.</p>
                     </div>
                     <!-- end col-4 -->
-                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.10s">
-                        <figure>
-                            <img src="images/footer-icon02.png" alt="Image">
-                        </figure>
-                        <h3>Working Hours</h3>
-                        <p>
-                            Monday to Friday <strong>09:00</strong> to <strong>18:30</strong>
-                            <br>
-                            Saturday we work until <strong>15:30</strong>
-                        </p>
+                    <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.10s">
+                        <ul class="footer-menu">
+                            <li><a href="#">QuickFix</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Facilities</a></li>
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <!-- end col-2 -->
+                    <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.15s">
+                        <ul class="footer-menu">
+                            <li><a href="#">Suites</a></li>
+                            <li><a href="#">Apartments</a></li>
+                            <li><a href="#">Villas & Houses</a></li>
+                            <li><a href="#">Butique Room</a></li>
+                            <li><a href="#">Buildings</a></li>
+                        </ul>
+                    </div>
+                    <!-- end col-2 -->
+                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.20s">
+                        <div class="contact-box">
+                            <h5>CALL CENTER</h5>
+                            <h3>+230 58300823</h3>
+                            <p><a href="#">Support@QuickFix.mu</a></p>
+                            <ul>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                        <!-- end contact-box -->
                     </div>
                     <!-- end col-4 -->
-                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.15s">
-                        <figure>
-                            <img src="images/footer-icon03.png" alt="Image">
-                        </figure>
-                        <h3>Sales Office</h3>
-                        <p>
-                             Mont Choisy Business Junction<br>
-                            Grand Baie - Mauritius
-                        </p>
+                    <div class="col-12">
+                        <span class="copyright">
+                            © 2024 QuickFix | Bringing Solutions to your life
+                        </span>
+                        <span class="creation">
+                            Site created by <a href="#">iTech</a>
+                        </span>
                     </div>
-                    <!-- end col-4 -->
+                    <!-- end col-12 -->
                 </div>
                 <!-- end row -->
             </div>
-            <!-- end inner -->
-        </div>
-        <!-- end container -->
-    </section>
-    <!-- end footer-bar -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.05s">
-                    <img src="images/logo01.png" alt="Image" class="logo">
-                    <p>By aiming to take the life quality to an upper level with the whole realized Projects, Homepark continues to be the address of luxury.</p>
-                 <%--   <div class="select-box dropdown show">
-                        <a class="dropdown-toggle" href="#" role="button" id="language-select" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>
-                            <img src="images/flag-tr.svg" alt="Image">
-                            Turkish</span> </a>
-                        <ul class="dropdown-menu" aria-labelledby="language-select">
-                            <li><a class="dropdown-item" href="#">
-                                <img src="images/flag-en.svg" alt="Image">
-                                English</a></li>
-                            <li><a class="dropdown-item" href="#">
-                                <img src="images/flag-ua.svg" alt="Image">
-                                Russian</a></li>
-                            <li><a class="dropdown-item" href="#">
-                                <img src="images/flag-br.svg" alt="Image">
-                                Portugues</a></li>
-                        </ul>
-                    </div>--%>
-                    <!-- end select-box -->
-                </div>
-                <!-- end col-4 -->
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.10s">
-                    <ul class="footer-menu">
-                        <li><a href="#">QuickFix</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Facilities</a></li>
-                        <li><a href="#">News</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <!-- end col-2 -->
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.15s">
-                    <ul class="footer-menu">
-                        <li><a href="#">Suites</a></li>
-                        <li><a href="#">Apartments</a></li>
-                        <li><a href="#">Villas & Houses</a></li>
-                        <li><a href="#">Butique Room</a></li>
-                        <li><a href="#">Buildings</a></li>
-                    </ul>
-                </div>
-                <!-- end col-2 -->
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.20s">
-                    <div class="contact-box">
-                        <h5>CALL CENTER</h5>
-                        <h3>+230 58300823</h3>
-                        <p><a href="#">Support@QuickFix.mu</a></p>
-                        <ul>
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                        </ul>
-                    </div>
-                    <!-- end contact-box -->
-                </div>
-                <!-- end col-4 -->
-                <div class="col-12"><span class="copyright">© 2024 QuickFix | Bringing Solutions to your life </span> <span class="creation">Site created by <a href="#">iTech</a></span> </div>
-                <!-- end col-12 -->
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
-    </footer>
-        </form>
+            <!-- end container -->
+        </footer>
+    </form>
     <!-- end footer -->
 
     <!-- JS FILES -->

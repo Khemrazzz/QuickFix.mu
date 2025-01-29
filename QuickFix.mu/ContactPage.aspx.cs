@@ -38,7 +38,7 @@ namespace QuickFix.mu
 
             using (SqlConnection conn = new SqlConnection(_conString))
             {
-                string ContactPage = @"INSERT INTO [dbo].[ContactPage] (First_Name, Last_Name, Email, Subject, Message) 
+                string ContactPage = @"INSERT INTO [dbo].[Contact] (First_Name, Last_Name, Email, Subject, Message) 
                       VALUES (@First_Name, @Last_Name, @Email, @Subject, @Message)";
 
                 using (SqlCommand cmd = new SqlCommand(ContactPage, conn))
