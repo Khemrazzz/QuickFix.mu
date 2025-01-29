@@ -12,7 +12,7 @@
                         <h2>Living Spaces in Pecherska - Kiev</h2>
                         <a href="#">GET A CONSULTATION <i class="fas fa-caret-right"></i></a>
                         <figure>
-                            <img src="images/services-icon01.png" alt="Image"></figure>
+                            <img src="images/002-maintenance.png" alt="Image"></figure>
                     </div>
                     <!-- end container -->
                 </div>
@@ -23,7 +23,7 @@
                         <h2>Provide a decent level of comfort </h2>
                         <a href="#">GET A CONSULTATION <i class="fas fa-caret-right"></i></a>
                         <figure>
-                            <img src="images/services-icon08.png" alt="Image"></figure>
+                            <img src="images/021-hammer.png" alt="Image"></figure>
                     </div>
                     <!-- end container -->
                 </div>
@@ -34,7 +34,7 @@
                         <h2>We build your dream house</h2>
                         <a href="#">GET A CONSULTATION <i class="fas fa-caret-right"></i></a>
                         <figure>
-                            <img src="images/services-icon07.png" alt="Image"></figure>
+                            <img src="images/011-water faucet.png" alt="Image"></figure>
                     </div>
                     <!-- end container -->
                 </div>
@@ -106,42 +106,42 @@
             <div class="row">
                 <div class="col-lg-2 col-md-4 col-sm-6 col-6 wow fadeInUp" data-wow-delay="0s">
                     <figure>
-                        <img src="images/logo01.jpg" alt="Image">
+                        <img src="images/m (1).jpg" alt="Image">
                         <h6>TABLE</h6>
                     </figure>
                 </div>
                 <!-- end col-2 -->
                 <div class="col-lg-2 col-md-4 col-sm-6 col-6 wow fadeInUp" data-wow-delay="0.05s">
                     <figure>
-                        <img src="images/logo02.jpg" alt="Image">
+                        <img src="images/m (2).jpg" alt="Image">
                         <h6>PLANE</h6>
                     </figure>
                 </div>
                 <!-- end col-2 -->
                 <div class="col-lg-2 col-md-4 col-sm-6 col-6 wow fadeInUp" data-wow-delay="0.10s">
                     <figure>
-                        <img src="images/logo03.jpg" alt="Image">
+                        <img src="images/m (3).jpg" alt="Image">
                         <h6>CONNECT</h6>
                     </figure>
                 </div>
                 <!-- end col-2 -->
                 <div class="col-lg-2 col-md-4 col-sm-6 col-6 wow fadeInUp" data-wow-delay="0.15s">
                     <figure>
-                        <img src="images/logo04.jpg" alt="Image">
+                        <img src="images/m (4).jpg" alt="Image">
                         <h6>GLASSES</h6>
                     </figure>
                 </div>
                 <!-- end col-2 -->
                 <div class="col-lg-2 col-md-4 col-sm-6 col-6 wow fadeInUp" data-wow-delay="0.20s">
                     <figure>
-                        <img src="images/logo05.jpg" alt="Image">
+                        <img src="images/m (5).jpg" alt="Image">
                         <h6>PIXEL</h6>
                     </figure>
                 </div>
                 <!-- end col-2 -->
                 <div class="col-lg-2 col-md-4 col-sm-6 col-6 wow fadeInUp" data-wow-delay="0.25s">
                     <figure>
-                        <img src="images/logo06.jpg" alt="Image">
+                        <img src="images/m (6).jpg" alt="Image">
                         <h6>ATTACH</h6>
                     </figure>
                 </div>
@@ -268,9 +268,9 @@
                         </p>
                         <ul>
                             <li>
-                                <img src="images/bank-logos01.jpg" alt="Image"></li>
+                                <img src="images/car1.jpg" alt="Image"></li>
                             <li>
-                                <img src="images/bank-logos02.jpg" alt="Image"></li>
+                                <img src="images/car2.jpg" alt="Image"></li>
                         </ul>
                         <a href="#">
                             <img src="images/icon-calculator.png" alt="Image">

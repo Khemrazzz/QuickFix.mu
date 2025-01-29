@@ -150,6 +150,9 @@
     <Content Include="ico\apple-touch-icon-57-precomposed.png" />
     <Content Include="ico\apple-touch-icon-72-precomposed.png" />
     <Content Include="ico\favicon.png" />
+    <Content Include="images\002-maintenance.png" />
+    <Content Include="images\011-water faucet.png" />
+    <Content Include="images\021-hammer.png" />
     <Content Include="images\10.jpg" />
     <Content Include="images\11.jpg" />
     <Content Include="images\12.JPG" />
@@ -168,6 +171,8 @@
     <Content Include="images\blog02.jpg" />
     <Content Include="images\blog03.jpg" />
     <Content Include="images\blog04.jpg" />
+    <Content Include="images\car1.jpg" />
+    <Content Include="images\car2.jpg" />
     <Content Include="images\certificate01.jpg" />
     <Content Include="images\certificate02.jpg" />
     <Content Include="images\certificate03.jpg" />
@@ -201,6 +206,8 @@
     <Content Include="images\icon-iso9001.png" />
     <Content Include="images\icon-m2.png" />
     <Content Include="images\icon-phone.png" />
+    <Content Include="images\login.jpg" />
+    <Content Include="images\login1.jpg" />
     <Content Include="images\logo-light.png" />
     <Content Include="images\logo01.jpg" />
     <Content Include="images\logo02.jpg" />
@@ -209,6 +216,12 @@
     <Content Include="images\logo05.jpg" />
     <Content Include="images\logo06.jpg" />
     <Content Include="images\logo1.png" />
+    <Content Include="images\m %281%29.jpg" />
+    <Content Include="images\m %282%29.jpg" />
+    <Content Include="images\m %283%29.jpg" />
+    <Content Include="images\m %284%29.jpg" />
+    <Content Include="images\m %285%29.jpg" />
+    <Content Include="images\m %286%29.jpg" />
     <Content Include="images\plan01.jpg" />
     <Content Include="images\plan02.jpg" />
     <Content Include="images\plan03.jpg" />

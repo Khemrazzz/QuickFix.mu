@@ -63,7 +63,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
-    <header class="page-header" data-background="images/slide01.jpg" data-stellar-background-ratio="1.15">
+    <header class="page-header" data-background="images/login1.jpg" data-stellar-background-ratio="1.15">
         <div class="container">
             <h1>Log In</h1>
             <p>Log In as a client or supplier</p>
