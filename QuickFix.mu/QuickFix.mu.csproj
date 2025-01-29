@@ -276,6 +276,7 @@
     <Content Include="images\banner1.jpg" />
     <Content Include="images\banner2.jpg" />
     <Content Include="images\banner3.jpg" />
+    <Content Include="OurExperiencesPage.aspx" />
     <Content Include="RegistrationPage.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -428,6 +429,7 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="SupplierDashboardPage.aspx" />
+    <Content Include="SupplierReviewsPage.aspx" />
     <Content Include="videos\video01.mp4" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -524,6 +526,13 @@
     <Compile Include="NewsPage.aspx.designer.cs">
       <DependentUpon>NewsPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="OurExperiencesPage.aspx.cs">
+      <DependentUpon>OurExperiencesPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OurExperiencesPage.aspx.designer.cs">
+      <DependentUpon>OurExperiencesPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuickFixMasterPage.Master.cs">
       <DependentUpon>QuickFixMasterPage.Master</DependentUpon>
@@ -566,6 +575,13 @@
     </Compile>
     <Compile Include="SupplierDashboardPage.aspx.designer.cs">
       <DependentUpon>SupplierDashboardPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierReviewsPage.aspx.cs">
+      <DependentUpon>SupplierReviewsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupplierReviewsPage.aspx.designer.cs">
+      <DependentUpon>SupplierReviewsPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
