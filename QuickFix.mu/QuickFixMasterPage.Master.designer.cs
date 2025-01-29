@@ -42,6 +42,24 @@ namespace QuickFix.mu
         protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
+        /// phProfileButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder phProfileButton;
+
+        /// <summary>
+        /// btnProfile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnProfile;
+
+        /// <summary>
         /// btnLogin control.
         /// </summary>
         /// <remarks>

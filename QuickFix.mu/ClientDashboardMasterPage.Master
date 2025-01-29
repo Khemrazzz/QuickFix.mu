@@ -26,9 +26,9 @@
         <h2>Welcome To <span class="danger"> Client Dashboard</span></h2>
     </div>
     <div class="navbar">
-        <a href="index.html" class="active">
+        <a href="HomePage.aspx" class="active">
             <span class="material-icons-sharp">home</span>
-            <h3>Dashboard</h3>
+            <h3>home</h3>
         </a>
         <a href="services.html">
             <span class="material-icons-sharp">build</span>
