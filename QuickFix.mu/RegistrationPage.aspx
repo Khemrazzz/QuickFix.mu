@@ -106,6 +106,15 @@
                 padding: 1rem;
             }
         }
+
+        legend {
+    color: white;
+}
+
+
+        h3{
+    color: white;
+}
     </style>
 </asp:Content>
 
@@ -1007,17 +1016,17 @@
                     isValid = false;
                 }
 
-                if (clientDistrict === -1) {
+                if (clientDistrict == -1) {
                     lblClientDistrict.textContent = "District is required.";
                     isValid = false;
                 }
 
-                if (clientVillageTown === -1) {
+                if (clientVillageTown == -1) {
                     lblClientVillageTown.textContent = "Village/Town is required.";
                     isValid = false;
                 }
 
-                if (!clientStreetAddress) {
+                if (clientStreetAddress == -1) {
                     lblClientStreetAddress.textContent = "Street Address is required.";
                     isValid = false;
                 }
@@ -1125,12 +1134,12 @@
                     isValid = false;
                 }
 
-                if (!supplierDistrict) {
+                if (supplierDistrict == -1) {
                     lblSupplierDistrict.textContent = "District is required.";
                     isValid = false;
                 }
 
-                if (!supplierVillageTown) {
+                if (supplierVillageTown == -1) {
                     lblSupplierVillageTown.textContent = "Village/Town is required.";
                     isValid = false;
                 }

@@ -40,9 +40,14 @@
              <h3>Manage Service</h3>
          </a>
 
-         <a href="earnings.html">
+         <a href="SupplierModifyService.aspx">
              <span class="material-icons-sharp">attach_money</span>
-             <h3>Earnings</h3>
+             <h3>Modify Service</h3>
+         </a>
+         
+         <a href="SupplierModifyService.aspx">
+             <span class="material-icons-sharp">attach_money</span>
+             <h3>Ratings</h3>
          </a>
          <asp:LinkButton ID="LogoutLinkButton" runat="server" OnClick="LogoutLinkButton_Click">
        <span class="material-icons-sharp">logout</span>
