@@ -444,9 +444,9 @@
     <Content Include="SupplierAddService.aspx" />
     <Content Include="SupplierDashboardPage.aspx" />
     <Content Include="SupplierReview.aspx" />
-    <Content Include="SupplierReviewsPage.aspx" />
     <Content Include="SupplierManageBookings.aspx" />
     <Content Include="SupplierModifyService.aspx" />
+    <Content Include="SupplierReviewsPage.aspx" />
     <Content Include="videos\video01.mp4" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -621,6 +621,13 @@
     <Compile Include="SupplierDashboardPage.aspx.designer.cs">
       <DependentUpon>SupplierDashboardPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SupplierManageBookings.aspx.cs">
+      <DependentUpon>SupplierManageBookings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupplierManageBookings.aspx.designer.cs">
+      <DependentUpon>SupplierManageBookings.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SupplierReview.aspx.cs">
       <DependentUpon>SupplierReview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -628,19 +635,19 @@
     <Compile Include="SupplierReview.aspx.designer.cs">
       <DependentUpon>SupplierReview.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SupplierReviewsPage.aspx.cs">
-      <DependentUpon>SupplierReviewsPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SupplierReviewsPage.aspx.designer.cs">
-      <DependentUpon>SupplierReviewsPage.aspx</DependentUpon>
-    </Compile>
     <Compile Include="SupplierModifyService.aspx.cs">
       <DependentUpon>SupplierModifyService.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SupplierModifyService.aspx.designer.cs">
       <DependentUpon>SupplierModifyService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierReviewsPage.aspx.cs">
+      <DependentUpon>SupplierReviewsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupplierReviewsPage.aspx.designer.cs">
+      <DependentUpon>SupplierReviewsPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
