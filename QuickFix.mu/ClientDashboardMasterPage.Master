@@ -42,9 +42,9 @@
             <span class="material-icons-sharp">receipt</span>
             <h3>review</h3>
         </a>
-        <a href="support.html">
+        <a href="ClientReview.aspx">
             <span class="material-icons-sharp">support_agent</span>
-            <h3>Support</h3>
+            <h3>Review</h3>
         </a>
       <asp:LinkButton ID="LogoutLinkButton" runat="server" OnClick="LogoutLinkButton_Click">
             <span class="material-icons-sharp">logout</span>
