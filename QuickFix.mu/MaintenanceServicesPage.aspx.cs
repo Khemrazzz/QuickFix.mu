@@ -91,6 +91,7 @@ namespace QuickFix.mu
         LEFT JOIN Village_Town AS VT ON SSD.VillageTown = VT.VT_Id
         INNER JOIN Supplier AS S ON SSD.Supplier_Id = S.Supplier_Id
         WHERE 
+            SSD.IsDeleted = 0 AND
             S.Services = 'Maintenance' 
             AND (@SearchQuery = '' OR SSD.BusinessName LIKE '%' + @SearchQuery + '%') 
             AND (@Category = '' OR SSD.BusinessCategory = @Category) 
