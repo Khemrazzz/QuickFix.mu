@@ -609,6 +609,13 @@
     <Compile Include="SupplierDashboardPage.aspx.designer.cs">
       <DependentUpon>SupplierDashboardPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SupplierManageBookings.aspx.cs">
+      <DependentUpon>SupplierManageBookings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupplierManageBookings.aspx.designer.cs">
+      <DependentUpon>SupplierManageBookings.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SupplierReviewsPage.aspx.cs">
       <DependentUpon>SupplierReviewsPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
