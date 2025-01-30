@@ -38,9 +38,9 @@
             <span class="material-icons-sharp">calendar_today</span>
             <h3>Bookings</h3>
         </a>
-        <a href="invoices.html">
+        <a href="ClientReview.aspx">
             <span class="material-icons-sharp">receipt</span>
-            <h3>Invoices</h3>
+            <h3>review</h3>
         </a>
         <a href="support.html">
             <span class="material-icons-sharp">support_agent</span>

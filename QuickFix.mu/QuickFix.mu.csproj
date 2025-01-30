@@ -105,6 +105,7 @@
     </Content>
     <Content Include="BookService.aspx" />
     <Content Include="ClientDashboardPage.aspx" />
+    <Content Include="ClientReview.aspx" />
     <Content Include="ConstructionServicesPage.aspx" />
     <Content Include="ContactPage.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -286,6 +287,9 @@
     <Content Include="images\banner3.jpg" />
     <Content Include="OurExperiencesPage.aspx" />
     <Content Include="RegistrationPage.aspx" />
+    <Content Include="reviewImages\construction.jpg" />
+    <Content Include="reviewImages\household.jpg" />
+    <Content Include="reviewImages\maintenance.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -439,9 +443,10 @@
     <Content Include="Site.Master" />
     <Content Include="SupplierAddService.aspx" />
     <Content Include="SupplierDashboardPage.aspx" />
-    <Content Include="SupplierReviewsPage.aspx" />
+    <Content Include="SupplierReview.aspx" />
     <Content Include="SupplierManageBookings.aspx" />
     <Content Include="SupplierModifyService.aspx" />
+    <Content Include="SupplierReviewsPage.aspx" />
     <Content Include="videos\video01.mp4" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -471,6 +476,13 @@
     </Compile>
     <Compile Include="ClientDashboardPage.aspx.designer.cs">
       <DependentUpon>ClientDashboardPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientReview.aspx.cs">
+      <DependentUpon>ClientReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientReview.aspx.designer.cs">
+      <DependentUpon>ClientReview.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConstructionServicesPage.aspx.cs">
       <DependentUpon>ConstructionServicesPage.aspx</DependentUpon>
@@ -616,12 +628,12 @@
     <Compile Include="SupplierManageBookings.aspx.designer.cs">
       <DependentUpon>SupplierManageBookings.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SupplierReviewsPage.aspx.cs">
-      <DependentUpon>SupplierReviewsPage.aspx</DependentUpon>
+    <Compile Include="SupplierReview.aspx.cs">
+      <DependentUpon>SupplierReview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SupplierReviewsPage.aspx.designer.cs">
-      <DependentUpon>SupplierReviewsPage.aspx</DependentUpon>
+    <Compile Include="SupplierReview.aspx.designer.cs">
+      <DependentUpon>SupplierReview.aspx</DependentUpon>
     </Compile>
     <Compile Include="SupplierModifyService.aspx.cs">
       <DependentUpon>SupplierModifyService.aspx</DependentUpon>
@@ -629,6 +641,13 @@
     </Compile>
     <Compile Include="SupplierModifyService.aspx.designer.cs">
       <DependentUpon>SupplierModifyService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierReviewsPage.aspx.cs">
+      <DependentUpon>SupplierReviewsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupplierReviewsPage.aspx.designer.cs">
+      <DependentUpon>SupplierReviewsPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
