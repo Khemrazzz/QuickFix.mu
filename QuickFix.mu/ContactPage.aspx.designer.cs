@@ -15,6 +15,15 @@ namespace QuickFix.mu
     {
 
         /// <summary>
+        /// lblFirstNameMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFirstNameMsg;
+
+        /// <summary>
         /// txtfname control.
         /// </summary>
         /// <remarks>
@@ -33,13 +42,13 @@ namespace QuickFix.mu
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFirstName;
 
         /// <summary>
-        /// lblFirstNameMsg control.
+        /// lblLastNameMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFirstNameMsg;
+        protected global::System.Web.UI.WebControls.Label lblLastNameMsg;
 
         /// <summary>
         /// txtlname control.
@@ -60,13 +69,13 @@ namespace QuickFix.mu
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvLastName;
 
         /// <summary>
-        /// lblLastNameMsg control.
+        /// lblEmailMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLastNameMsg;
+        protected global::System.Web.UI.WebControls.Label lblEmailMsg;
 
         /// <summary>
         /// txtemail control.
@@ -96,13 +105,13 @@ namespace QuickFix.mu
         protected global::System.Web.UI.WebControls.RegularExpressionValidator revEmail;
 
         /// <summary>
-        /// lblEmailMsg control.
+        /// lblSubjectMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEmailMsg;
+        protected global::System.Web.UI.WebControls.Label lblSubjectMsg;
 
         /// <summary>
         /// txtsubject control.
@@ -123,13 +132,13 @@ namespace QuickFix.mu
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSubject;
 
         /// <summary>
-        /// lblSubjectMsg control.
+        /// lblMessageMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSubjectMsg;
+        protected global::System.Web.UI.WebControls.Label lblMessageMsg;
 
         /// <summary>
         /// txtmessage control.
@@ -148,15 +157,6 @@ namespace QuickFix.mu
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMessage;
-
-        /// <summary>
-        /// lblMessageMsg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessageMsg;
 
         /// <summary>
         /// btnSend control.

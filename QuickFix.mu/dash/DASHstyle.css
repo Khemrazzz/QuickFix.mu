@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-    --color-primary: #9f8054; /* Golden Brown */
-    --color-secondary: #9f8054; /* Background Color */
+    --color-primary: #bead95; /* Golden Brown */
+    --color-secondary: #bead95; /* Background Color */
     --color-dark: #26282b; /* Dark Gray */
     --color-light: #eee; /* Light Gray */
     --color-white: #fff; /* White */
@@ -70,7 +70,7 @@ header {
 
 header .logo h2 {
     font-weight: 700;
-    color: var(--color-primary);
+    color: #000000;
 }
 
 header .navbar {

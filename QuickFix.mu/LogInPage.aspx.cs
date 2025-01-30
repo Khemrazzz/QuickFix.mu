@@ -74,18 +74,36 @@ namespace QuickFix.mu
                                     Session["ClientUsername"] = null;
                                     Session["SupplierUsername"] = null;
 
-                                    // Store user session and redirect based on user type
+                                    // Store user session
                                     if (userType == "Client")
                                     {
                                         Session["ClientUsername"] = username;
                                         Session["UserType"] = "Client";
-                                        Response.Redirect("ClientDashboardPage.aspx");
                                     }
                                     else if (userType == "Supplier")
                                     {
                                         Session["SupplierUsername"] = username;
                                         Session["UserType"] = "Supplier";
-                                        Response.Redirect("SupplierDashboardPage.aspx");
+                                    }
+
+                                    // Redirect based on return URL or dashboard
+                                    if (Session["ReturnUrl"] != null)
+                                    {
+                                        string returnUrl = Session["ReturnUrl"].ToString();
+                                        Session["ReturnUrl"] = null; // Clear the return URL session
+                                        Response.Redirect(returnUrl);
+                                    }
+                                    else
+                                    {
+                                        // Default behavior if no return URL
+                                        if (userType == "Client")
+                                        {
+                                            Response.Redirect("ClientDashboardPage.aspx");
+                                        }
+                                        else if (userType == "Supplier")
+                                        {
+                                            Response.Redirect("SupplierDashboardPage.aspx");
+                                        }
                                     }
                                 }
                                 else

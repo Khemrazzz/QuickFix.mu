@@ -167,6 +167,7 @@
                             <span class="heading">Get in touch</span>
 
                             <!-- First Name -->
+                             <asp:Label ID="lblFirstNameMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Display="Dynamic" Text=""></asp:Label>
                             <asp:TextBox ID="txtfname" CssClass="input" Placeholder="First Name" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator
                                 ID="rfvFirstName"
@@ -175,9 +176,10 @@
                                 ErrorMessage="First Name is required."
                                 ForeColor="red"
                                 Display="Dynamic"></asp:RequiredFieldValidator>
-                            <asp:Label ID="lblFirstNameMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Display="Dynamic" Text=""></asp:Label>
+                           
 
                             <!-- Last Name -->
+                            <asp:Label ID="lblLastNameMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Text=""></asp:Label>
                             <asp:TextBox ID="txtlname" CssClass="input" Placeholder="Last Name" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator
                                 ID="rfvLastName"
@@ -186,9 +188,10 @@
                                 ErrorMessage="Last Name is required."
                                 ForeColor="red"
                                 Display="Dynamic"></asp:RequiredFieldValidator>
-                            <asp:Label ID="lblLastNameMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Text=""></asp:Label>
+                            
 
                             <!-- Email -->
+                            <asp:Label ID="lblEmailMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Text=""></asp:Label>
                             <asp:TextBox ID="txtemail" CssClass="input" Placeholder="Email" TextMode="Email" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator
                                 ID="rfvEmail"
@@ -205,9 +208,10 @@
                                 ValidationExpression="^\S+@\S+\.\S+$"
                                 ForeColor="red"
                                 Display="Dynamic"></asp:RegularExpressionValidator>
-                            <asp:Label ID="lblEmailMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Text=""></asp:Label>
+                            
 
                             <!-- Subject -->
+                            <asp:Label ID="lblSubjectMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Text=""></asp:Label>
                             <asp:TextBox ID="txtsubject" CssClass="input" Placeholder="Subject" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator
                                 ID="rfvSubject"
@@ -216,9 +220,10 @@
                                 ErrorMessage="Subject is required."
                                 ForeColor="red"
                                 Display="Dynamic"></asp:RequiredFieldValidator>
-                            <asp:Label ID="lblSubjectMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Text=""></asp:Label>
+                            
 
                             <!-- Message -->
+                            <asp:Label ID="lblMessageMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Text=""></asp:Label>
                             <asp:TextBox ID="txtmessage" CssClass="textarea" TextMode="MultiLine" Rows="4" Placeholder="Say Hello" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator
                                 ID="rfvMessage"
@@ -227,7 +232,7 @@
                                 ErrorMessage="Message is required."
                                 ForeColor="red"
                                 Display="Dynamic"></asp:RequiredFieldValidator>
-                            <asp:Label ID="lblMessageMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Text=""></asp:Label>
+                            
 
                             <!-- Submit Button -->
                             <div class="button-container">
