@@ -439,11 +439,8 @@
     <Content Include="Site.Master" />
     <Content Include="SupplierAddService.aspx" />
     <Content Include="SupplierDashboardPage.aspx" />
-<<<<<<< HEAD
     <Content Include="SupplierReviewsPage.aspx" />
-=======
     <Content Include="SupplierManageBookings.aspx" />
->>>>>>> fcf9b31516c4169709b909d3b1328a9bfb50d084
     <Content Include="videos\video01.mp4" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
