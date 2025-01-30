@@ -621,12 +621,21 @@
     <Compile Include="SupplierDashboardPage.aspx.designer.cs">
       <DependentUpon>SupplierDashboardPage.aspx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="SupplierReview.aspx.cs">
       <DependentUpon>SupplierReview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SupplierReview.aspx.designer.cs">
       <DependentUpon>SupplierReview.aspx</DependentUpon>
+=======
+    <Compile Include="SupplierManageBookings.aspx.cs">
+      <DependentUpon>SupplierManageBookings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupplierManageBookings.aspx.designer.cs">
+      <DependentUpon>SupplierManageBookings.aspx</DependentUpon>
+>>>>>>> 5351597c617c55b05f714c378c32f5b75a5484aa
     </Compile>
     <Compile Include="SupplierReviewsPage.aspx.cs">
       <DependentUpon>SupplierReviewsPage.aspx</DependentUpon>
