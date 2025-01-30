@@ -441,6 +441,7 @@
     <Content Include="SupplierDashboardPage.aspx" />
     <Content Include="SupplierReviewsPage.aspx" />
     <Content Include="SupplierManageBookings.aspx" />
+    <Content Include="SupplierModifyService.aspx" />
     <Content Include="videos\video01.mp4" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -614,6 +615,13 @@
     </Compile>
     <Compile Include="SupplierReviewsPage.aspx.designer.cs">
       <DependentUpon>SupplierReviewsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierModifyService.aspx.cs">
+      <DependentUpon>SupplierModifyService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupplierModifyService.aspx.designer.cs">
+      <DependentUpon>SupplierModifyService.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

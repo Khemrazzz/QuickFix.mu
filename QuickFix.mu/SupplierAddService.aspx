@@ -20,9 +20,6 @@
         .service-form {
             text-align: left;
         }
-/*        .form-group {
-            margin-bottom: 20px;
-        }*/
         .form-label {
             display: block;
             font-weight: 600;
@@ -79,49 +76,63 @@
     </style>
 
     <div class="container1">
-        <!-- Page Title -->
+        <h2 class="page-title">Add a New Service</h2>
+        <asp:Label ID="lblMsg" runat="server" CssClass="message" />
 
-
-        <!-- Service Form -->
         <div class="service-form">
-                    <h2 class="page-title">Add a New Service</h2>
-            <asp:Label ID="lblMsg" runat="server" CssClass="message" />
-
             <div class="form-group">
                 <asp:Label AssociatedControlID="txtBusinessName" runat="server" CssClass="form-label">Business Name</asp:Label>
                 <asp:TextBox ID="txtBusinessName" runat="server" CssClass="form-input" placeholder="Enter Business Name"></asp:TextBox>
+                <asp:RequiredFieldValidator ControlToValidate="txtBusinessName" ErrorMessage="Business Name is required." CssClass="message error" runat="server" />
             </div>
+
             <div class="form-group">
                 <asp:Label AssociatedControlID="ddlBusinessCategory" runat="server" CssClass="form-label">Business Category</asp:Label>
                 <asp:DropDownList ID="ddlBusinessCategory" runat="server" CssClass="form-dropdown"></asp:DropDownList>
+                <asp:RequiredFieldValidator ControlToValidate="ddlBusinessCategory" InitialValue="-1" ErrorMessage="Please select a category." CssClass="message error" runat="server" />
             </div>
+
             <div class="form-group">
                 <asp:Label AssociatedControlID="fileUploadImage" runat="server" CssClass="form-label">Upload Profile Picture</asp:Label>
                 <asp:FileUpload ID="fileUploadImage" runat="server" CssClass="form-input"></asp:FileUpload>
             </div>
+
             <div class="form-group">
                 <asp:Label AssociatedControlID="txtBio" runat="server" CssClass="form-label">Bio</asp:Label>
                 <asp:TextBox ID="txtBio" runat="server" CssClass="form-textarea" TextMode="MultiLine" placeholder="Enter a short bio about your service"></asp:TextBox>
+                <asp:RequiredFieldValidator ControlToValidate="txtBio" ErrorMessage="Bio is required." CssClass="message error" runat="server" />
             </div>
+
             <div class="form-group">
                 <asp:Label AssociatedControlID="txtEmail" runat="server" CssClass="form-label">Email</asp:Label>
                 <asp:TextBox ID="txtEmail" runat="server" CssClass="form-input" placeholder="Enter your email"></asp:TextBox>
+                <asp:RequiredFieldValidator ControlToValidate="txtEmail" ErrorMessage="Email is required." CssClass="message error" runat="server" />
+                <asp:RegularExpressionValidator ControlToValidate="txtEmail" ValidationExpression="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" ErrorMessage="Invalid email format." CssClass="message error" runat="server" />
             </div>
+
             <div class="form-group">
                 <asp:Label AssociatedControlID="txtMobileNumber" runat="server" CssClass="form-label">Mobile Number</asp:Label>
                 <asp:TextBox ID="txtMobileNumber" runat="server" CssClass="form-input" placeholder="Enter mobile number"></asp:TextBox>
+                <asp:RequiredFieldValidator ControlToValidate="txtMobileNumber" ErrorMessage="Mobile number is required." CssClass="message error" runat="server" />
+                <asp:RegularExpressionValidator ControlToValidate="txtMobileNumber" ValidationExpression="^\d{8,15}$" ErrorMessage="Enter a valid mobile number." CssClass="message error" runat="server" />
             </div>
+
             <div class="form-group">
                 <asp:Label AssociatedControlID="ddlDistrict" runat="server" CssClass="form-label">District</asp:Label>
                 <asp:DropDownList ID="ddlDistrict" runat="server" CssClass="form-dropdown"></asp:DropDownList>
+                <asp:RequiredFieldValidator ControlToValidate="ddlDistrict" InitialValue="-1" ErrorMessage="Please select a district." CssClass="message error" runat="server" />
             </div>
+
             <div class="form-group">
                 <asp:Label AssociatedControlID="ddlVillageTown" runat="server" CssClass="form-label">Village/Town</asp:Label>
                 <asp:DropDownList ID="ddlVillageTown" runat="server" CssClass="form-dropdown"></asp:DropDownList>
+                <asp:RequiredFieldValidator ControlToValidate="ddlVillageTown" InitialValue="-1" ErrorMessage="Please select a village/town." CssClass="message error" runat="server" />
             </div>
+
             <div class="form-group">
                 <asp:Label AssociatedControlID="txtStrAddress" runat="server" CssClass="form-label">Street Address</asp:Label>
                 <asp:TextBox ID="txtStrAddress" runat="server" CssClass="form-textarea" TextMode="MultiLine" placeholder="Enter full street address"></asp:TextBox>
+                <asp:RequiredFieldValidator ControlToValidate="txtStrAddress" ErrorMessage="Street address is required." CssClass="message error" runat="server" />
             </div>
 
             <div class="form-actions">
