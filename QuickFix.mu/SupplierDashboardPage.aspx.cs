@@ -32,7 +32,7 @@ namespace QuickFix.mu
                 try
                 {
                     con.Open();
-                    string query = "SELECT FirstName, LastName, Email, MobileNumber, ProfilePicture FROM Supplier WHERE Username = @Username";
+                    string query = "SELECT FirstName, LastName, Email, MobileNumber, ProfilePicture, StrAddress FROM Supplier WHERE Username = @Username";
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@Username", username);
@@ -44,7 +44,8 @@ namespace QuickFix.mu
                             lblWelcome.Text = "Welcome, " + reader["FirstName"].ToString() + " " + reader["LastName"].ToString();
                             lblEmail.Text = reader["Email"].ToString();
                             lblMobileNumber.Text = reader["MobileNumber"].ToString();
-                           
+                            lblladdress.Text = reader["StrAddress"].ToString();
+
 
                             // Load profile picture
                             string profilePicturePath = reader["ProfilePicture"].ToString();

@@ -1,28 +1,30 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SupplierDashboardMasterPage.Master" AutoEventWireup="true" CodeBehind="SupplierDashboardPage.aspx.cs" Inherits="QuickFix.mu.SupplierDashboardPage" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
-        <div class="container">
+
+    <div class="container">
         <aside>
-        
+
 
             <!-- Welcome Info -->
-       <div class="profile-photo">
-    <asp:Image ID="imgProfilePicture" runat="server" CssClass="profile-pic" />
-</div>
-<div class="info">
-    <asp:Label ID="lblWelcome" runat="server" Text="Welcome, " CssClass="welcome-label"></asp:Label>
-    <small class="text-muted">Service Provider</small>
-</div>
-<div class="about">
-    <h5>Email</h5>
-    <asp:Label ID="lblEmail" runat="server" Text="" CssClass="email-label"></asp:Label>
-    <h5>Number</h5>
-    <asp:Label ID="lblMobileNumber" runat="server" Text="" CssClass="number-label"></asp:Label>
-    <h5>Address</h5>
-    
-</div>
+            <div class="profile-photo">
+                <asp:Image ID="imgProfilePicture" runat="server" CssClass="profile-pic" />
+            </div>
+            <div class="info">
+                <asp:Label ID="lblWelcome" runat="server" Text="Welcome, " CssClass="welcome-label"></asp:Label>
+                <small class="text-muted">Service Provider</small>
+            </div>
+            <div class="about">
+                <h5>Email</h5>
+                <asp:Label ID="lblEmail" runat="server" Text="" CssClass="email-label"></asp:Label>
+                <h5>Number</h5>
+                <asp:Label ID="lblMobileNumber" runat="server" Text="" CssClass="number-label"></asp:Label>
+                <h5>Address</h5>
+                <asp:Label ID="lblladdress" runat="server" Text="" CssClass="number-label"></asp:Label>
+
+            </div>
 
         </aside>
 
