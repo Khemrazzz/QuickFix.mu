@@ -4,28 +4,40 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
       <div class="container">
       <aside>
-          <!-- Profile Picture Section -->
-          <div class="profile-photo">
-              <img src="./images/profile-1.jpg" alt="Profile Picture">
-          </div>
+         <!-- Profile Picture Section -->
+            <div class="profile-photo">
+                <asp:Image ID="imgProfilePicture" runat="server" CssClass="profile-pic" Alt="Profile Picture" />
+            </div>
 
-          <!-- Welcome Info -->
-          <div class="profile">
-              <div class="info">
-                  <p>Welcome, <b>John Doe</b></p>
-                  <small class="text-muted">Client ID: 12345</small>
-              </div>
-              <div class="about">
-                  <h5>Service Plan</h5>
-                  <p>Premium Package</p>
-                  <h5>Contact</h5>
-                  <p>+1 9876543210</p>
-                  <h5>Email</h5>
-                  <p>john.doe@example.com</p>
-                  <h5>Address</h5>
-                  <p>123 Service Street, Cityville</p>
-              </div>
-          </div>
+            <!-- Welcome Info -->
+            <div class="profile">
+                <div class="info">
+                    <p>
+                        <asp:Label ID="lblWelcome" runat="server" CssClass="welcome-label" />
+                    </p>
+                    <small class="text-muted">
+                        Client ID: <asp:Label ID="lblClientID" runat="server" CssClass="client-id-label" />
+                    </small>
+                </div>
+                <div class="about">
+                    <h5>Service Plan</h5>
+                    <p>
+                        <asp:Label ID="lblServicePlan" runat="server" CssClass="service-plan-label" />
+                    </p>
+                    <h5>Contact</h5>
+                    <p>
+                        <asp:Label ID="lblContact" runat="server" CssClass="contact-label" />
+                    </p>
+                    <h5>Email</h5>
+                    <p>
+                        <asp:Label ID="lblEmail" runat="server" CssClass="email-label" />
+                    </p>
+                    <h5>Address</h5>
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
       </aside>
 
       <main>

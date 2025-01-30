@@ -33,6 +33,15 @@ namespace QuickFix.mu
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvClientFName;
 
         /// <summary>
+        /// lblFname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFname;
+
+        /// <summary>
         /// txtClientMName control.
         /// </summary>
         /// <remarks>
@@ -60,6 +69,15 @@ namespace QuickFix.mu
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvClientLName;
 
         /// <summary>
+        /// lblLname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLname;
+
+        /// <summary>
         /// ddlClientGender control.
         /// </summary>
         /// <remarks>
@@ -78,6 +96,15 @@ namespace QuickFix.mu
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvClientGender;
 
         /// <summary>
+        /// lblgender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblgender;
+
+        /// <summary>
         /// ddlClientGTag control.
         /// </summary>
         /// <remarks>
@@ -94,6 +121,15 @@ namespace QuickFix.mu
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvClientGTag;
+
+        /// <summary>
+        /// lbltitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbltitle;
 
         /// <summary>
         /// txtClientDOB control.
@@ -123,6 +159,15 @@ namespace QuickFix.mu
         protected global::System.Web.UI.WebControls.RangeValidator rvClientDOB;
 
         /// <summary>
+        /// lbldob control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbldob;
+
+        /// <summary>
         /// fuClientProfilePic control.
         /// </summary>
         /// <remarks>
@@ -139,6 +184,15 @@ namespace QuickFix.mu
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvClientProfilePic;
+
+        /// <summary>
+        /// lblpp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblpp;
 
         /// <summary>
         /// txtClientBio control.
@@ -168,6 +222,15 @@ namespace QuickFix.mu
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvClientEmail;
 
         /// <summary>
+        /// lblemail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblemail;
+
+        /// <summary>
         /// txtClientMobile control.
         /// </summary>
         /// <remarks>
@@ -193,6 +256,15 @@ namespace QuickFix.mu
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator revClientMobile;
+
+        /// <summary>
+        /// lblmob control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblmob;
 
         /// <summary>
         /// updPanelClientDistrict control.
@@ -222,6 +294,15 @@ namespace QuickFix.mu
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvClientDistrict;
 
         /// <summary>
+        /// lbldistrict control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbldistrict;
+
+        /// <summary>
         /// ddlClientVillageTown control.
         /// </summary>
         /// <remarks>
@@ -240,6 +321,15 @@ namespace QuickFix.mu
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvClientVillageTown;
 
         /// <summary>
+        /// lblvt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblvt;
+
+        /// <summary>
         /// txtClientStreetAddress control.
         /// </summary>
         /// <remarks>
@@ -256,6 +346,15 @@ namespace QuickFix.mu
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvClientStreetAddress;
+
+        /// <summary>
+        /// lbladdress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbladdress;
 
         /// <summary>
         /// txtClientUsername control.
@@ -285,6 +384,15 @@ namespace QuickFix.mu
         protected global::System.Web.UI.WebControls.CustomValidator cvClientUsernameTaken;
 
         /// <summary>
+        /// lbluname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbluname;
+
+        /// <summary>
         /// txtClientPass control.
         /// </summary>
         /// <remarks>
@@ -310,6 +418,15 @@ namespace QuickFix.mu
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CustomValidator cvClientPassLen;
+
+        /// <summary>
+        /// lblpass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblpass;
 
         /// <summary>
         /// txtClientCPass control.
@@ -339,6 +456,15 @@ namespace QuickFix.mu
         protected global::System.Web.UI.WebControls.CompareValidator cvClientPasswords;
 
         /// <summary>
+        /// lblcpass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblcpass;
+
+        /// <summary>
         /// btnClientRegister control.
         /// </summary>
         /// <remarks>
@@ -364,6 +490,15 @@ namespace QuickFix.mu
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSupplierFName;
+
+        /// <summary>
+        /// lblFname2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFname2;
 
         /// <summary>
         /// txtSupplierMName control.
@@ -393,6 +528,15 @@ namespace QuickFix.mu
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSupplierLName;
 
         /// <summary>
+        /// lblLname2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLname2;
+
+        /// <summary>
         /// ddlSupplierGender control.
         /// </summary>
         /// <remarks>
@@ -411,6 +555,15 @@ namespace QuickFix.mu
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSupplierGender;
 
         /// <summary>
+        /// lblgender2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblgender2;
+
+        /// <summary>
         /// ddlSupplierGTag control.
         /// </summary>
         /// <remarks>
@@ -427,6 +580,15 @@ namespace QuickFix.mu
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSupplierGTag;
+
+        /// <summary>
+        /// lbltitle2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbltitle2;
 
         /// <summary>
         /// txtSupplierDOB control.
@@ -456,6 +618,15 @@ namespace QuickFix.mu
         protected global::System.Web.UI.WebControls.RangeValidator rvSupplierDOB;
 
         /// <summary>
+        /// lbldob2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbldob2;
+
+        /// <summary>
         /// fuSupplierProfilePic control.
         /// </summary>
         /// <remarks>
@@ -472,6 +643,42 @@ namespace QuickFix.mu
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSupplierProfilePic;
+
+        /// <summary>
+        /// lblpp2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblpp2;
+
+        /// <summary>
+        /// ddlSupplierServices control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSupplierServices;
+
+        /// <summary>
+        /// rfvddlservice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvddlservice;
+
+        /// <summary>
+        /// lblservice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblservice;
 
         /// <summary>
         /// txtSupplierBio control.
@@ -501,6 +708,15 @@ namespace QuickFix.mu
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSupplierEmail;
 
         /// <summary>
+        /// lblemail2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblemail2;
+
+        /// <summary>
         /// txtSupplierMobile control.
         /// </summary>
         /// <remarks>
@@ -526,6 +742,15 @@ namespace QuickFix.mu
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator revSupplierMobile;
+
+        /// <summary>
+        /// lblmob2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblmob2;
 
         /// <summary>
         /// updPanelSupplierDistrict control.
@@ -555,6 +780,15 @@ namespace QuickFix.mu
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSupplierDistrict;
 
         /// <summary>
+        /// lbldistrict2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbldistrict2;
+
+        /// <summary>
         /// ddlSupplierVillageTown control.
         /// </summary>
         /// <remarks>
@@ -573,6 +807,15 @@ namespace QuickFix.mu
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSupplierVillageTown;
 
         /// <summary>
+        /// lblvt2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblvt2;
+
+        /// <summary>
         /// txtSupplierStreetAddress control.
         /// </summary>
         /// <remarks>
@@ -589,6 +832,15 @@ namespace QuickFix.mu
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSupplierStreetAddress;
+
+        /// <summary>
+        /// lbladdress2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbladdress2;
 
         /// <summary>
         /// txtSupplierUsername control.
@@ -618,6 +870,15 @@ namespace QuickFix.mu
         protected global::System.Web.UI.WebControls.CustomValidator cvSupplierUsernameTaken;
 
         /// <summary>
+        /// lbluname2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbluname2;
+
+        /// <summary>
         /// txtSupplierPass control.
         /// </summary>
         /// <remarks>
@@ -645,6 +906,15 @@ namespace QuickFix.mu
         protected global::System.Web.UI.WebControls.CustomValidator cvSupplierPassLen;
 
         /// <summary>
+        /// lblpass2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblpass2;
+
+        /// <summary>
         /// txtSupplierCPass control.
         /// </summary>
         /// <remarks>
@@ -670,6 +940,15 @@ namespace QuickFix.mu
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CompareValidator cvSupplierPasswords;
+
+        /// <summary>
+        /// lblcpass2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblcpass2;
 
         /// <summary>
         /// btnSupplierRegister control.

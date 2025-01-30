@@ -1,9 +1,97 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/QuickFixMasterPage.Master" AutoEventWireup="true" CodeBehind="ConstructionServicesPage.aspx.cs" Inherits="QuickFix.mu.ConstructionServicesPage" %>
+﻿<%@ Page Title="Construction Services" Language="C#" MasterPageFile="~/QuickFixMasterPage.Master" AutoEventWireup="true" CodeBehind="ConstructionServicesPage.aspx.cs" Inherits="QuickFix.mu.ConstructionServicesPage" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"></asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
-    <header class="page-header" data-background="images/slide01.jpg" data-stellar-background-ratio="1.15">
+    <style>
+        .breadcrumb {
+            background: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+
+        .breadcrumb-item a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .breadcrumb-item.active {
+            color: #ddd;
+        }
+
+        .container {
+            max-width: 1500px;
+            margin: 10px auto;
+            padding: 20px;
+        }
+
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Creates a flexible grid layout */
+            gap: 20px; /* Space between items */
+            justify-content: center;
+        }
+
+        .service-item {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            padding: 15px;
+        }
+
+
+
+            .service-item img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+
+            .service-item h3 {
+                font-size: 18px;
+                margin: 10px 0;
+                color: #333;
+            }
+
+            .service-item p {
+                font-size: 14px;
+                color: #777;
+                margin: 5px 0;
+            }
+
+        .btn {
+            padding: 10px 15px;
+            margin: 10px 0;
+            display: inline-block;
+            background-color: #9f8054;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn2 {
+            padding: 10px 15px;
+            margin: 10px 0;
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+            .btn2:hover {
+                background-color: #ffd599;
+            }
+
+        .btn:hover {
+            background-color: #ffd599;
+        }
+    </style>
+
+
+    <header class="page-header" data-background="images/x2.jpg" data-stellar-background-ratio="1.15">
         <div class="container">
             <h1>Construction Services</h1>
             <p>The smaller male cones release pollen, which fertilizes the female</p>
@@ -14,85 +102,65 @@
         </div>
         <!-- end container -->
     </header>
-    <!-- end page-header -->
-    <section class="press-relases">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0s">
-                    <figure data-stellar-ratio="1.07">
-                        <a href="images/gallery-thumb01.jpg" data-fancybox>
-                            <img src="images/gallery-thumb01.jpg" alt="Image"></a>
-                        <figcaption>
-                            <h5>NEW YORK TIMES</h5>
-                            <p>How to lead company simply due to confusion</p>
-                            <small>26 November 2018</small>
-                        </figcaption>
-                    </figure>
+
+    <div class="container">
+        <!-- Filters -->
+        <asp:UpdatePanel ID="UpdatePanelFilters" runat="server">
+            <ContentTemplate>
+                <div class="row mb-4">
+
+                    <div class="col-md-3">
+                        <asp:DropDownList ID="ddlCategory" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlCategory_SelectedIndexChanged">
+                            <asp:ListItem Text="All Categories" Value="" Selected="True"></asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                    <div class="col-md-3">
+                        <asp:DropDownList ID="ddlDistrict" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlDistrict_SelectedIndexChanged">
+                            <asp:ListItem Text="All Districts" Value="" Selected="True"></asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+
+                    <div class="col-md-3">
+                        <asp:DropDownList ID="ddlSortBy" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlSortBy_SelectedIndexChanged">
+                            <asp:ListItem Text="Sort by Name (A-Z)" Value="NameAsc" Selected="True"></asp:ListItem>
+                            <asp:ListItem Text="Sort by Name (Z-A)" Value="NameDesc"></asp:ListItem>
+                            <asp:ListItem Text="Sort by Category" Value="Category"></asp:ListItem>
+                            <asp:ListItem Text="Sort by District" Value="District"></asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                    <div class="col-md-3">
+                        <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" placeholder="Search Services" AutoPostBack="true" OnTextChanged="txtSearch_TextChanged"></asp:TextBox>
+                    </div>
                 </div>
-                <!-- end col-4 -->
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0s">
-                    <figure data-stellar-ratio="1.07">
-                        <a href="images/gallery-thumb02.jpg" data-fancybox>
-                            <img src="images/gallery-thumb02.jpg" alt="Image"></a>
-                        <figcaption>
-                            <h5>REAL MAGAZINE</h5>
-                            <p>How to lead company simply due to confusion</p>
-                            <small>26 November 2018</small>
-                        </figcaption>
-                    </figure>
+
+            </ContentTemplate>
+        </asp:UpdatePanel>
+
+        <!-- Service List -->
+
+
+        <asp:UpdatePanel ID="UpdatePanelServices" runat="server">
+            <ContentTemplate>
+                <div class="service-list">
+                    <asp:ListView ID="lvServices" runat="server">
+                        <ItemTemplate>
+                            <div class="service-item">
+                                <img src='<%# ResolveUrl(Eval("ProfilePicture").ToString()) %>' alt="Profile Image" />
+                                <h3><%# Eval("BusinessName") %></h3>
+                                <p>Category: <%# Eval("BusinessCategory") %></p>
+                                <p>Location: <%# Eval("District") %>, <%# Eval("VillageTown") %></p>
+                                <p>Phone: <strong><%# Eval("MobileNumber") %></strong></p>
+                                <a href='ServiceDetails.aspx?ServiceId=<%# Eval("ServiceId") %>' class="btn">View Details</a>
+                                <asp:Button ID="btnBookNow" runat="server" CssClass="btn2" Text="Book Now" CommandArgument='<%# Eval("ServiceId") %>' OnClick="BookNow_Click" />
+                            </div>
+                        </ItemTemplate>
+
+
+                    </asp:ListView>
                 </div>
-                <!-- end col-4 -->
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0s">
-                    <figure data-stellar-ratio="1.07">
-                        <a href="images/gallery-thumb03.jpg" data-fancybox>
-                            <img src="images/gallery-thumb03.jpg" alt="Image"></a>
-                        <figcaption>
-                            <h5>US REALTOR</h5>
-                            <p>How to lead company simply due to confusion</p>
-                            <small>26 November 2018</small>
-                        </figcaption>
-                    </figure>
-                </div>
-                <!-- end col-4 -->
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0s">
-                    <figure data-stellar-ratio="1.07">
-                        <a href="images/gallery-thumb04.jpg" data-fancybox>
-                            <img src="images/gallery-thumb04.jpg" alt="Image"></a>
-                        <figcaption>
-                            <h5>APART MAG</h5>
-                            <p>How to lead company simply due to confusion</p>
-                            <small>26 November 2018</small>
-                        </figcaption>
-                    </figure>
-                </div>
-                <!-- end col-4 -->
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0s">
-                    <figure data-stellar-ratio="1.07">
-                        <a href="images/gallery-thumb05.jpg" data-fancybox>
-                            <img src="images/gallery-thumb05.jpg" alt="Image"></a>
-                        <figcaption>
-                            <h5>FLAT NEWS</h5>
-                            <p>How to lead company simply due to confusion</p>
-                            <small>26 November 2018</small>
-                        </figcaption>
-                    </figure>
-                </div>
-                <!-- end col-4 -->
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0s">
-                    <figure data-stellar-ratio="1.07">
-                        <a href="images/gallery-thumb06.jpg" data-fancybox>
-                            <img src="images/gallery-thumb06.jpg" alt="Image"></a>
-                        <figcaption>
-                            <h5>CDN NEWS</h5>
-                            <p>How to lead company simply due to confusion</p>
-                            <small>26 November 2018</small>
-                        </figcaption>
-                    </figure>
-                </div>
-                <!-- end col-4 -->
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
-    </section>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+
+
+    </div>
 </asp:Content>

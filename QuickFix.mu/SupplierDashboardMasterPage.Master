@@ -23,30 +23,37 @@
          <h2>Service<span class="danger">Pro</span> Provider</h2>
      </div>
      <div class="navbar">
-         <a href="index.html" class="active">
+         <a href="HomePage.aspx" <%--class="active"--%>>
              <span class="material-icons-sharp">home</span>
-             <h3>Dashboard</h3>
+             <h3>Home</h3>
          </a>
-         <a href="posts.html">
-             <span class="material-icons-sharp">post_add</span>
-             <h3>Manage Posts</h3>
-         </a>
-         <a href="analytics.html">
-             <span class="material-icons-sharp">insights</span>
-             <h3>Analytics</h3>
-         </a>
-         <a href="messages.html">
+                  <a href="SupplierDashboardPage.aspx" <%--class="active"--%>>
              <span class="material-icons-sharp">message</span>
-             <h3>Messages</h3>
+             <h3>View Profile</h3>
          </a>
-         <a href="earnings.html">
+         <a href="SupplierAddService.aspx">
+             <span class="material-icons-sharp">post_add</span>
+             <h3>Add Service</h3>
+         </a>
+         <a href="SupplierManageBookings.aspx">
+             <span class="material-icons-sharp">insights</span>
+             <h3>Manage Service</h3>
+         </a>
+
+         <a href="SupplierModifyService.aspx">
              <span class="material-icons-sharp">attach_money</span>
-             <h3>Earnings</h3>
+             <h3>Modify Service</h3>
          </a>
-         <a href="#">
-             <span class="material-icons-sharp">logout</span>
-             <h3>Logout</h3>
+         
+         <a href="SupplierModifyService.aspx">
+             <span class="material-icons-sharp">attach_money</span>
+             <h3>Ratings</h3>
          </a>
+         <asp:LinkButton ID="LogoutLinkButton" runat="server" OnClick="LogoutLinkButton_Click">
+       <span class="material-icons-sharp">logout</span>
+       <h3>Logout</h3>
+     </asp:LinkButton>
+        
      </div>
  </header>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
