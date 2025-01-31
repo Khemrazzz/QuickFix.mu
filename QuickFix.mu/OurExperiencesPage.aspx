@@ -6,10 +6,10 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
-    <header class="page-header" data-background="images/slide01.jpg" data-stellar-background-ratio="1.15">
+    <header class="page-header" data-background="images/r1.jpg" data-stellar-background-ratio="1.15">
         <div class="container">
-            <h1>News</h1>
-            <p>The smaller male cones release pollen, which fertilizes the female</p>
+            <h1>Our Experience</h1>
+            <p>Life Changing stories of our Suppliers</p>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Start</a></li>
                 <li class="breadcrumb-item active" aria-current="page">News</li>

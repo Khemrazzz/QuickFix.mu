@@ -108,20 +108,20 @@
         }
 
         legend {
-    color: white;
-}
+            color: white;
+        }
 
 
-        h3{
-    color: white;
-}
+        h3 {
+            color: white;
+        }
     </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
 
     <!-- Page Header -->
-    <header class="page-header" data-background="images/slide01.jpg" data-stellar-background-ratio="1.15">
+    <header class="page-header" data-background="images/r4.jpg" data-stellar-background-ratio="1.15">
         <div class="container">
             <h1>Registration</h1>
             <p>Register as a client or supplier</p>
@@ -904,6 +904,39 @@
     </div>
     <!-- End form container -->
 
+    <!-- Registration Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">Registration Successful</h5>
+                </div>
+                <div class="modal-body">
+                    Your registration was successful! Redirecting to login page...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="redirectToLogin()">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Modal & Redirect -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function showSuccessModal() {
+            $('#successModal').modal('show');
+            setTimeout(function () {
+                window.location.href = 'LogInPage.aspx';
+            }, 5000);
+        }
+
+        function redirectToLogin() {
+            window.location.href = 'LogInPage.aspx';
+        }
+    </script>
+
     <!-- Tab switching script -->
     <script type="text/javascript">
         document.addEventListener("DOMContentLoaded", function () {
@@ -962,19 +995,19 @@
 
                 // Get input values
                 const clientFirstName = document.getElementById('<%= txtClientFName.ClientID %>').value.trim();
-        const clientLastName = document.getElementById('<%= txtClientLName.ClientID %>').value.trim();
-        const clientGender = document.getElementById('<%= ddlClientGender.ClientID %>').value.trim();
-        const clientGTag = document.getElementById('<%= ddlClientGTag.ClientID %>').value.trim();
-        const clientDOB = document.getElementById('<%= txtClientDOB.ClientID %>').value.trim();
-        const clientProfilePic = document.getElementById('<%= fuClientProfilePic.ClientID %>').value.trim();
-        const clientEmail = document.getElementById('<%= txtClientEmail.ClientID %>').value.trim();
-        const clientMobile = document.getElementById('<%= txtClientMobile.ClientID %>').value.trim();
-        const clientDistrict = document.getElementById('<%= ddlClientDistrict.ClientID %>').value.trim();
-        const clientVillageTown = document.getElementById('<%= ddlClientVillageTown.ClientID %>').value.trim();
-        const clientStreetAddress = document.getElementById('<%= txtClientStreetAddress.ClientID %>').value.trim();
-        const clientUsername = document.getElementById('<%= txtClientUsername.ClientID %>').value.trim();
-        const clientPass = document.getElementById('<%= txtClientPass.ClientID %>').value.trim();
-        const clientCPass = document.getElementById('<%= txtClientCPass.ClientID %>').value.trim();
+                const clientLastName = document.getElementById('<%= txtClientLName.ClientID %>').value.trim();
+                const clientGender = document.getElementById('<%= ddlClientGender.ClientID %>').value.trim();
+                const clientGTag = document.getElementById('<%= ddlClientGTag.ClientID %>').value.trim();
+                const clientDOB = document.getElementById('<%= txtClientDOB.ClientID %>').value.trim();
+                const clientProfilePic = document.getElementById('<%= fuClientProfilePic.ClientID %>').value.trim();
+                const clientEmail = document.getElementById('<%= txtClientEmail.ClientID %>').value.trim();
+                const clientMobile = document.getElementById('<%= txtClientMobile.ClientID %>').value.trim();
+                const clientDistrict = document.getElementById('<%= ddlClientDistrict.ClientID %>').value.trim();
+                const clientVillageTown = document.getElementById('<%= ddlClientVillageTown.ClientID %>').value.trim();
+                const clientStreetAddress = document.getElementById('<%= txtClientStreetAddress.ClientID %>').value.trim();
+                const clientUsername = document.getElementById('<%= txtClientUsername.ClientID %>').value.trim();
+                const clientPass = document.getElementById('<%= txtClientPass.ClientID %>').value.trim();
+                const clientCPass = document.getElementById('<%= txtClientCPass.ClientID %>').value.trim();
 
                 if (!clientFirstName) {
                     lblClientFName.textContent = "First Name is required.";
@@ -1074,20 +1107,20 @@
 
                 // Get input values
                 const supplierFirstName = document.getElementById('<%= txtSupplierFName.ClientID %>').value.trim();
-        const supplierLastName = document.getElementById('<%= txtSupplierLName.ClientID %>').value.trim();
-        const supplierGender = document.getElementById('<%= ddlSupplierGender.ClientID %>').value.trim();
-        const supplierGTag = document.getElementById('<%= ddlSupplierGTag.ClientID %>').value.trim();
-        const supplierDOB = document.getElementById('<%= txtSupplierDOB.ClientID %>').value.trim();
-        const supplierProfilePic = document.getElementById('<%= fuSupplierProfilePic.ClientID %>').value.trim();
-        const supplierService = document.getElementById('<%= ddlSupplierServices.ClientID %>').value.trim();
-        const supplierEmail = document.getElementById('<%= txtSupplierEmail.ClientID %>').value.trim();
-        const supplierMobile = document.getElementById('<%= txtSupplierMobile.ClientID %>').value.trim();
-        const supplierDistrict = document.getElementById('<%= ddlSupplierDistrict.ClientID %>').value.trim();
-        const supplierVillageTown = document.getElementById('<%= ddlSupplierVillageTown.ClientID %>').value.trim();
-        const supplierStreetAddress = document.getElementById('<%= txtSupplierStreetAddress.ClientID %>').value.trim();
-        const supplierUsername = document.getElementById('<%= txtSupplierUsername.ClientID %>').value.trim();
-        const supplierPass = document.getElementById('<%= txtSupplierPass.ClientID %>').value.trim();
-        const supplierCPass = document.getElementById('<%= txtSupplierCPass.ClientID %>').value.trim();
+                const supplierLastName = document.getElementById('<%= txtSupplierLName.ClientID %>').value.trim();
+                const supplierGender = document.getElementById('<%= ddlSupplierGender.ClientID %>').value.trim();
+                const supplierGTag = document.getElementById('<%= ddlSupplierGTag.ClientID %>').value.trim();
+                const supplierDOB = document.getElementById('<%= txtSupplierDOB.ClientID %>').value.trim();
+                const supplierProfilePic = document.getElementById('<%= fuSupplierProfilePic.ClientID %>').value.trim();
+                const supplierService = document.getElementById('<%= ddlSupplierServices.ClientID %>').value.trim();
+                const supplierEmail = document.getElementById('<%= txtSupplierEmail.ClientID %>').value.trim();
+                const supplierMobile = document.getElementById('<%= txtSupplierMobile.ClientID %>').value.trim();
+                const supplierDistrict = document.getElementById('<%= ddlSupplierDistrict.ClientID %>').value.trim();
+                const supplierVillageTown = document.getElementById('<%= ddlSupplierVillageTown.ClientID %>').value.trim();
+                const supplierStreetAddress = document.getElementById('<%= txtSupplierStreetAddress.ClientID %>').value.trim();
+                const supplierUsername = document.getElementById('<%= txtSupplierUsername.ClientID %>').value.trim();
+                const supplierPass = document.getElementById('<%= txtSupplierPass.ClientID %>').value.trim();
+                const supplierCPass = document.getElementById('<%= txtSupplierCPass.ClientID %>').value.trim();
 
                 if (!supplierFirstName) {
                     lblSupplierFName.textContent = "First Name is required.";

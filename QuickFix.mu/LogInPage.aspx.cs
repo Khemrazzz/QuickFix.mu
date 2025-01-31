@@ -98,7 +98,7 @@ namespace QuickFix.mu
                                         // Default behavior if no return URL
                                         if (userType == "Client")
                                         {
-                                            Response.Redirect("ClientDashboardPage.aspx");
+                                            Response.Redirect("HomePage.aspx");
                                         }
                                         else if (userType == "Supplier")
                                         {

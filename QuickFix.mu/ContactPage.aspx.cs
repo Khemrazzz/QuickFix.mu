@@ -39,7 +39,7 @@ namespace QuickFix.mu
             using (SqlConnection conn = new SqlConnection(_conString))
             {
                 string ContactPage = @"INSERT INTO [dbo].[Contact] (First_Name, Last_Name, Email, Subject, Message) 
-                      VALUES (@First_Name, @Last_Name, @Email, @Subject, @Message)";
+                   VALUES (@First_Name, @Last_Name, @Email, @Subject, @Message)";
 
                 using (SqlCommand cmd = new SqlCommand(ContactPage, conn))
                 {
@@ -49,18 +49,32 @@ namespace QuickFix.mu
                     cmd.Parameters.AddWithValue("@Subject", subject);
                     cmd.Parameters.AddWithValue("@Message", message);
 
-                    sendemail();
-                    conn.Open();
+                    try
+                    {
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
 
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
+                        // Send email
+                        sendemail();
 
+                        // Display success message and clear fields
+                        lblSuccessMessage.Text = "Your message has been sent successfully!";
+                        txtfname.Text = "";
+                        txtlname.Text = "";
+                        txtemail.Text = "";
+                        txtsubject.Text = "";
+                        txtmessage.Text = "";
+                    }
+                    catch (Exception ex)
+                    {
+                        lblSuccessMessage.ForeColor = System.Drawing.Color.Red;
+                        lblSuccessMessage.Text = "An error occurred. Please try again.";
+                    }
                 }
             }
-
-            // Optionally, display a success message or redirect to another page
-            Response.Redirect("homePage.aspx");
         }
+
 
 
         private void sendemail()

@@ -155,10 +155,8 @@ namespace QuickFix.mu
         // ---------- CLIENT REGISTRATION ----------
         protected void btnClientRegister_Click(object sender, EventArgs e)
         {
-            // Only "ClientReg" validation group is triggered here
             if (Page.IsValid)
             {
-                // Gather data
                 string fname = txtClientFName.Text.Trim();
                 string mname = txtClientMName.Text.Trim();
                 string lname = txtClientLName.Text.Trim();
@@ -173,25 +171,22 @@ namespace QuickFix.mu
                 string address = txtClientStreetAddress.Text.Trim();
                 string username = txtClientUsername.Text.Trim();
 
-                // Encrypt passwords
                 string encPass = Encrypt(txtClientPass.Text.Trim());
                 string encCPass = Encrypt(txtClientCPass.Text.Trim());
 
-                // Profile pic
                 string profilePicPath = SaveFileIfValid(fuClientProfilePic, "~/clientImages/");
 
                 using (SqlConnection con = new SqlConnection(_conString))
                 {
-                    // Insert into Client table
                     string query = @"
-                        INSERT INTO Client 
-                        (FirstName, MiddleName, LastName, Gender, GTag, DateOfBirth, ProfilePicture,
-                         Bio, Email, MobileNumber, Country, District, VillageTown, StrAddress,
-                         Username, Password, CPassword, Status, Approval, IsActive, IsDeleted, FailedLoginAttempts)
-                        VALUES
-                        (@FName, @MName, @LName, @Gender, @GTag, @DOB, @ProfilePic,
-                         @Bio, @Email, @Mobile, @Country, @District, @VillageTown, @StrAddress,
-                         @Username, @Password, @CPassword, @Status, @Approval, @IsActive, @IsDeleted, @FailedLoginAttempts)";
+                INSERT INTO Client 
+                (FirstName, MiddleName, LastName, Gender, GTag, DateOfBirth, ProfilePicture,
+                 Bio, Email, MobileNumber, Country, District, VillageTown, StrAddress,
+                 Username, Password, CPassword, Status, Approval, IsActive, IsDeleted, FailedLoginAttempts)
+                VALUES
+                (@FName, @MName, @LName, @Gender, @GTag, @DOB, @ProfilePic,
+                 @Bio, @Email, @Mobile, @Country, @District, @VillageTown, @StrAddress,
+                 @Username, @Password, @CPassword, @Status, @Approval, @IsActive, @IsDeleted, @FailedLoginAttempts)";
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.AddWithValue("@FName", fname);
@@ -204,18 +199,13 @@ namespace QuickFix.mu
                     cmd.Parameters.AddWithValue("@Bio", bio);
                     cmd.Parameters.AddWithValue("@Email", email);
                     cmd.Parameters.AddWithValue("@Mobile", mobile);
-
-                    // If you have a "Country" column, set it
                     cmd.Parameters.AddWithValue("@Country", "");
-
                     cmd.Parameters.AddWithValue("@District", districtVal);
                     cmd.Parameters.AddWithValue("@VillageTown", villageVal);
                     cmd.Parameters.AddWithValue("@StrAddress", address);
                     cmd.Parameters.AddWithValue("@Username", username);
                     cmd.Parameters.AddWithValue("@Password", encPass);
                     cmd.Parameters.AddWithValue("@CPassword", encCPass);
-
-                    // Default fields
                     cmd.Parameters.AddWithValue("@Status", "Inactive");
                     cmd.Parameters.AddWithValue("@Approval", "pending");
                     cmd.Parameters.AddWithValue("@IsActive", true);
@@ -226,10 +216,11 @@ namespace QuickFix.mu
                     cmd.ExecuteNonQuery();
                 }
 
-                lblMsg.ForeColor = System.Drawing.Color.LightGreen;
-                lblMsg.Text = "Client registration successful. You can now log in.";
+                // Show the success modal and trigger JavaScript
+                ClientScript.RegisterStartupScript(this.GetType(), "ShowModal", "showSuccessModal();", true);
             }
         }
+
 
         // ---------- SUPPLIER REGISTRATION ----------
         protected void btnSupplierRegister_Click(object sender, EventArgs e)
@@ -249,7 +240,7 @@ namespace QuickFix.mu
                 string villageVal = ddlSupplierVillageTown.SelectedValue;
                 string address = txtSupplierStreetAddress.Text.Trim();
                 string username = txtSupplierUsername.Text.Trim();
-                string service = ddlSupplierServices.SelectedValue; // Capture the selected service
+                string service = ddlSupplierServices.SelectedValue;
 
                 string encPass = Encrypt(txtSupplierPass.Text.Trim());
                 string encCPass = Encrypt(txtSupplierCPass.Text.Trim());
@@ -259,14 +250,14 @@ namespace QuickFix.mu
                 using (SqlConnection con = new SqlConnection(_conString))
                 {
                     string query = @"
-                        INSERT INTO Supplier
-                        (FirstName, MiddleName, LastName, Gender, GTag, DateOfBirth, ProfilePicture,
-                         Bio, Services, Email, MobileNumber, Country, District, VillageTown, StrAddress,
-                         Username, Password, CPassword, Status, Approval, IsActive, IsDeleted, FailedLoginAttempts)
-                        VALUES
-                        (@FName, @MName, @LName, @Gender, @GTag, @DOB, @ProfilePic,
-                         @Bio, @Services, @Email, @Mobile, @Country, @District, @VillageTown, @StrAddress,
-                         @Username, @Password, @CPassword, @Status, @Approval, @IsActive, @IsDeleted, @FailedLoginAttempts)";
+                INSERT INTO Supplier
+                (FirstName, MiddleName, LastName, Gender, GTag, DateOfBirth, ProfilePicture,
+                 Bio, Services, Email, MobileNumber, Country, District, VillageTown, StrAddress,
+                 Username, Password, CPassword, Status, Approval, IsActive, IsDeleted, FailedLoginAttempts)
+                VALUES
+                (@FName, @MName, @LName, @Gender, @GTag, @DOB, @ProfilePic,
+                 @Bio, @Services, @Email, @Mobile, @Country, @District, @VillageTown, @StrAddress,
+                 @Username, @Password, @CPassword, @Status, @Approval, @IsActive, @IsDeleted, @FailedLoginAttempts)";
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.AddWithValue("@FName", fname);
@@ -277,7 +268,7 @@ namespace QuickFix.mu
                     cmd.Parameters.AddWithValue("@DOB", dob);
                     cmd.Parameters.AddWithValue("@ProfilePic", profilePicPath ?? (object)DBNull.Value);
                     cmd.Parameters.AddWithValue("@Bio", bio);
-                    cmd.Parameters.AddWithValue("@Services", service); // Save selected service
+                    cmd.Parameters.AddWithValue("@Services", service);
                     cmd.Parameters.AddWithValue("@Email", email);
                     cmd.Parameters.AddWithValue("@Mobile", mobile);
                     cmd.Parameters.AddWithValue("@Country", "");
@@ -297,10 +288,11 @@ namespace QuickFix.mu
                     cmd.ExecuteNonQuery();
                 }
 
-                lblMsg.ForeColor = System.Drawing.Color.LightGreen;
-                lblMsg.Text = "Supplier registration successful. You can now log in.";
+                // Show the success modal and trigger JavaScript
+                ClientScript.RegisterStartupScript(this.GetType(), "ShowModal", "showSuccessModal();", true);
             }
         }
+
 
 
         // ---------- ENCRYPTION ----------

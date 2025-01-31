@@ -105,7 +105,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
-    <header class="page-header" data-background="images/slide01.jpg" data-stellar-background-ratio="1.15">
+    <header class="page-header" data-background="images/r3.jpg" data-stellar-background-ratio="1.15">
         <div class="container">
             <h1>Contact</h1>
             <p>The smaller male cones release pollen, which fertilizes the female</p>
@@ -165,6 +165,9 @@
                     <div class="form-container">
                         <div class="form">
                             <span class="heading">Get in touch</span>
+
+                            <asp:Label ID="lblSuccessMessage" runat="server" ForeColor="Green" CssClass="success-message" Text="" />
+
 
                             <!-- First Name -->
                              <asp:Label ID="lblFirstNameMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Display="Dynamic" Text=""></asp:Label>

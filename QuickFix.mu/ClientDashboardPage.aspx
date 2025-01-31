@@ -67,16 +67,6 @@
                       </div>
                       <div class="widget card">
                           <div class="icon">
-                              <span class="material-icons-sharp">receipt_long</span>
-                          </div>
-                          <div class="details">
-                              <h3>Outstanding Invoices</h3>
-                              <h2>$450</h2>
-                              <small class="text-muted">Due: Dec 20</small>
-                          </div>
-                      </div>
-                      <div class="widget card">
-                          <div class="icon">
                               <span class="material-icons-sharp">support_agent</span>
                           </div>
                           <div class="details">
@@ -90,25 +80,6 @@
           </div>
       </main>
 
-      <div class="right">
-          <div class="announcements">
-              <h2>Latest Updates</h2>
-              <div class="updates">
-                  <div class="message">
-                      <p><b>System Update:</b> Maintenance scheduled for Dec 22.</p>
-                      <small class="text-muted">5 Minutes Ago</small>
-                  </div>
-                  <div class="message">
-                      <p><b>Promotion:</b> Get 20% off on additional services.</p>
-                      <small class="text-muted">1 Hour Ago</small>
-                  </div>
-                  <div class="message">
-                      <p><b>Reminder:</b> Complete your profile for personalized offers.</p>
-                      <small class="text-muted">Yesterday</small>
-                  </div>
-              </div>
-          </div>
-      </div>
   </div>
 
   <script src="DASHapp.js"></script>

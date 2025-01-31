@@ -41,12 +41,12 @@
          </a>
 
          <a href="SupplierModifyService.aspx">
-             <span class="material-icons-sharp">attach_money</span>
+             <span class="material-icons-sharp"></span>
              <h3>Modify Service</h3>
          </a>
          
          <a href="SupplierReview.aspx">
-             <span class="material-icons-sharp">attach_money</span>
+             <span class="material-icons-sharp"></span>
              <h3>Review</h3>
          </a>
          <asp:LinkButton ID="LogoutLinkButton" runat="server" OnClick="LogoutLinkButton_Click">

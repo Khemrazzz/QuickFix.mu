@@ -7,7 +7,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
-    <header class="page-header" data-background="images/slide01.jpg" data-stellar-background-ratio="1.15">
+    <header class="page-header" data-background="images/r2.jpg" data-stellar-background-ratio="1.15">
         <div class="container">
             <h1>Supplier Reviews</h1>
             <p>Discover what clients are saying about our suppliers.</p>
