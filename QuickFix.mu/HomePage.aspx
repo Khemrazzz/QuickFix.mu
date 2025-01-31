@@ -8,8 +8,8 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide" data-background="images/banner1.jpg" data-stellar-background-ratio="1.15">
                     <div class="container">
-                        <h1><span>Udført</span> Luxury Residences</h1>
-                        <h2>Living Spaces in Pecherska - Kiev</h2>
+                        <h1><span>Experience</span> Luxury Residences</h1>
+                        <h2>Living Spaces in Bagatelle - Mauritius</h2>
                         <a href="#">GET A CONSULTATION <i class="fas fa-caret-right"></i></a>
                         <figure>
                             <img src="images/002-maintenance.png" alt="Image"></figure>
@@ -19,7 +19,7 @@
                 <!-- end swiper-slide -->
                 <div class="swiper-slide" data-background="images/banner2.jpg" data-stellar-background-ratio="1.15">
                     <div class="container">
-                        <h1><span>Oxøme</span> Premium Flats</h1>
+                        <h1><span>Quality</span> Over Quantity</h1>
                         <h2>Provide a decent level of comfort </h2>
                         <a href="#">GET A CONSULTATION <i class="fas fa-caret-right"></i></a>
                         <figure>
@@ -30,7 +30,7 @@
                 <!-- end swiper-slide -->
                 <div class="swiper-slide" data-background="images/banner3.jpg" data-stellar-background-ratio="1.15">
                     <div class="container">
-                        <h1><span>Hømepark</span> Elite Residences</h1>
+                        <h1><span>QuickFix</span> Local Services</h1>
                         <h2>We build your dream house</h2>
                         <a href="#">GET A CONSULTATION <i class="fas fa-caret-right"></i></a>
                         <figure>
@@ -83,7 +83,7 @@
                 <div class="col-lg-6 wow fadeInUp">
                     <div class="content-box">
                         <b>01</b>
-                        <h4><span>Pozniaky</span> Construction LLC</h4>
+                        <h4><span>QuickFix</span> Construction Services</h4>
                         <h3>Living spaces for creative peoples</h3>
                         <p>
                             The smaller male cones release pollen, 
@@ -157,23 +157,23 @@
             <div class="row">
                 <div class="col-12 wow fadeInUp">
                     <b>02</b>
-                    <h4><span>Homepark</span> Property</h4>
-                    <h3>Decorated Flats in Pozniaky - Kiev</h3>
+                    <h4><span>QuickFix</span> Achievements</h4>
+                    <h3>Providing services all around the island - Mauritius</h3>
                 </div>
                 <!-- end col-12 -->
                 <div class="col wow fadeInUp" data-wow-delay="0s">
                     <figure>
                         <img src="images/icon-benefits01.png" alt="Image">
                         <b></b></figure>
-                    <h6>Near to Subway</h6>
-                    <span class="odometer" data-count="28" data-status="yes">0</span> <span class="extra">min</span>
+                    <h6>Houses Built</h6>
+                    <span class="odometer" data-count="28" data-status="yes">0</span> <span class="extra">+</span>
                 </div>
                 <!-- end col -->
                 <div class="col wow fadeInUp" data-wow-delay="0.05s">
                     <figure>
                         <img src="images/icon-benefits02.png" alt="Image">
                         <b></b></figure>
-                    <h6>Spaces in Pozniaky</h6>
+                    <h6>House Maintenance</h6>
                     <span class="odometer" data-count="32" data-status="yes">0</span> <span class="extra">+</span>
                 </div>
                 <!-- end col -->
@@ -181,24 +181,24 @@
                     <figure>
                         <img src="images/icon-benefits03.png" alt="Image">
                         <b></b></figure>
-                    <h6>Spaces in Pozniaky</h6>
-                    <span class="odometer" data-count="15" data-status="yes">0</span> <span class="extra">%</span>
+                    <h6>Houses Renovated</h6>
+                    <span class="odometer" data-count="15" data-status="yes">0</span> <span class="extra">+</span>
                 </div>
                 <!-- end col -->
                 <div class="col wow fadeInUp" data-wow-delay="0.15s">
                     <figure>
                         <img src="images/icon-benefits04.png" alt="Image">
                         <b></b></figure>
-                    <h6>Spaces in Pozniaky</h6>
-                    <span class="odometer" data-count="3" data-status="yes">0</span> <span class="extra">years</span>
+                    <h6>Houses Designed</h6>
+                    <span class="odometer" data-count="3" data-status="yes">0</span> <span class="extra">+</span>
                 </div>
                 <!-- end col -->
                 <div class="col wow fadeInUp" data-wow-delay="0.20s">
                     <figure>
                         <img src="images/icon-benefits05.png" alt="Image">
                         <b></b></figure>
-                    <h6>Spaces in Pozniaky</h6>
-                    <span class="odometer" data-count="79" data-status="yes">0</span> <span class="extra">m²</span>
+                    <h6>Commercial Services</h6>
+                    <span class="odometer" data-count="79" data-status="yes">0</span> <span class="extra">+</span>
                 </div>
                 <!-- end col -->
             </div>
@@ -212,8 +212,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-5 wow fadeInUp">
                     <b>03</b>
-                    <h4><span>Property</span> Inner Gallery</h4>
-                    <h3>Lux Living Spaces in Pozniaky - Kiev</h3>
+                    <h4><span>QuickFix</span> Inner Gallery</h4>
+                    <h3>Lux Living Spaces over the sland - Mauritius</h3>
                     <a href="#" class="link">SEE ALL GALLERY <i class="fas fa-caret-right"></i></a>
                 </div>
                 <!-- end col-5 -->
@@ -260,8 +260,8 @@
                 <div class="col-lg-6 wow fadeInUp">
                     <div class="content-box">
                         <b>04</b>
-                        <h4><span>Homepark</span> Living Spaces</h4>
-                        <h3>Decorated Flats in Pozniaky - Kiev</h3>
+                        <h4><span>QuickFix</span> Living Spaces</h4>
+                        <h3>Decorated houses over the island - Mauritius</h3>
                         <p>
                             The smaller male cones release pollen, 
             which fertilizes the female
@@ -290,8 +290,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 wow fadeInUp">
                     <b>05</b>
-                    <h4><span>Homepark</span> Living Spaces</h4>
-                    <h3>Decorated Flats in Pozniaky - Kiev</h3>
+                    <h4><span>QuickFix</span> Living Spaces</h4>
+                    <h3>Maintained Flats over the island - Mauritius</h3>
                     <p>We are waiting for you in our sales office for having all these opportunities with affordable prices and appropriate payment opportunities..</p>
                     <table>
                         <tbody>
@@ -353,8 +353,8 @@
                 <div class="col-lg-6 col-md-8 fadeInUp wow">
                     <div class="content-box">
                         <b>06</b>
-                        <h4><span>Homepark</span> Living Spaces</h4>
-                        <h3>Are you interested to Homepark</h3>
+                        <h4><span>QuickFix</span> Services</h4>
+                        <h3>Are you interested to QuickFix</h3>
                         <p>The sun collectors, shall provide the electricity of the social areas of the site and shall do its part for protecting the environment.</p>
                         <a href="#">SCHEDULE A VISIT <i class="fas fa-caret-right"></i></a>
                     </div>
@@ -372,7 +372,7 @@
             <div class="row">
                 <div class="col-12 wow fadeInUp">
                     <b>07</b>
-                    <h4><span>Homepark</span> Living Spaces</h4>
+                    <h4><span>QuickFIx</span> Living Spaces</h4>
                     <small>Smaller male cones </small>
                 </div>
                 <!-- end col-12 -->
@@ -535,7 +535,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-4 col-md-12 wow fadeInUp">
                     <b>09</b>
-                    <h4><span>Property</span> Certificates</h4>
+                    <h4><span>QuickFix</span> Volunteers</h4>
                     <small>Smaller male cones </small>
                 </div>
                 <!-- end col-5 -->
