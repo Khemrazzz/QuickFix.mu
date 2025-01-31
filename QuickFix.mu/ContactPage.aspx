@@ -166,6 +166,9 @@
                         <div class="form">
                             <span class="heading">Get in touch</span>
 
+                            <asp:Label ID="lblSuccessMessage" runat="server" ForeColor="Green" CssClass="success-message" Text="" />
+
+
                             <!-- First Name -->
                              <asp:Label ID="lblFirstNameMsg" runat="server" ForeColor="red" CssClass="help-block text-danger" Display="Dynamic" Text=""></asp:Label>
                             <asp:TextBox ID="txtfname" CssClass="input" Placeholder="First Name" runat="server"></asp:TextBox>
