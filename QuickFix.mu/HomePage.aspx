@@ -436,7 +436,7 @@
             <div class="row">
                 <div class="col-12 wow fadeInUp">
                     <b>08</b>
-                    <h4><span>Homepark</span> Living Spaces</h4>
+                    <h4><span>QuickFix</span> Living Spaces</h4>
                     <h3>Are you interested to Homepark</h3>
                 </div>
                 <!-- end col-12 -->
