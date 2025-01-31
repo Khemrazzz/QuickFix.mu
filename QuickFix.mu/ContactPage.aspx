@@ -105,7 +105,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
-    <header class="page-header" data-background="images/slide01.jpg" data-stellar-background-ratio="1.15">
+    <header class="page-header" data-background="images/r3.jpg" data-stellar-background-ratio="1.15">
         <div class="container">
             <h1>Contact</h1>
             <p>The smaller male cones release pollen, which fertilizes the female</p>

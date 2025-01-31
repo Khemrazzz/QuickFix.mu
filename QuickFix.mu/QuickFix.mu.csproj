@@ -230,6 +230,10 @@
     <Content Include="images\plan02.jpg" />
     <Content Include="images\plan03.jpg" />
     <Content Include="images\preloader.gif" />
+    <Content Include="images\r1.jpg" />
+    <Content Include="images\r2.jpg" />
+    <Content Include="images\r3.jpg" />
+    <Content Include="images\r4.jpg" />
     <Content Include="images\recent-news01.jpg" />
     <Content Include="images\recent-news02.jpg" />
     <Content Include="images\recent-news03.jpg" />
